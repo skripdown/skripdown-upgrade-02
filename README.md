@@ -21,6 +21,7 @@ We would like to extend our thanks to the following names for funding **Skripown
 - **Fathir** (Fathir Fakriansyah)
 - **Wahyu** (Wahyu Hadi Saptura)
 - **8-ball** (Ahmad Iqbal Harianto)
+- **Rin** (Rina Fachriani Putri)
 - **Inna** (Aldina Fariza)
 - **Dea** (Rahmah Fadilah)
 - **Sugab** (Bagus Putra Widadi)
