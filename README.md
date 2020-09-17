@@ -17,7 +17,7 @@ With simple, expressive and intuitive syntax made **Skripdown** so powerfull to 
 ## **Skripdown** Donor
 We would like to extend our thanks to the following names for funding **Skripown** development. If you are interested in funding this project or contributing with your great skill, feel free to contact me on [instagram](https://instagram.com/malkolp).
 
-### Funder
+## Funder
 - **Fathir** (Fathir Fakriansyah)
 - **Wahyu** (Wahyu Hadi Saptura)
 - **8-ball** (Ahmad Iqbal Harianto)
