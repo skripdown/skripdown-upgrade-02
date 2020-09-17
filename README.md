@@ -6,6 +6,7 @@ autogenerate and simplified syntax. **Skripdown** just require less than a secon
 With simple, expressive and intuitive syntax made **Skripdown** so powerfull to deal with thesis writing.
 
 ## **Skripdown** v0.2 Feature
+- Auto Formating
 - Auto Emphasis
 - AutoSave Editor
 - Live Preview Content
