@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="" />
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +12,9 @@
   <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -133,6 +138,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1heYf9HyMSTXCcHyoC35l87fYYS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -143,6 +149,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bagus\PhpstormProjects\skripdown-upgrade-02" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -158,7 +169,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600373125861</updated>
-      <workItem from="1600373126947" duration="850000" />
+      <workItem from="1600373126947" duration="1451000" />
     </task>
     <servers />
   </component>
@@ -166,6 +177,14 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="806" y="421" key="Github.ShareDialog" timestamp="1600374159613">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="806" y="421" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600374159613" />
+    <state x="722" y="141" key="Github.UntrackedFilesDialog" timestamp="1600374167038">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="722" y="141" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600374167038" />
     <state width="1876" height="275" key="GridCell.Tab.0.bottom" timestamp="1600373530978">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
