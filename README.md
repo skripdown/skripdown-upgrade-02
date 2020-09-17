@@ -23,6 +23,7 @@ We would like to extend our thanks to the following names for funding **Skripown
 - **8-ball** (Ahmad Iqbal Harianto)
 - **Inna** (Aldina Fariza)
 - **Dea** (Rahmah Fadilah)
+- **Sugab** (Bagus Putra Widadi)
 
 ## Users
 Thank you for writing your thesis with **Skripdown**! 
