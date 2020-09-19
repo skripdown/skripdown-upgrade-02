@@ -42,7 +42,7 @@
                         <a class="nav-link" href="#digital-marketing-section">Fitur</a>
                     </li>
                     <li class="nav-item btn-contact-us pl-4 pl-lg-0">
-                        <a href="{{url('/editor')}}" class="btn btn-success">Mulai menulis</a>
+                        <a href="{{url('/editor')}}" class="btn btn-success">Masuk</a>
                     </li>
                 </ul>
             </div>
