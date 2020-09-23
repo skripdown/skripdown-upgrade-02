@@ -24,8 +24,7 @@ Route::post('post_foreign_words','Controller@skripdownForeignWords');
 
 
 //STUDENT
-Route::get('/editor', 'Controller@openEditor')->name('editor');
-Route::get('/editor/{url}', 'Controller@openDoc')->name('editor_url');
+Route::get('/editor/{url}', 'Controller@openDoc')->name('editor');
 Route::get('/parse/{url}', 'Controller@parseDoc')->name('parse');
 
 //LECTURER

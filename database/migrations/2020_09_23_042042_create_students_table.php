@@ -25,6 +25,7 @@ class CreateStudentsTable extends Migration
             $table->string('identity_l1')->nullable();
             $table->string('identity_l2')->nullable();
             $table->string('identity_dep')->nullable();
+            $table->string('identity_fac')->nullable();
             $table->string('identity_univ')->nullable();
             $table->timestamps();
         });

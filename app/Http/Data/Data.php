@@ -15,6 +15,18 @@ class Data {
             ->first();
     }
 
+    public static function hasThesis($identity) {
+        return DB::table('documents')
+            ->where('id_',$identity)
+            ->count() > 0;
+    }
+
+    public static function getDoc_url($identity) {
+        return DB::table('documents')
+            ->where('id_',$identity)
+            ->first()->url;
+    }
+
     public static function getStudents_data($id) {
         if (Auth::user()->role == 'lecturer')
             return DB::table('students')

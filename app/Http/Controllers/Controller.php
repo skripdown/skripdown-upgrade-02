@@ -11,6 +11,8 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Services\Data;
+use Services\Maker;
 
 class Controller extends BaseController
 {
@@ -19,7 +21,13 @@ class Controller extends BaseController
     public function dashboard() {
         if (Auth::check()) {
             if (Auth::user()->role == 'student') {
+                $doc_url = null;
+                if (!Data::hasThesis(Auth::user()->identity))
+                    $doc_url = Maker::makeDoc();
+                else
+                    $doc_url = Data::getDoc_url(Auth::user()->identity);
 
+                return redirect()->route('editor',array('url'=>$doc_url));
             }
             elseif (Auth::user()->role == 'lecturer') {
 
@@ -48,53 +56,6 @@ class Controller extends BaseController
     public function submit_autosave(Request $request) {
         $this->makeDoc($request);
         return response()->json(array('status'=>'1'),200);
-    }
-
-    private function makeDoc($request) {
-        $text = $request->text;
-        $univ = $request->university;
-        $dept = $request->department;
-        $fact = $request->faculty;
-        $prse = $request->parse;
-        $urls = $request->url;
-        $cfnt = $request->conf_font;
-        $auth = $request->author;
-        $id   = $request->id_;
-        $ttle = $request->title;
-        $abst = $request->abstract;
-        $absk = $request->abstract_key;
-        $doc  = null;
-
-        if ($urls == 'none') {
-            $alp_ = 'abcdefghi__--jklmnopqrstuvwxyz__--ABCDEFGHIJK__--LMNOPQRSTUVWXYZ0123456789_-';
-            $len  = strlen($alp_);
-            for ($i = 0; $i < 20; $i++) {
-                $urls .= $alp_[rand(0, $len - 1)];
-            }
-
-            $urls = date("s").date("h").$urls;
-            $doc  = new Document();
-            $doc  ->url = $urls;
-        }
-        else {
-            $doc = DB::table('documents')->where('url',$urls)->first();
-            $doc = Document::find($doc->id);
-        }
-
-        $doc->university    = $univ;
-        $doc->faculty       = $fact;
-        $doc->department    = $dept;
-        $doc->text          = $text;
-        $doc->parse         = $prse;
-        $doc->conf_font     = $cfnt;
-        $doc->author        = $auth;
-        $doc->id_           = $id;
-        $doc->title         = $ttle;
-        $doc->abstract      = $abst;
-        $doc->abstract_key  = $absk;
-        $doc->save();
-
-        return $urls;
     }
 
     public function openDoc($url) {
