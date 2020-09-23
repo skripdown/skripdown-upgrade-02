@@ -30,23 +30,22 @@ class Controller extends BaseController
                 return redirect()->route('editor',array('url'=>$doc_url));
             }
             elseif (Auth::user()->role == 'lecturer') {
-
+                $data = Data::getStudents_data(Auth::user()->identity);
+                return view('content.dashboard-lecturer',compact('data'));
             }
             elseif (Auth::user()->role == 'department') {
-
+                $data = Data::getStudents_data(Auth::user()->identity);
+                return view('content.dashboard-department',compact('data'));
             }
             else {
-
+                $data = Data::getStudents_data(Auth::user()->identity);
+                return view('content.dashboard-super',compact('data'));
             }
         }
         return view('welcome');
     }
 
     //-----------------------------STUDENT-----------------------------//
-    public function openEditor() {
-        $doc = null;
-        return view('editor',compact('doc'));
-    }
 
     public function submit(Request $request) {
         $urls = $this->makeDoc($request);
