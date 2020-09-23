@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\DB;
 class Controller extends BaseController
 {
 
+    //-----------------------------EDITOR-----------------------------//
     public function openEditor() {
         $doc = null;
         return view('editor',compact('doc'));
@@ -115,4 +116,19 @@ class Controller extends BaseController
             ),200
         );
     }
+
+    //-----------------------------STUDENT-----------------------------//
+    //-----------------------------LECTURER-----------------------------//
+    public function acceptThesis(Request $request) {
+
+    }
+
+    public function rejectThesis(Request $request) {
+
+    }
+
+    public function progresThesis(Request $request) {
+
+    }
+
 }

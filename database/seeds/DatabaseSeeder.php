@@ -5,6 +5,7 @@ use Database\Seeders\LecturerSeeder;
 use Database\Seeders\StudentSeeder;
 use Database\Seeders\UniversitySeeder;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,5 +20,9 @@ class DatabaseSeeder extends Seeder
         $this->call(LecturerSeeder::class);
         $this->call(DepartmentSeeder::class);
         $this->call(UniversitySeeder::class);
+        DB::table('skripdowns')->insert([
+            'foreign_words' => 'online|offline|software|file',
+            'translate_words' => 'daring|luring|perangkat lunak|berkas'
+        ]);
     }
 }

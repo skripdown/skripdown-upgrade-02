@@ -19,33 +19,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="update README.md">
-      <change afterPath="$PROJECT_DIR$/app/Models/Document.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Skripdown.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_19_144315_create_documents_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_19_144331_create_skripdowns_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/DepartmentSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/LecturerSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/StudentSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/UniversitySeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/login.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/template.blade.php" afterDir="false" />
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="integrating version 0.1">
+      <change afterPath="$PROJECT_DIR$/app/Models/Department.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Lecturer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Student.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/University.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_23_042042_create_students_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_23_042057_create_lecturers_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_23_042110_create_departments_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_23_042124_create_universities_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/content/dashboard-lecturer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AppController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +208,13 @@
       <workItem from="1600411490187" duration="53000" />
       <workItem from="1600461138952" duration="3246000" />
       <workItem from="1600515682292" duration="592000" />
-      <workItem from="1600516765349" duration="11114000" />
+      <workItem from="1600516765349" duration="13146000" />
+      <workItem from="1600539484811" duration="2169000" />
+      <workItem from="1600548490919" duration="4028000" />
+      <workItem from="1600695940026" duration="997000" />
+      <workItem from="1600702292806" duration="1335000" />
+      <workItem from="1600832620310" duration="8000" />
+      <workItem from="1600832665203" duration="2819000" />
     </task>
     <task id="LOCAL-00001" summary="update README.md">
       <created>1600374939544</created>
@@ -265,7 +258,21 @@
       <option name="project" value="LOCAL" />
       <updated>1600375576789</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="integrating version 0.1">
+      <created>1600536959882</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1600536959882</updated>
+    </task>
+    <task id="LOCAL-00008" summary="integrating version 0.1">
+      <created>1600537106412</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1600537106412</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,7 +293,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="update README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="update README.md" />
+    <MESSAGE value="integrating version 0.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="integrating version 0.1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="806" y="421" key="Github.ShareDialog" timestamp="1600374159613">
@@ -313,9 +321,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="746" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600523811298" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1600375585447">
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1600537116226">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1600375585447" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1600537116226" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1600549629827">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600549629827" />
   </component>
 </project>
