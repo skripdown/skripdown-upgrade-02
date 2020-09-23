@@ -18,7 +18,6 @@ Route::get('/', 'Controller@dashboard')->name('home');
 Route::get('/login', 'Controller@login');
 Route::get('logout', 'Auth\LoginController@logout');
 Route::get('/dashboard', 'Controller@dashboard');
-Route::post('submit_text','Controller@submit');
 Route::post('submit_autosave','Controller@submit_autosave');
 Route::post('post_foreign_words','Controller@skripdownForeignWords');
 

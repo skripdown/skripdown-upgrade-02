@@ -48,4 +48,20 @@ class Maker {
 
         return $urls;
     }
+
+    public static function saveDoc($request) {
+        $user = Student::find(Auth::user()->id);
+        $item = Data::getStudent_thesis(Auth::user()->identity);
+
+        $item->text = $request->text;
+        $item->parse = $request->parse;
+        $item->conf_font = $request->conf_font;
+        $item->title = $request->title;
+        $item->abstract = $request->abstract;
+        $item->abstract_key = $request->abstract_key;
+        $user->doc_title = $request->title;
+
+        $user->save();
+        $item->save();
+    }
 }

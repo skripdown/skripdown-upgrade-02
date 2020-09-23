@@ -47,13 +47,8 @@ class Controller extends BaseController
 
     //-----------------------------STUDENT-----------------------------//
 
-    public function submit(Request $request) {
-        $urls = $this->makeDoc($request);
-        return redirect('/editor/'.$urls);
-    }
-
     public function submit_autosave(Request $request) {
-        $this->makeDoc($request);
+        Maker::saveDoc($request);
         return response()->json(array('status'=>'1'),200);
     }
 
