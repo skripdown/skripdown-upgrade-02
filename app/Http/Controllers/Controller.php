@@ -31,7 +31,7 @@ class Controller extends BaseController
 
             }
         }
-        return view('login');
+        return view('welcome');
     }
 
     //-----------------------------STUDENT-----------------------------//
