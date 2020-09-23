@@ -190,6 +190,8 @@
                     <input type="hidden" name="parse" id="parse-val" value="{{$doc->parse}}">
                     <input type="hidden" name="url" id="url-val" value="{{$doc->url}}">
                     <input type="hidden" name="conf_font" id="conf-font-val" value="{{$doc->conf_font}}">
+                    <input type="hidden" name="lecturer_1" id="lec1-val" value="{{$doc->conf_font}}">
+                    <input type="hidden" name="lecturer_2" id="lec2-val" value="{{$doc->conf_font}}">
                 @else
                     <input type="hidden" name="title" id="title-val">
                     <input type="hidden" name="author" id="author-val">

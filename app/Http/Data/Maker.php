@@ -6,6 +6,7 @@
 namespace Services;
 
 use App\Models\Document;
+use App\Models\Skripdown;
 use App\Models\Student;
 use Illuminate\Support\Facades\Auth;
 
@@ -63,5 +64,19 @@ class Maker {
 
         $user->save();
         $item->save();
+    }
+
+    public static function skripdown($request) {
+        $skripdown = Skripdown::find(1);
+        if ($request->foreign_word != 'online|offline') {
+            $skripdown->foreign_words = $request->foreign_word;
+            $skripdown->translate_words = $request->translate_word;
+            $skripdown->save();
+        }
+
+        return array(
+            'foreign_word'=>$skripdown->foreign_words,
+            'translate_word'=>$skripdown->translate_words
+        );
     }
 }

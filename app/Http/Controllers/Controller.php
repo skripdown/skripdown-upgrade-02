@@ -5,13 +5,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Document;
 use App\Models\Skripdown;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Services\Data;
+use Services\Helper;
 use Services\Maker;
 
 class Controller extends BaseController
@@ -49,7 +49,8 @@ class Controller extends BaseController
 
     public function submit_autosave(Request $request) {
         Maker::saveDoc($request);
-        return response()->json(array('status'=>'1'),200);
+        $response = Helper::check($request);
+        return response()->json($response,200);
     }
 
     public function openDoc($url) {
@@ -76,20 +77,8 @@ class Controller extends BaseController
     }
 
     public function skripdownForeignWords(Request $request) {
-
-        $skripdown = Skripdown::find(1);
-        if ($request->foreign_word !== 'online|offline') {
-            $skripdown->foreign_words = $request->foreign_word;
-            $skripdown->translate_words = $request->translate_word;
-            $skripdown->save();
-        }
-
-        return response()->json(
-            array(
-                'foreign_word'=>$skripdown->foreign_words,
-                'translate_word'=>$skripdown->translate_words
-            ),200
-        );
+        $response = Maker::skripdown($request);
+        return response()->json($response,200);
     }
 
     //-----------------------------LECTURER-----------------------------//
