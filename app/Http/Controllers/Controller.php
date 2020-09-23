@@ -9,12 +9,32 @@ use App\Models\Document;
 use App\Models\Skripdown;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class Controller extends BaseController
 {
 
-    //-----------------------------EDITOR-----------------------------//
+    //-----------------------------ROOT-----------------------------//
+    public function dashboard() {
+        if (Auth::check()) {
+            if (Auth::user()->role == 'student') {
+
+            }
+            elseif (Auth::user()->role == 'lecturer') {
+
+            }
+            elseif (Auth::user()->role == 'department') {
+
+            }
+            else {
+
+            }
+        }
+        return view('login');
+    }
+
+    //-----------------------------STUDENT-----------------------------//
     public function openEditor() {
         $doc = null;
         return view('editor',compact('doc'));
@@ -117,7 +137,6 @@ class Controller extends BaseController
         );
     }
 
-    //-----------------------------STUDENT-----------------------------//
     //-----------------------------LECTURER-----------------------------//
     public function acceptThesis(Request $request) {
 

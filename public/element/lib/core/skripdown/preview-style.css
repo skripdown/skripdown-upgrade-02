@@ -1,209 +1,647 @@
-#skrip {
-    color : #444;
-    font-size : 14pt;
-}
-.sk-syntax {
-    opacity         : 0.5;
-    font-weight     : normal;
-    border          : 0!important;
-    text-align: right!important;
-}
-
-.sk-meta-judul {
-    text-align      : center;
-    padding         : 1rem 0 1.25rem;
-    margin          : 0 10rem;
-    font-weight     : bold;
-    font-size       : 26pt;
-}
-
-.sk-meta-val {
-    text-align      : center;
-    padding         : 0.25rem 0;
-    font-weight     : 500;
-}
-
-.sk-bab {
-    padding         : 1.5rem 0 2rem;
-    text-align      : center;
-    font-weight     : 600;
-    font-size       : 18pt;
-}
-
-.bab-i::after {
-    white-space     : pre;
-    content         : "BAB I\APENDAHULUAN";
-}
-
-.bab-ii::after {
-    white-space     : pre;
-    content         : "BAB II\AKAJIAN TEORI";
-}
-
-.bab-iii::after {
-    white-space     : pre;
-    content         : "BAB III\AMETODOLOGI PENELITIAN";
-}
-
-.bab-iv::after {
-    white-space     : pre;
-    content         : "BAB IV\AIMPLEMENTASI DAN PEMBAHASAN";
-}
-
-.bab-v::after {
-    white-space     : pre;
-    content         : "BAB V\AKESIMPULAN";
-}
-
-.sk-sub {
-    font-weight     : bold;
-    font-size       : 16pt;
-    margin-bottom   : 0.5rem;
-}
-
-.sk-parag {
-    text-indent     : 3rem;
-    text-align      : justify;
-    line-height     : 2rem;
-}
-
-.sk-num-reset {
-    display: inline-block;
-    counter-reset: numlist;
-}
-
-.sk-num-list {
-    text-align: justify;
-    margin-left: 3rem;
-    text-indent: -1.4rem;
-    line-height: 2rem;
-}
-
-.sk-num-list::before {
-    display : inline-block;
-    min-width : 1rem;
-    max-width : 1rem;
-    content : counter(numlist) " . ";
-    counter-increment : numlist;
-}
-
-.sk-alpha-reset {
-    display: inline-block;
-    counter-reset: alphalist;
-}
-
-.sk-alpha-list {
-    text-align: justify;
-    margin-left: 3rem;
-    text-indent: -1.4rem;
-    line-height: 2rem;
-}
-
-.sk-alpha-list::before {
-    display : inline-block;
-    min-width : 1rem;
-    max-width : 1rem;
-    content : counters(alphalist,"loweralpha") " ) ";
-    counter-increment : alphalist;
-}
-
-.sk-dash-list {
-    text-align: justify;
-    margin-left: 3rem;
-    text-indent: -1.4rem;
-    line-height: 2rem;
-}
-
-.sk-alpha-list::marker {
-    display : inline-block;
-    min-width : 1rem;
-    max-width : 1rem;
-}
-
-.sk-image {
-    display: block;
-    margin: 2rem auto 2rem;
-}
-
-.sk-image-dsc {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.sk-table td {
-    border: 1px solid black;
-}
-
-.sk-table thead tr td {
-    text-align: center;
-    padding: 0.65rem 0.85rem;
-}
-
-.sk-table tbody tr td {
-    padding: 0.25rem 0.5rem;
-}
-
-.sk-table {
-    margin: 0 auto 2rem;
-}
-
-.sk-table-dsc {
-    text-align: center;
-    margin: 2rem 0 1rem;
-}
-
-.sk-size-20 {
-    width: 20%;
-}
-
-.sk-size-40 {
-    width: 40%;
-}
-
-.sk-size-50 {
-    width: 50%;
-}
-
-.sk-size-60 {
+#preview-skrip {
+    font-size : 12.25pt;
+    line-height : 1.8em;
+    letter-spacing: 0.05em;
+    font-family: "Times New Roman", serif;
+    color: black;
     width: 60%;
+    margin: 0 auto;
+    padding: 5vh 0;
 }
 
-.sk-size-80 {
-    width: 80%;
+#preview-skrip #pg-lembar_persetujuan {
+    counter-reset : page 1;
 }
-
-.sk-size-100 {
-    width: 100%;
+#preview-skrip #bab-i {
+    counter-reset : page 1;
 }
-
-.sk-bold {
-    font-weight     : bold;
+#preview-skrip #set-bab-i {
+    counter-reset : bab 1;
 }
-
-.sk-emp {
-    font-style      : italic;
+#preview-skrip #set-bab-ii {
+    counter-reset : bab 2;
 }
-
-.sk-und {
-    text-decoration : underline;
+#preview-skrip #set-bab-iii {
+    counter-reset : bab 3;
 }
-
-.sk-parag + .sk-parag {
-    margin-top: -0.75rem;
+#preview-skrip #set-bab-iv {
+    counter-reset : bab 4;
 }
-
-.sk-parag + .sk-sub {
-    margin-top: 2rem;
+#preview-skrip #set-bab-v {
+    counter-reset : bab 5;
 }
-
-.sk-parag + .sk-table-dsc {
-    margin-top: 0;
+#preview-skrip .reset-sub {
+    counter-reset : sub-1;
 }
-
-.sk-parag + .sk-num-reset {
-    margin-top: -4rem;
+#preview-skrip .sub-1 {
+    counter-increment : sub-1;
+    counter-reset : sub-2;
 }
+#preview-skrip .sub-2 {
+    counter-increment : sub-2;
+    counter-reset : sub-3;
+}
+#preview-skrip .sub-3 {
+    counter-increment : sub-3;
+    counter-reset : sub-4;
+}
+#preview-skrip .sub-4 {
+    counter-increment : sub-4;
+    counter-reset : sub-5;
+}
+#preview-skrip .sub-5 {
+    counter-increment : sub-5;
+    counter-reset : sub-6;
+}
+#preview-skrip .sub-6 {
+    counter-increment : sub-6;
+}
+#preview-skrip .sub-1::before {
+    content : counter(bab) "." counter(sub-1) " ";
+}
+#preview-skrip .sub-2::before {
+    content : counter(bab) "." counter(sub-1) "." counter(sub-2) " ";
+}
+#preview-skrip .sub-3::before {
+    content : counter(bab) "." counter(sub-1) "." counter(sub-2) "." counter(sub-3) " ";
+}
+#preview-skrip .sub-4::before {
+    content : counter(bab) "." counter(sub-1) "." counter(sub-2) "." counter(sub-3) "." counter(sub-4) " ";
+}
+#preview-skrip .sub-5::before {
+    content : counter(bab) "." counter(sub-1) "." counter(sub-2) "." counter(sub-3) "." counter(sub-4) "." counter(sub-5) " ";
+}
+#preview-skrip .sub-6::before {
+    content : counter(bab) "." counter(sub-1) "." counter(sub-2) "." counter(sub-3) "." counter(sub-4) "." counter(sub-5) "." counter(sub-6) " ";
+}
+#preview-skrip #lampiran {
+    counter-reset : lampiran-idx;
+}
+#preview-skrip .ls-lampiran {
+    counter-increment : lampiran-idx;
+}
+#preview-skrip .ls-lampiran-title > div::before {
+    content : "Lampiran " counter(lampiran-idx) " ";
+}
+#preview-skrip .reset-img {
+    counter-reset : image-idx;
+}
+#preview-skrip .image-dsc {
+    counter-increment : image-idx;
+}
+#preview-skrip .image-dsc::before {
+    font-weight : bold;
+    content : "Gambar " counter(bab) "." counter(image-idx) ". ";
+}
+#preview-skrip .lampiran-img > .image-dsc {
+    font-weight : bold;
+    content : "Gambar " counter(image-idx) ". ";
+}
+#preview-skrip .lampiran-img-hidden > .image-dsc {
+    content : "";
+}
+#preview-skrip .reset-tbl {
+    counter-reset : table-idx;
+}
+#preview-skrip .table-dsc {
+    counter-increment : table-idx;
+}
+#preview-skrip .table-dsc::before {
+    font-weight : bold;
+    content : "Tabel " counter(bab) "." counter(table-idx) ". ";
+}
+#preview-skrip .lampiran-tbl > .table-dsc::before {
+    font-weight : bold;
+    content : "Tabel " counter(table-idx) ". ";
+}
+#preview-skrip .lampiran-tbl-hidden > .table-dsc::before {
+    content : "";
+}
+#preview-skrip .reset-alpha-ls {
+    counter-reset : alpha-ls;
+}
+#preview-skrip .ls-alpha {
+    counter-increment : alpha-ls;
+}
+#preview-skrip .ls-alpha::before {
+    content : counter(alpha-ls,lower-alpha) ") ";
+}
+#preview-skrip .reset-num-ls {
+    counter-reset : num-ls 0;
+}
+#preview-skrip .ls-num {
+    counter-increment : num-ls;
+}
+#preview-skrip .ls-num::before {
+    content : counter(num-ls) ". ";
+}
+#preview-skrip .reset-ref-ls {
+    counter-reset : ref-ls;
+}
+#preview-skrip .ls-ref {
+    counter-increment : ref-ls;
+}
+#preview-skrip .ls-ref::before {
+    content : "[" counter(ref-ls) "] ";
+}
+#preview-skrip .set-dfi-bab-i {
+    counter-reset : dfi-bab-idx 1;
+}
+#preview-skrip .set-dfi-bab-ii {
+    counter-reset : dfi-bab-idx 2;
+}
+#preview-skrip .set-dfi-bab-iii {
+    counter-reset : dfi-bab-idx 3;
+}
+#preview-skrip .set-dfi-bab-iv {
+    counter-reset : dfi-bab-idx 4;
+}
+#preview-skrip .set-dfi-bab-v {
+    counter-reset : dfi-bab-idx 5;
+}
+#preview-skrip .reset-dfi-sub {
+    counter-reset : dfi-sub-1;
+}
+#preview-skrip .dfi-sub-i {
+    counter-increment : dfi-sub-1;
+    counter-reset : dfi-sub-2;
+}
+#preview-skrip .dfi-sub-ii {
+    counter-increment : dfi-sub-2;
+    counter-reset : dfi-sub-3;
+}
+#preview-skrip .dfi-sub-iii {
+    counter-increment : dfi-sub-3;
+    counter-reset : dfi-sub-4;
+}
+#preview-skrip .dfi-sub-iv {
+    counter-increment : dfi-sub-4;
+    counter-reset : dfi-sub-5;
+}
+#preview-skrip .dfi-sub-v {
+    counter-increment : dfi-sub-5;
+    counter-reset : dfi-sub-6;
+}
+#preview-skrip .dfi-sub-vi {
+    counter-increment : dfi-sub-6;
+}
+#preview-skrip .dfi-sub-i::before {
+    background-color : white;
+    font-weight : bold;
+    content : counter(dfi-bab-idx) "." counter(dfi-sub-1) " ";
+}
+#preview-skrip .dfi-sub-ii::before {
+    background-color : white;
+    font-weight : bold;
+    content : counter(dfi-bab-idx) "." counter(dfi-sub-1) "." counter(dfi-sub-2) " ";
+}
+#preview-skrip .dfi-sub-iii::before {
+    background-color : white;
+    font-weight : bold;
+    content : counter(dfi-bab-idx) "." counter(dfi-sub-1) "." counter(dfi-sub-2) "." counter(dfi-sub-3) " ";
+}
+#preview-skrip .dfi-sub-iv::before {
+    background-color : white;
+    font-weight : bold;
+    content : counter(dfi-bab-idx) "." counter(dfi-sub-1) "." counter(dfi-sub-2) "." counter(dfi-sub-3) "." counter(dfi-sub-4) " ";
+}
+#preview-skrip .dfi-sub-v::before {
+    background-color : white;
+    font-weight : bold;
+    content : counter(dfi-bab-idx) "." counter(dfi-sub-1) "." counter(dfi-sub-2) "." counter(dfi-sub-3) "." counter(dfi-sub-4) "." counter(dfi-sub-5) " ";
+}
+#preview-skrip .dfi-sub-vi::before {
+    background-color : white;
+    font-weight : bold;
+    content : counter(dfi-bab-idx) "." counter(dfi-sub-1) "." counter(dfi-sub-2) "." counter(dfi-sub-3) "." counter(dfi-sub-4) "." counter(dfi-sub-5) "." counter(dfi-sub-6) ". ";
+}
+#preview-skrip .reset-df-gambar {
+    counter-reset : df-gambar-idx;
+}
+#preview-skrip .df-gambar {
+    counter-increment : df-gambar-idx ;
+}
+#preview-skrip .df-gambar::before {
+    background-color : white;
+    font-weight : bold;
+    content : " Gambar " counter(dfi-bab-idx) "." counter(df-gambar-idx) ". ";
+}
+#preview-skrip .reset-df-tabel {
+    counter-reset : df-tabel-idx;
+}
+#preview-skrip .df-tabel {
+    counter-increment : df-tabel-idx ;
+}
+#preview-skrip .df-tabel::before {
+    background-color : white;
+    font-weight : bold;
+    content : "Tabel " counter(dfi-bab-idx) "." counter(df-tabel-idx) ". ";
+}
+#preview-skrip .reset-df-lampiran {
+    counter-reset : df-lampiran-idx;
+}
+#preview-skrip .df-lampiran {
+    counter-increment : df-lampiran-idx ;
+}
+#preview-skrip .df-lampiran::before {
+    background-color : white;
+    font-weight : bold;
+    content : "Lampiran " counter(df-lampiran-idx) ". ";
+}
+#preview-skrip .pendahuluan-sub-title {
+    font-weight : bold;
+    font-size : 14pt;
+    text-transform : uppercase;
+    line-height : 1.7em;
+    text-align : center;
+    margin-bottom : 0.5em;
+}
+#preview-skrip .pendahuluan-sub-title > img {
+    display : block;
+    width : 220pt;
+    margin : 0.5em auto 0;
+}
+#preview-skrip #cover {
+    page : cover;
+    page-break-after : always;
+    display : flex;
+    flex-direction : column;
+    width : 100%;
+    height : 232mm;
 
-.sk-num-reset + .sk-num-list {
-    margin-top: -2.5rem;
+}
+#preview-skrip #cov-head {
+    font-size : 14pt;
+    font-weight : bold;
+    text-transform : uppercase;
+    line-height : 1.5em;
+    text-align : center;
+    flex : 1;
+}
+#preview-skrip #cov-head + div {
+    line-height : 1.5em;
+    text-transform : capitalize;
+    text-align : center;
+    flex : auto;
+}
+#preview-skrip #cov-head + div + div {
+    text-align : center;
+    flex : auto;
+}
+#preview-skrip #cov-head + div + div > img {
+    width : 12em;
+}
+#preview-skrip #cov-head + div + div + div {
+    text-align : center;
+    text-transform : capitalize;
+    line-height : 1.7em;
+    flex : auto;
+}
+#preview-skrip #cov-head + div + div + div > span {
+    font-weight : bold;
+}
+#preview-skrip #cov-footer {
+    font-weight : bold;
+    font-size : 14pt;
+    line-height : 1.7em;
+    text-align : center;
+    text-transform : uppercase;
+    flex : 1;
+}
+#preview-skrip #pg-lembar_persetujuan , #pg-lembar_pengesahan , #pg-lembar_pernyataan {
+    page : pendahuluan;
+    text-align : center;
+    width : 100%;
+    height : 232mm;
+    page-break-after : always;
+}
+#preview-skrip #pg-lembar_persetujuan > img , #pg-lembar_pengesahan > img , #pg-lembar_pernyataan > img {
+    width : 90%;
+    position : relative;
+    top : 13%;
+}
+#preview-skrip #pg-lembar_abstrak , #pg-lembar_abstract {
+    page : pendahuluan;
+    width : 100%;
+    height : 232mm;
+    page-break-after : always;
+}
+#preview-skrip #pg-lembar_persembahan , #pg-kata_pengantar {
+    page : pendahuluan;
+    width : 100%;
+    height : 232mm;
+    page-break-after : always;
+}
+#preview-skrip #pg-lembar_persembahan > p , #pg-kata_pengantar-content > p {
+    text-align : justify;
+    line-height : 1.7em;
+    font-size : 12pt;
+}
+#preview-skrip #pg-lembar_persembahan > P + p , #pg-kata_pengantar-content > P + p{
+    margin-top : -1em;
+}
+#preview-skrip #pg-kata_pengantar-judul {
+    text-align : center!important;
+    text-transform : uppercase;
+    font-size : 14pt;
+    line-height : 1.7em;
+    font-weight : bold;
+    padding-top : 5px;
+}
+#preview-skrip #pg-kata_pengantar {
+    display : flex;
+    flex-direction : column;
+}
+#preview-skrip #pg-kata_pengantar-content , #pg-kata_pengantar-info{
+    flex : 1;
+}
+#preview-skrip #pg-kata_pengantar > div {
+    flex : auto;
+}
+#preview-skrip #pg-kata_pengantar-info {
+    text-align : right;
+}
+#preview-skrip #pg-kata_pengantar-info > br + span {
+    font-weight : bold;
+}
+#preview-skrip #pg-daftar_isi {
+    page : pendahuluan;
+    width : 100%;
+    display: none;
+}
+#preview-skrip #pg-daftar_isi > ul {
+    padding-left : 0;
+    margin : 1.5em 0 0;
+    list-style-type : none;
+}
+#preview-skrip #pg-daftar_isi > ul > li {
+    color : inherit;
+    text-transform : capitalize;
+    font-weight : bold;
+    overflow-x : hidden;
+    line-height : 1.5em;
+}
+#preview-skrip #pg-daftar_isi > ul > li > span {
+    background-color : white;
+}
+#preview-skrip #pg-daftar_isi > ul > li::after {
+    font-weight : normal;
+    float : left;
+    width : 0;
+    white-space : nowrap;
+    letter-spacing : -0.5pt;
+    content : "..................................................................................................................................................................................................................";
+}
+#preview-skrip .di-b {
+    text-transform : uppercase;
+}
+#preview-skrip .di-s1 {
+    margin-left : 1em;
+}
+#preview-skrip .di-s2 {
+    margin-left : 2em;
+}
+#preview-skrip .di-s3 {
+    margin-left : 3em;
+}
+#preview-skrip .di-s4 {
+    margin-left : 4em;
+}
+#preview-skrip .di-s5 {
+    margin-left : 5em;
+}
+#preview-skrip .di-s6 {
+    margin-left : 6em;
+}
+#preview-skrip #pg-daftar_isi > ul > li > a {
+    float : right;
+    text-transform : lowercase;
+    color : inherit;
+    text-decoration : none;
+}
+#preview-skrip #pg-daftar_isi > ul > li > .pen-idx::after {
+    position : relative;
+    z-index : 2;
+    background-color : white;
+    content : " " target-counter(attr(href),page, lower-roman);
+}
+#preview-skrip #pg-daftar_isi > ul > li > .con-idx::after {
+    position : relative;
+    z-index : 2;
+    background-color : white;
+    content : " " target-counter(attr(href),page, "");
+}
+#preview-skrip #pg-daftar_gambar_tabel_lampiran {
+    page-break-before: always;
+    page : pendahuluan;
+    width : 100%;
+    display: none;
+}
+#preview-skrip #daftar_gambar , #daftar_tabel , #daftar_lampiran {
+    padding-left : 0;
+    margin : 1.5em 0 0;
+    list-style-type : none;
+}
+#preview-skrip #daftar_gambar > li , #daftar_tabel > li , #daftar_lampiran > li {
+    color : inherit;
+    text-transform : capitalize;
+    font-weight : bold;
+    overflow-x : hidden;
+    line-height : 1.5em;
+}
+#preview-skrip #daftar_gambar > li > span , #daftar_tabel > li > span , #daftar_lampiran > li > span {
+    background-color : white;
+}
+#preview-skrip #daftar_gambar > li::after , #daftar_tabel > li::after , #daftar_lampiran > li::after {
+    font-weight : normal;
+    float : left;
+    width : 0;
+    white-space : nowrap;
+    letter-spacing : -0.5pt;
+    content : "..................................................................................................................................................................................................................";
+}
+#preview-skrip #daftar_gambar > li > a::after , #daftar_tabel > li > a::after , #daftar_lampiran > li > a::after {
+    float : right;
+    text-transform : lowercase;
+    color : black;
+    text-decoration : none;
+    position : relative;
+    z-index : 2;
+    background-color : white;
+    content : " " target-counter(attr(href),page, "");
+}
+#preview-skrip #daftar-pustaka , #lampiran{
+    page-break-before : always;
+    font-weight : bold;
+    text-align : center;
+    line-height : 1.5em;
+}
+#preview-skrip #daftar-pustaka::after {
+    white-space : pre;
+    content : "DAFTAR PUSTAKA \A\A";
+}
+#preview-skrip #lampiran::after {
+    white-space : pre;
+    content : "LAMPIRAN \A\A";
+}
+#preview-skrip .ls-lampiran {
+    page-break-before : always;
+    width : 100%;
+    display : flex;
+    flex-direction : row;
+}
+#preview-skrip #lampiran + .ls-lampiran {
+    page-break-before : avoid;
+}
+#preview-skrip .ls-lampiran > div:first-child {
+    border : 1px black solid;
+    border-right : 0;
+}
+#preview-skrip .ls-lampiran > div:last-child {
+    border : 1px black solid;
+    flex : auto;
+    text-align : center;
+}
+#preview-skrip .ls-lampiran-logo > img {
+    width : 5em;
+}
+#preview-skrip .ls-lampiran > div:last-child > div {
+    font-weight : bold;
+    position : relative;
+    top : 45%;
+}
+#preview-skrip .bab {
+    font-weight : bold;
+    text-transform : uppercase;
+    line-height : 1em;
+    text-align : center;
+    margin-bottom : 0.25em;
+}
+#preview-skrip #bab-ii , #bab-iii , #bab-iv , #bab-v {
+    page-break-before : always;
+}
+#preview-skrip #bab-i::after {
+    white-space : pre;
+    content : "BAB I \A\A PENDAHULUAN \A\A";
+}
+#preview-skrip #bab-ii::after {
+    white-space : pre;
+    content : "BAB II \A\A KAJIAN TEORI \A\A";
+}
+#preview-skrip #bab-iii::after {
+    white-space : pre;
+    content : "BAB III \A\A METODOLOGI PENELITIAN \A\A";
+}
+#preview-skrip #bab-iv::after {
+    white-space : pre;
+    content : "BAB IV \A\A IMPLEMENTASI DAN PENGUJIAN \A\A";
+}
+#preview-skrip #bab-v::after {
+    white-space : pre;
+    content : "BAB V \A\A KESIMPULAN \A\A";
+}
+#preview-skrip .sub {
+    font-weight : bold;
+    text-transform : capitalize;
+}
+p {
+    text-align : justify;
+    text-indent : 22pt;
+    margin-left : 22pt;
+}
+#preview-skrip .sub + p {
+    margin-top : -0.25pt;
+}
+#preview-skrip .reset-num-ls + .sub, .reset-alpha-ls + .sub{
+    margin-top: 12pt;
+}
+p + p {
+    margin-top : -10pt;
+}
+span + p {
+    margin-top : -2pt;
+}
+p + .ls-alpha , p + .ls-num {
+    margin-top : -1em;
+}
+#preview-skrip .image {
+    margin-top : 0.5em;
+    margin-left : 22pt;
+    margin-bottom : 1em;
+    text-align : center;
+}
+#preview-skrip .image-dsc {
+    margin-top : 0.25em;
+}
+#preview-skrip .img-xs {
+    width : 15%;
+}
+#preview-skrip .img-sm {
+    width : 25%;
+}
+#preview-skrip .img-md {
+    width : 50%;
+}
+#preview-skrip .img-lg {
+    width : 75%;
+}
+#preview-skrip .img-xl {
+    width : 100%;
+}
+#preview-skrip .table {
+    margin-top : 0.2em;
+    margin-left : 22pt;
+    margin-bottom : 0.6em;
+    text-align : center;
+}
+table {
+    margin : 0 auto;
+    border-collapse : collapse;
+}
+td {
+    border : 1px solid black;
+    text-align : justify;
+    padding : 2pt 4pt;
+}
+table tr:first-child td {
+    text-align : center;
+}
+table tr:first-child {
+    background-color : darkgray;
+    font-weight : bold;
+}
+#preview-skrip .table-dsc {
+    display : table;
+    margin : 0.6em auto 0.2em;
+}
+#preview-skrip .tbl-xs {
+    max-width : 20%;
+}
+#preview-skrip .tbl-sm {
+    max-width : 45%;
+}
+#preview-skrip .tbl-md {
+    max-width : 60%;
+}
+#preview-skrip .tbl-lg {
+    max-width : 75%;
+}
+#preview-skrip .tbl-xl {
+    max-width : 100%;
+}
+#preview-skrip .ls-alpha , .ls-num {
+    text-align : justify;
+    text-indent: -0.8rem;
+    margin-left: 3.5rem;
+}
+#preview-skrip .ls-alpha::before , .ls-num::before {
+    min-width: 0.75rem;
+    display: inline-block;
+}
+#preview-skrip .ls-ref {
+    text-indent : -2.1em;
+    margin-left : 1.8em;
+}
+#preview-skrip .ls-ref::before {
+    margin-right : 0.75em;
 }
