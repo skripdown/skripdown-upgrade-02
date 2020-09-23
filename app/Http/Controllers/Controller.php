@@ -5,7 +5,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Skripdown;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
@@ -46,7 +45,6 @@ class Controller extends BaseController
     }
 
     //-----------------------------STUDENT-----------------------------//
-
     public function submit_autosave(Request $request) {
         Maker::saveDoc($request);
         $response = Helper::check($request);
