@@ -15,6 +15,7 @@ class CreateLecturersTable extends Migration
     {
         Schema::create('lecturers', function (Blueprint $table) {
             $table->id();
+            $table->string('keyword');
             $table->timestamps();
         });
     }
