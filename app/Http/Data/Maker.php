@@ -90,7 +90,7 @@ class Maker {
         $check = DB::table('documents')->where('url',$url)->get()->count();
         if ($check == 1) {
             $doc = DB::table('documents')->where('url',$url)->first();
-            $result = array($doc->university,$doc->department,$doc->parse);
+            $result = array('umm','037',$doc->parse);
             return view('print.out',compact('result'));
         }
         else {

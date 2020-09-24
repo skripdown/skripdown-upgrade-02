@@ -3,7 +3,7 @@
     <head>
         <title>OUT</title>
         <script src="{{asset(env('LIB_PATH').'extra/paged_js/paged.js')}}"></script>
-        @include('print'.$result[0].'.'.$result[1])
+        @include('print.'.$result[0].'.'.$result[1])
     </head>
     <body>
         {!! $result[2] !!}
