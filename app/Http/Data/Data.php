@@ -15,6 +15,14 @@ class Data {
             ->first();
     }
 
+    public static function isURL_thesis($url) {
+        $identity = Auth::user()->identity;
+        return DB::table('documents')
+            ->where('id_',$identity)
+            ->where('doc_link',$url)
+            ->count() > 0;
+    }
+
     public static function hasThesis($identity) {
         return DB::table('documents')
             ->where('id_',$identity)

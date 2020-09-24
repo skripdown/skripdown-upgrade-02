@@ -8,7 +8,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Services\Data;
 use Services\Helper;
 use Services\Maker;
@@ -52,26 +51,15 @@ class Controller extends BaseController
     }
 
     public function openDoc($url) {
-        $check = DB::table('documents')->where('url',$url)->get()->count();
-        if ($check == 1) {
-            $doc = DB::table('documents')->where('url',$url)->first();
+        if (Data::isURL_thesis($url)) {
+            $doc = Data::getStudent_thesis(Auth::user()->identity);
             return view('editor',compact('doc'));
         }
-        else {
-            return '404 NOT FOUND!';
-        }
+        return '404 NOT FOUND!';
     }
 
     public function parseDoc($url) {
-        $check = DB::table('documents')->where('url',$url)->get()->count();
-        if ($check == 1) {
-            $doc = DB::table('documents')->where('url',$url)->first();
-            $result = array($doc->university,$doc->department,$doc->parse);
-            return view('print.out',compact('result'));
-        }
-        else {
-            return '404 NOT FOUND!';
-        }
+        return Maker::parseDoc($url);
     }
 
     public function skripdownForeignWords(Request $request) {

@@ -9,6 +9,7 @@ use App\Models\Document;
 use App\Models\Skripdown;
 use App\Models\Student;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class Maker {
 
@@ -64,6 +65,18 @@ class Maker {
 
         $user->save();
         $item->save();
+    }
+
+    public static function parseDoc($url) {
+        $check = DB::table('documents')->where('url',$url)->get()->count();
+        if ($check == 1) {
+            $doc = DB::table('documents')->where('url',$url)->first();
+            $result = array($doc->university,$doc->department,$doc->parse);
+            return view('print.out',compact('result'));
+        }
+        else {
+            return '404 NOT FOUND!';
+        }
     }
 
     public static function skripdown($request) {
