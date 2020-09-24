@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{asset(env('CSS_PATH').'style.min.css')}}">
     <link rel="stylesheet" href="{{asset(env('CSS_PATH').'added.css')}}">
     <link rel="stylesheet" href="{{asset(env('LIB_PATH').'core/skripdown/preview-style.css')}}">
+    <!--suppress CssUnusedSymbol -->
     <style>
         .muted {
             opacity: 0.3;
