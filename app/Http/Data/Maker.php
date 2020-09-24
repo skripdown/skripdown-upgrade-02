@@ -21,8 +21,16 @@ class Maker {
                      .'<div>//this is a comment</div>'
                      .'<div><br></div>'
                      .'<div>@title : </div>'
-                     .'<div>@author : </div>'
-                     .'<div>@id : </div>';
+                     .'<div>@author : '.Auth::user()->name.'</div>'
+                     .'<div>@id : '.$user->identity.'</div>'
+                     .'<div>@department : '.$user->identity_dep.'</div>'
+                     .'<div>@faculty : '.$user->identity_fac.'</div>'
+                     .'<div>@university : '.$user->identity_univ.'</div>'
+                     .'<div>@citation : APA</div>'
+                     .'<div>@watermark : on</div>'
+                     .'<div>@preface : default</div>'
+                     .'<div>@date : 20 - 10 - 2020</div>'
+                     .'<div>@location : malang</div>';
         $item->university = $user->identity_univ;
         $item->department = $user->identity_dep;
         $item->faculty = $user->identity_fac;
