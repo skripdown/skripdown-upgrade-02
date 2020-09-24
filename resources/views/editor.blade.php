@@ -161,10 +161,6 @@
                             <i data-feather="code" class="svg-icon mr-2 ml-1"></i>
                             Mode Kode
                         </a>
-                        <a href="javascript:void(0)" id="btn-frame" class="dropdown-item">
-                            <i data-feather="hash" class="svg-icon mr-2 ml-1"></i>
-                            Kerangka
-                        </a>
                         <a href="{{url('logout')}}" class="dropdown-item">
                             <i data-feather="power" class="svg-icon mr-2 ml-1"></i>
                             Keluar

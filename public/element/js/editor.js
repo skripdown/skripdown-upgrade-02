@@ -19,7 +19,6 @@ let skrip_input;
 let preview_output;
 let btn_font_up;
 let btn_font_down;
-let btn_frame;
 let btn_live;
 let btn_code;
 let btn_disp_code;
@@ -72,8 +71,6 @@ $(document).ready(()=>{
     btn_code          = $('#btn-display-code').get(0);
     btn_disp_code     = $('#display-code').get(0);
     btn_disp_rendered = $('#display-rendered').get(0);
-
-    btn_frame         = $('#btn-frame').get(0);
 
     conn_status       = $('#connection-status').get(0);
     conn_bool         = false;
@@ -218,55 +215,6 @@ $(document).ready(()=>{
                 },500);
             }
         }
-    });
-
-    $(btn_frame).click(()=>{
-        $(skrip_input).html('//start writing now. 😉<br>' +
-            '//SKRIPDOWN : fast end thesis writing<br>' +
-            '//this is a comment<br>' +
-            '<br>' +
-            '@title : document title<br>' +
-            '@author : your name<br>' +
-            '@id : your student id<br>' +
-            '@university : your university<br>' +
-            '@faculty : your faculty<br>' +
-            '@department : your department<br>' +
-            '<br>' +
-            '//delete @majoring line if none<br>' +
-            '@majoring : your majoring<br>' +
-            '<br>' +
-            '//set document watermark (on | off)<br>' +
-            '@watermark : on<br>' +
-            '<br>' +
-            '//set document preface (basmallah | default)<br>' +
-            '@preface : default<br>' +
-            '<br>' +
-            '//citation format<br>' +
-            '@citation : APA<br>' +
-            '@date : 19 08 2020<br>' +
-            '@location : your location<br>' +
-            '<br>' +
-            'bab i<br>' +
-            '# latar belakang<br>' +
-            '# rumusan masalah<br>' +
-            '# tujuan penelitian<br>' +
-            '<br>' +
-            '//remove \'# batasan masalah\' and \'# manfaat penelitian\' if you don\'t need it<br>' +
-            '# batasan masalah<br>' +
-            '# manfaat penelitian<br>' +
-            '<br>' +
-            'bab ii<br>' +
-            '//sub heading #, #2, #3, . . . , #6 for level 1 to 6<br>' +
-            '# sub heading 1<br>' +
-            '<br>' +
-            'bab iii<br>' +
-            '# penelitian terdahulu<br>' +
-            '<br>' +
-            'bab iv<br>' +
-            '# bahasan<br>' +
-            '<br>' +
-            'bab v<br>' +
-            'kesimpulan dari penelitan tulis sendiri');
     });
 
 });
