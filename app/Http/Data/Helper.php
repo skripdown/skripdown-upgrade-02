@@ -3,7 +3,7 @@
 /** @noinspection SqlNoDataSourceInspection */
 /** @noinspection SqlDialectInspection */
 
-namespace Services;
+namespace App\Http\Data;
 
 class Helper {
 

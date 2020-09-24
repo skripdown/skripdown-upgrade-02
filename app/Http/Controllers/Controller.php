@@ -8,9 +8,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
-use Services\Data;
-use Services\Helper;
-use Services\Maker;
+use App\Http\Data\Data;
+use App\Http\Data\Maker;
+use App\Http\Data\Helper;
 
 class Controller extends BaseController
 {

@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 Route::get('/', 'Controller@dashboard')->name('home');
-Route::get('/login', 'Controller@login');
 Route::get('logout', 'Auth\LoginController@logout');
 Route::get('/dashboard', 'Controller@dashboard');
 Route::post('submit_autosave','Controller@submit_autosave');

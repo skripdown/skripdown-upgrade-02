@@ -3,7 +3,7 @@
 /** @noinspection SqlNoDataSourceInspection */
 /** @noinspection SqlDialectInspection */
 
-namespace Services;
+namespace App\Http\Data;
 
 use App\Models\Document;
 use App\Models\Skripdown;
@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\DB;
 class Maker {
 
     public static function makeDoc() {
-        $user = Student::find(Auth::user()->id);
+        $user = DB::table('students')->where('identity',Auth::user()->identity)->first();
+        $user = Student::find($user->id);
         $item = new Document();
 
         $item->text = '<div>//start writing now. 😉</div><div>//SKRIPDOWN : fast end thesis writing</div>'
@@ -60,8 +61,10 @@ class Maker {
     }
 
     public static function saveDoc($request) {
-        $user = Student::find(Auth::user()->id);
+        $user = DB::table('students')->where('identity',Auth::user()->identity)->first();
+        $user = Student::find($user->id);
         $item = Data::getStudent_thesis(Auth::user()->identity);
+        $item = Document::find($item->id);
 
         $item->text = $request->text;
         $item->parse = $request->parse;

@@ -3,7 +3,7 @@
 /** @noinspection SqlNoDataSourceInspection */
 /** @noinspection SqlDialectInspection */
 
-namespace Services;
+namespace App\Http\Data;
 
 use App\Models\Student;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +20,7 @@ class Data {
         $identity = Auth::user()->identity;
         return DB::table('documents')
             ->where('id_',$identity)
-            ->where('doc_link',$url)
+            ->where('url',$url)
             ->count() > 0;
     }
 

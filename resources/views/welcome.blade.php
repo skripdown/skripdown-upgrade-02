@@ -45,7 +45,7 @@
                         @if(\Illuminate\Support\Facades\Auth::check())
                             <a href="{{url('/dashboard')}}" class="btn btn-success">Dashboard</a>
                         @else
-                            <a href="{{url('/login')}}" class="btn btn-success">Masuk</a>
+                            <a href="{{route('login')}}" class="btn btn-success">Masuk</a>
                         @endif
                     </li>
                 </ul>

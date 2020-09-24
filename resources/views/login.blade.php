@@ -26,11 +26,12 @@
                     <h2 class="mt-3 text-center">Login</h2>
                     <p class="text-center">Masukkan ID dan kata sandi untuk mengakses Skripdown.</p>
                     <form class="mt-4" method="POST" action="{{route('login')}}">
+                        @csrf
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <label class="text-dark" for="nid">ID</label>
-                                    <input class="form-control{{ $errors->has('identity') ? ' is-invalid' : '' }}" id="nid" type="text" placeholder="masukkan NID" name="identity" required autofocus>
+                                    <label class="text-dark" for="identity">ID</label>
+                                    <input class="form-control{{ $errors->has('identity') ? ' is-invalid' : '' }}" id="identity" type="text" placeholder="masukkan NID" name="identity" required autofocus>
                                     @if ($errors->has('identity'))
                                         <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $errors->first('identity') }}</strong>

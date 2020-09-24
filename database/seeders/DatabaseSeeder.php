@@ -199,7 +199,7 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('mohiqbal123')
         ]);
 
-        //-----------------SUPER-----------------//
+        //-----------------lecturers-----------------//
         DB::table('lecturers')->insert([
             'name' => 'Jokowi Dodo',
             'identity' => '1223239090'
@@ -253,6 +253,105 @@ class DatabaseSeeder extends Seeder
         DB::table('skripdowns')->insert([
             'foreign_words' => 'online|offline|software|file',
             'translate_words' => 'daring|luring|perangkat lunak|berkas'
+        ]);
+
+        DB::table('students')->insert([
+            'name' => 'Moh Hermawan',
+            'identity' => '201610370311101',
+            'identity_dep' => 'informatika',
+            'identity_fac' => 'teknik',
+            'identity_univ' => 'universitas muhammadiyah malang'
+        ]);
+        DB::table('students')->insert([
+            'name' => 'Moh Irsyad',
+            'identity' => '201610370311102',
+            'identity_dep' => 'informatika',
+            'identity_fac' => 'teknik',
+            'identity_univ' => 'universitas muhammadiyah malang'
+        ]);
+        DB::table('students')->insert([
+            'name' => 'Ayu Purwaningsih',
+            'identity' => '201610370311103',
+            'identity_dep' => 'informatika',
+            'identity_fac' => 'teknik',
+            'identity_univ' => 'universitas muhammadiyah malang'
+        ]);
+        DB::table('students')->insert([
+            'name' => 'Said Imam Baihaqi',
+            'identity' => '201610370311104',
+            'identity_dep' => 'informatika',
+            'identity_fac' => 'teknik',
+            'identity_univ' => 'universitas muhammadiyah malang'
+        ]);
+        DB::table('students')->insert([
+            'name' => 'Bima Prasetya Anugrah',
+            'identity' => '201610370311105',
+            'identity_dep' => 'informatika',
+            'identity_fac' => 'teknik',
+            'identity_univ' => 'universitas muhammadiyah malang'
+        ]);
+        DB::table('students')->insert([
+            'name' => 'Alfarid Wardiman',
+            'identity' => '201610370311106',
+            'identity_dep' => 'bahasa indonesia',
+            'identity_fac' => 'fakultas keguruan dan ilmu pendidikan',
+            'identity_univ' => 'universitas muhammadiyah malang'
+        ]);
+        DB::table('students')->insert([
+            'name' => 'Rasyid Lutfi',
+            'identity' => '201610370311107',
+            'identity_dep' => 'bahasa indonesia',
+            'identity_fac' => 'fakultas keguruan dan ilmu pendidikan',
+            'identity_univ' => 'universitas muhammadiyah malang'
+        ]);
+        DB::table('students')->insert([
+            'name' => 'Kekeyi Putri',
+            'identity' => '201610370311108',
+            'identity_dep' => 'bahasa indonesia',
+            'identity_fac' => 'fakultas keguruan dan ilmu pendidikan',
+            'identity_univ' => 'universitas muhammadiyah malang'
+        ]);
+        DB::table('students')->insert([
+            'name' => 'Septian Rio',
+            'identity' => '201610370311109',
+            'identity_dep' => 'bahasa indonesia',
+            'identity_fac' => 'fakultas keguruan dan ilmu pendidikan',
+            'identity_univ' => 'universitas muhammadiyah malang'
+        ]);
+        DB::table('students')->insert([
+            'name' => 'Bagus Putra Widadi',
+            'identity' => '201610370311110',
+            'identity_dep' => 'psikologi',
+            'identity_fac' => 'psikologi',
+            'identity_univ' => 'universitas muhammadiyah malang'
+        ]);
+        DB::table('students')->insert([
+            'name' => 'Muh Faruq',
+            'identity' => '201610370311111',
+            'identity_dep' => 'psikologi',
+            'identity_fac' => 'psikologi',
+            'identity_univ' => 'universitas muhammadiyah malang'
+        ]);
+        DB::table('students')->insert([
+            'name' => 'Rahmatillah',
+            'identity' => '201610370311112',
+            'identity_dep' => 'psikologi',
+            'identity_fac' => 'psikologi',
+            'identity_univ' => 'universitas muhammadiyah malang'
+        ]);
+        DB::table('students')->insert([
+            'name' => 'Asti Astuti',
+            'identity' => '201610370311113',
+            'identity_dep' => 'psikologi',
+            'identity_fac' => 'psikologi',
+            'identity_univ' => 'universitas muhammadiyah malang'
+        ]);
+        DB::table('students')->insert([
+            'name' => 'Moh Iqbal',
+            'identity' => '201610370311114',
+            'identity_dep' => 'psikologi',
+            'identity_fac' => 'psikologi',
+            'identity_univ' => 'universitas muhammadiyah malang'
         ]);
     }
 }
