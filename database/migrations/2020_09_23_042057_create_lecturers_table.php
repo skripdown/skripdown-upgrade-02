@@ -17,7 +17,7 @@ class CreateLecturersTable extends Migration
             $table->id();
             $table->string('identity');
             $table->string('name');
-            $table->string('keyword');
+            $table->string('keyword')->default('');
             $table->timestamps();
         });
     }

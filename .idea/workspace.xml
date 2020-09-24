@@ -21,7 +21,14 @@
   <component name="ChangeListManager">
     <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="editor.js helper integrate">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_23_042057_create_lecturers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_23_042057_create_lecturers_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_23_042110_create_departments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_23_042110_create_departments_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DepartmentSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/LecturerSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/StudentSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UniversitySeeder.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +212,7 @@
       <workItem from="1600832620310" duration="8000" />
       <workItem from="1600832665203" duration="4214000" />
       <workItem from="1600873957248" duration="1113000" />
-      <workItem from="1600898357998" duration="17847000" />
+      <workItem from="1600898357998" duration="20566000" />
     </task>
     <task id="LOCAL-00001" summary="update README.md">
       <created>1600374939544</created>
@@ -375,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600916946335</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="editor.js helper integrate">
+      <created>1600920423082</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1600920423082</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,10 +422,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="editor.js helper integrate" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600908093829">
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600922526929">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600908093829" />
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600922526929" />
     <state x="806" y="421" key="Github.ShareDialog" timestamp="1600374159613">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
