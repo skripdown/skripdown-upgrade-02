@@ -28,10 +28,10 @@ class Helper {
 
         $json_0  = '0';
         $json_1  = '0';
-        $json_2  = 'none';
+        $json_2  = 'noname';
         $json_3  = '0';
         $json_4  = '0';
-        $json_5  = 'none';
+        $json_5  = 'noname';
         $json_6  = '0';
         $json_7  = '0';
         $json_8  = '0';

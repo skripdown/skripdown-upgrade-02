@@ -1,6 +1,12 @@
+
+// noinspection DuplicatedCode
 class Skripdown {
 
     constructor(for_words, trans_words) {
+        this.lec_1_id   = '';
+        this.lec_1_name = '';
+        this.lec_2_id   = '';
+        this.lec_2_name = '';
         this.title      = '';
         this.author     = '';
         this.id         = '';
