@@ -191,6 +191,7 @@ $(document).ready(()=>{
                     if ($(conn_status).html() !== '<span class="text-info">Mengetik...</span>'
                         && $(conn_status).html() !== '<span class="text-info">Menyimpan...</span>')
                         $(conn_status).html('<span class="text-info">Menyimpan...</span>');
+                    const dosen_data = skrip_d.getLecturer();
                     $.ajax({
                         type    : 'POST',
                         url     : ''+skripd_autosave+'',
@@ -207,6 +208,10 @@ $(document).ready(()=>{
                             faculty      : skrip_d.getFaculty(),
                             parse        : skrip_d.getParsed(),
                             url          : $(input_url).val(),
+                            l1_id        : dosen_data[0],
+                            l1_name      : dosen_data[1],
+                            l2_id        : dosen_data[2],
+                            l2_name      : dosen_data[3],
                             conf_font    : $(input_conf_font).val()
                         }
                     });

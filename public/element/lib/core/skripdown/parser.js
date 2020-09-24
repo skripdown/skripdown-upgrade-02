@@ -971,6 +971,10 @@ class Skripdown {
         this.department = $department_value;
         this.text       = input;
         this.parsed     = result;
+        this.lec_1_id   = $dosen_i_id_value;
+        this.lec_2_id   = $dosen_ii_id_value;
+        this.lec_1_name = $dosen_i_name_value;
+        this.lec_2_name = $dosen_ii_name_value;
 
         return result;
     }
@@ -1012,6 +1016,23 @@ class Skripdown {
         if (this.id === '' || this.id === 'noid')
             return 'no id';
         return this.id;
+    }
+
+    getLecturer() {
+        let lec_1_id   = '';
+        let lec_2_id   = '';
+        let lec_1_name = '';
+        let lec_2_name = '';
+
+        if (this.lec_1_id === '') lec_1_id = 'noid';
+        if (this.lec_2_id === '') lec_2_id = 'noid';
+        if (this.lec_1_name === '') lec_1_name = 'noname';
+        if (this.lec_2_name === '') lec_2_name = 'noname';
+
+        return [
+            lec_1_id,lec_1_name,
+            lec_2_id,lec_2_name
+        ];
     }
 
     getFaculty() {

@@ -19,9 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="suppress .muted class">
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="editor.js helper integrate">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Data/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Data/Maker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Maker.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/element/js/editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/element/js/editor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/element/lib/core/skripdown/parser.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/element/lib/core/skripdown/parser.js" afterDir="false" />
     </list>
@@ -207,7 +207,7 @@
       <workItem from="1600832620310" duration="8000" />
       <workItem from="1600832665203" duration="4214000" />
       <workItem from="1600873957248" duration="1113000" />
-      <workItem from="1600898357998" duration="13737000" />
+      <workItem from="1600898357998" duration="15199000" />
     </task>
     <task id="LOCAL-00001" summary="update README.md">
       <created>1600374939544</created>
@@ -356,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600913816450</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="editor.js helper integrate">
+      <created>1600914739405</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1600914739405</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,7 +392,8 @@
     <MESSAGE value="integrate Helper.php" />
     <MESSAGE value="integrate Middleware" />
     <MESSAGE value="suppress .muted class" />
-    <option name="LAST_COMMIT_MESSAGE" value="suppress .muted class" />
+    <MESSAGE value="editor.js helper integrate" />
+    <option name="LAST_COMMIT_MESSAGE" value="editor.js helper integrate" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600908093829">
