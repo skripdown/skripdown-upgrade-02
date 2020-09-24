@@ -191,8 +191,10 @@
                     <input type="hidden" name="parse" id="parse-val" value="{{$doc->parse}}">
                     <input type="hidden" name="url" id="url-val" value="{{$doc->url}}">
                     <input type="hidden" name="conf_font" id="conf-font-val" value="{{$doc->conf_font}}">
-                    <input type="hidden" name="lecturer_1" id="lec1-val" value="{{$doc->conf_font}}">
-                    <input type="hidden" name="lecturer_2" id="lec2-val" value="{{$doc->conf_font}}">
+                    <input type="hidden" name="l1_id" id="lec1-val" value="{{$doc->conf_font}}">
+                    <input type="hidden" name="l1_name" id="lec1-name-val" value="{{$doc->conf_font}}">
+                    <input type="hidden" name="l2_id" id="lec2-val" value="{{$doc->conf_font}}">
+                    <input type="hidden" name="l2_name" id="lec2-name-val" value="{{$doc->conf_font}}">
                 @endif
             </form>
             <div class="row">
