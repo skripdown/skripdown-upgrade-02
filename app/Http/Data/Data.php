@@ -5,6 +5,7 @@
 
 namespace Services;
 
+use App\Models\Student;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -66,7 +67,12 @@ class Data {
                 ->first();
     }
 
-    public static function isVerified_thesis($lecturer_id) {
-
+    public static function isVerified_thesis_by($lecturer_id) {
+        $student = Student::find(Auth::user()->identity);
+        if ($student->identity_l1 == null) {
+            if ($student->identity_l2 == null) return false;
+            return $student->identity_l2 == $lecturer_id;
+        }
+        return $student->identity_l1 == $lecturer_id;
     }
 }

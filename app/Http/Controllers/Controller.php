@@ -46,8 +46,7 @@ class Controller extends BaseController
     //-----------------------------STUDENT-----------------------------//
     public function submit_autosave(Request $request) {
         Maker::saveDoc($request);
-        $response = Helper::check($request);
-        return response()->json($response,200);
+        return response()->json(Helper::check($request),200);
     }
 
     public function openDoc($url) {

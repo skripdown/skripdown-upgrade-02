@@ -62,6 +62,14 @@ class Maker {
         $item->abstract = $request->abstract;
         $item->abstract_key = $request->abstract_key;
         $user->doc_title = $request->title;
+        if ($request->lecturer_1 != 'none') {
+            if (Data::hasLecturer($request->lecturer_1))
+                $user->identity_l1 = $request->lecturer_1;
+        }
+        if ($request->lecturer_1 != 'none') {
+            if (Data::hasLecturer($request->lecturer_2))
+                $user->identity_l2 = $request->lecturer_2;
+        }
 
         $user->save();
         $item->save();
