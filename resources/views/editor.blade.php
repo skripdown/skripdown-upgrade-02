@@ -165,7 +165,7 @@
                             <i data-feather="hash" class="svg-icon mr-2 ml-1"></i>
                             Kerangka
                         </a>
-                        <a href="javascript:void(0)" class="dropdown-item">
+                        <a href="{{url('logout')}}" class="dropdown-item">
                             <i data-feather="power" class="svg-icon mr-2 ml-1"></i>
                             Keluar
                         </a>
