@@ -53,4 +53,20 @@ class Data {
             ->where('identity',$id)
             ->first();
     }
+
+    public static function hasLecturer($id) {
+        return DB::table('lecturers')
+            ->where('identity',$id)
+            ->count() > 0;
+    }
+
+    public static function getLecturer($id) {
+        return DB::table('lecturers')
+                ->where('identity',$id)
+                ->first();
+    }
+
+    public static function isVerified_thesis($lecturer_id) {
+
+    }
 }
