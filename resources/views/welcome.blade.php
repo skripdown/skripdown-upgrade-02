@@ -42,7 +42,11 @@
                         <a class="nav-link" href="#digital-marketing-section">Fitur</a>
                     </li>
                     <li class="nav-item btn-contact-us pl-4 pl-lg-0">
-                        <a href="{{url('/editor')}}" class="btn btn-success">Masuk</a>
+                        @if(\Illuminate\Support\Facades\Auth::check())
+                            <a href="{{url('/dashboard')}}" class="btn btn-success">Dashboard</a>
+                        @else
+                            <a href="{{url('/login')}}" class="btn btn-success">Masuk</a>
+                        @endif
                     </li>
                 </ul>
             </div>
