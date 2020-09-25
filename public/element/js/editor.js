@@ -17,6 +17,7 @@ let input_lec2_id;
 let input_lec2_name;
 let skrip_input;
 let preview_output;
+let btn_setting;
 let btn_font_up;
 let btn_font_down;
 let btn_live;
@@ -65,6 +66,7 @@ $(document).ready(()=>{
     code_panel        = $('#panel-1').get(0);
     preview_panel     = $('#panel-2').get(0);
 
+    btn_setting       = $('#btn-setting').get(0);
     btn_font_up       = $('#btn-font-up').get(0);
     btn_font_down     = $('#btn-font-down').get(0);
     btn_live          = $('#btn-display-live').get(0);
@@ -231,6 +233,7 @@ window.setInterval(()=>{
             $(conn_status).html(temp_conn_status);
             $(skrip_input).removeClass('muted');
             $(skrip_input).attr('contenteditable','true');
+            $(btn_setting).removeClass('d-none');
             conn_bool = true;
         },
         error: ()=>{
@@ -238,6 +241,7 @@ window.setInterval(()=>{
             $(skrip_input).addClass('muted');
             $(skrip_input).attr('contenteditable','false');
             $(conn_status).html(temp_conn_status);
+            $(btn_setting).addClass('d-none');
             conn_bool = false;
         }
     });

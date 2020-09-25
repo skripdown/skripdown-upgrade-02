@@ -125,7 +125,7 @@
                                 </span>
                     </a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown"  id="btn-setting" >
                     <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
                             <span class="d-none d-lg-inline-block">
                                     <span class="text-dark">
@@ -136,11 +136,6 @@
                     <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
                         @if ($doc != null)
                             <a href="{{url('/parse/'.$doc->url)}}" class="dropdown-item" target="_blank">
-                                <i data-feather="printer" class="svg-icon mr-2 ml-1"></i>
-                                Parse
-                            </a>
-                        @else
-                            <a href="javascript:void(0)" class="dropdown-item">
                                 <i data-feather="printer" class="svg-icon mr-2 ml-1"></i>
                                 Parse
                             </a>
@@ -160,6 +155,14 @@
                         <a href="javascript:void(0)" id="btn-display-code" class="dropdown-item d-none">
                             <i data-feather="code" class="svg-icon mr-2 ml-1"></i>
                             Mode Kode
+                        </a>
+                        <a href="javascript:void(0)" id="btn-progres-i" class="dropdown-item d-none">
+                             <i data-feather="code" class="svg-icon mr-2 ml-1"></i>
+                             Progres Dosen I
+                        </a>
+                        <a href="javascript:void(0)" id="btn-progres-i" class="dropdown-item d-none">
+                            <i data-feather="code" class="svg-icon mr-2 ml-1"></i>
+                            Progres Dosen II
                         </a>
                         <a href="{{url('logout')}}" class="dropdown-item">
                             <i data-feather="power" class="svg-icon mr-2 ml-1"></i>
