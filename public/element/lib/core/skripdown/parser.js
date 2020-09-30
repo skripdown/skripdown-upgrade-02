@@ -900,27 +900,32 @@ class Skripdown {
         function factory(type, data) {
 
             function cover(data) {
+                data[5] = data[5].replace(/^fakultas /mi,'');
                 let res = '<div id="cover" class="reset-head-count">'
                     + '<div id="cov-head">'
                     + data[3] + '<br><br>tugas akhir<br><br>'
                     + '</div><div>diajukan untuk memenuhi<br>'
                     + 'persyaratan guna meraih gelar sarjana strata i<br>'
                     + 'program studi '+data[2]+' '+data[6] +'</div>'
-                    + '<div><img src="https://drive.google.com/thumbnail?id=1EOCSr1KSQ0ThPAx-DepjcqwL3WURRabg" alt=""></div><div>'
-                    + 'oleh :<br>'
+                    + '<div><img src="https://drive.google.com/thumbnail?id=1EOCSr1KSQ0ThPAx-DepjcqwL3WURRabg" alt=""></div><div id="cov-footer">'
+                    + '<span class="no-format">oleh :</span><br>'
                     + '<span>'+data[0]+'</span><br>'
-                    + '<span>'+data[1]+'</span><br>';
+                    + '<span>'+data[1]+'</span><br><br><br>';
 
                 if (data[4] !== 'majoring')
-                    return res +
-                        + '<span>bidang minat<br>'+data[4]+'</span><br></div><div id="cov-footer">'
-                        + 'jurusan ' +data[2]+ '<br>fakultas ' +data[5]+ '<br>' +data[6]+ '<br>'
-                        + data[7]+ '</div></div>';
+                    res +=
+                          '<span>bidang minat<br>'+data[4]+'</span><br></div><div id="cov-footer">'
+                        + '<span>program studi ' +data[2]+ '</span><br><span>fakultas ' +data[5]+ '</span><br><span>' +data[6]+ '</span><br><span>'
+                        + data[7]+ '</span></div></div>';
+                else
+                    res +=
+                          '</div><div id="cov-footer">'
+                        + '<span>program studi ' +data[2]+ '</span><br><span>fakultas ' +data[5]+ '</span><br><span>' +data[6]+ '</span><br><span>'
+                        + data[7]+ '</span></div></div>';
 
-                return res +
-                    + '</div><div id="cov-footer">'
-                    + 'jurusan ' +data[2]+ '<br>fakultas ' +data[5]+ '<br>' +data[6]+ '<br>'
-                    + data[7]+ '</div></div>';
+                console.log(res);
+
+                return res;
             }
 
             function kata_pengantar(data) {

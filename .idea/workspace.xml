@@ -20,9 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="remove button frame">
+      <change afterPath="$PROJECT_DIR$/public/asset/skripdown/basmallah.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/asset/skripdown/title-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/asset/skripdown/watermark.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/element/js/editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/element/js/editor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/editor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/editor.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/element/lib/core/skripdown/parser.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/element/lib/core/skripdown/parser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/print/umm/037.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/print/umm/037.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +216,12 @@
       <workItem from="1600958471181" duration="362000" />
       <workItem from="1600960286632" duration="10000" />
       <workItem from="1601003776586" duration="604000" />
-      <workItem from="1601011127534" duration="376000" />
+      <workItem from="1601011127534" duration="2529000" />
+      <workItem from="1601070872244" duration="496000" />
+      <workItem from="1601185030452" duration="611000" />
+      <workItem from="1601196016235" duration="95000" />
+      <workItem from="1601425746545" duration="3566000" />
+      <workItem from="1601443721343" duration="8844000" />
     </task>
     <task id="LOCAL-00001" summary="update README.md">
       <created>1600374939544</created>
@@ -424,7 +433,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600954483560</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="remove button frame">
+      <created>1601011671027</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1601011671027</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -498,10 +514,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="507" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1600920212231" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1600954488101">
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1601011690675">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1600954488101" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601011690675" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1600549629827">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

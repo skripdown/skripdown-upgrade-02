@@ -303,6 +303,10 @@
         text-transform : uppercase;
         flex : 1;
     }
+    #cov-footer .no-format {
+        font-weight: normal;
+        text-transform: none;
+    }
     #pg-lembar_persetujuan , #pg-lembar_pengesahan , #pg-lembar_pernyataan {
         page : pendahuluan;
         text-align : center;
