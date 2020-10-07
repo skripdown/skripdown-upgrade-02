@@ -107,7 +107,7 @@
                 </div>
             </div>
             <ul class="navbar-nav float-right" >
-                <li class="nav-item" id="display-warning">
+                <li class="nav-item d-none" id="display-warning">
                     <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
                         <span class="d-none d-inline-block">
                             <span class="text-dark">

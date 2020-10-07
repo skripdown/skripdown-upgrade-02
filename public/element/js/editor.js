@@ -41,6 +41,8 @@ let conn_bool;
 let university,faculty,department;
 
 let helper_warning;
+let disp_warning;
+let list_warning;
 
 $(document).ready(()=>{
 
@@ -84,6 +86,9 @@ $(document).ready(()=>{
     skripd_link       = $('meta[name=skripd_f_words]').attr('content');
     skripd_autosave   = $('meta[name=skripd_autosave]').attr('content');
     skripd_token      = $('meta[name=skripd_token]').attr('content');
+
+    disp_warning      = $('#display-warning').get(0);
+    list_warning      = $('#warning-list').get(0);
 
     helper_warning    = new Map();
     helper_warning.set('l1_id_corr',true);
@@ -272,6 +277,26 @@ window.setInterval(()=>{
             $(skrip_input).attr('contenteditable','true');
             $(btn_setting).removeClass('d-none');
             conn_bool = true;
+            if (helper_warning != null) {
+                let warning_count = 0;
+                let html_warning = '';
+                if (helper_warning.get('l1_verify') && helper_warning.get('l2_verify')) {
+
+                }
+                else if (!helper_warning.get('l1_verify') && helper_warning.get('l2_verify')) {
+                    warning_count++;
+                }
+                else if (helper_warning.get('l1_verify') && !helper_warning.get('l2_verify')) {
+                    warning_count++;
+                }
+                else {
+                    warning_count++;
+                }
+
+                if (warning_count > 1) $(disp_warning).removeClass('d-none');
+                else $(disp_warning).addClass('d-none');
+                $(list_warning).html(html_warning);
+            }
         },
         error: ()=>{
             temp_conn_status = '<span class="bg-danger text-white p-1 rounded">Tidak Terhubung !</span>';
@@ -282,4 +307,4 @@ window.setInterval(()=>{
             conn_bool = false;
         }
     });
-},1000);
+},500);
