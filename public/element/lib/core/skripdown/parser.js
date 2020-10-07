@@ -320,9 +320,6 @@ class Skripdown {
                     if (result[1] === '#') {
                         reg_sub_level.push(1);
                         markup = '<div id="##REP-ID##" class="sub-1 sub">'+autocorrect(result[2])+'</div>';
-                        if (result[2] === 'latar belakang') latar_belakang = true;
-                        else if (result[2] === 'rumusan masalah') rmsn_masalah = true;
-                        else if (result[2] === 'tujuan penelitian') tjuan_pnlitian = true;
                     }
                     else if (result[1] === '#2') {
                         reg_sub_level.push(2);
@@ -666,6 +663,9 @@ class Skripdown {
                             const value = reg_sub_value.shift();
                             const id    = sub_id++;
                             if (level === 1) {
+                                if (value === 'latar belakang') latar_belakang = true;
+                                else if (value === 'rumusan masalah') rmsn_masalah = true;
+                                else if (value === 'tujuan penelitian') tjuan_pnlitian = true;
                                 toc_content = toc_content
                                     + '<li class="di-s1 dfi-sub-i"><span>' +value
                                     + '</span><a href="#s'+id+'" class="con-idx"></a></li>';

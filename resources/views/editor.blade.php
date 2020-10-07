@@ -110,7 +110,7 @@
                 <li class="nav-item d-none" id="display-warning">
                     <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
                         <span class="d-none d-inline-block">
-                            <span class="text-dark">
+                            <span class="text-danger">
                                 <i data-feather="alert-triangle" class="svg-icon"></i>
                             </span>
                         </span>

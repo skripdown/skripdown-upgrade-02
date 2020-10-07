@@ -279,17 +279,80 @@ window.setInterval(()=>{
             conn_bool = true;
             if (helper_warning != null) {
                 let warning_count = 0;
-                let html_warning = '';
-                if (helper_warning.get('l1_verify') && helper_warning.get('l2_verify')) {
-
-                }
-                else if (!helper_warning.get('l1_verify') && helper_warning.get('l2_verify')) {
-                    warning_count++;
-                }
-                else if (helper_warning.get('l1_verify') && !helper_warning.get('l2_verify')) {
-                    warning_count++;
+                let html_warning  = '';
+                const _open       = '<span class="dropdown-item">';
+                const _close      = '</span>';
+                const dosen_data  = skrip_d.getLecturer();
+                if (dosen_data[0] !== 'noid' && dosen_data[2] !== 'noid') {
+                    if (!helper_warning.get('l1_verify') && helper_warning.get('l2_verify')) {
+                        if (helper_warning.get('l1_id_corr'))
+                            html_warning += _open + 'belum disetujui oleh ' + helper_warning.get('l1_name') + _close;
+                        else
+                            html_warning += _open + 'NID pembimbing 1 salah' + _close;
+                        warning_count++;
+                    }
+                    else if (helper_warning.get('l1_verify') && !helper_warning.get('l2_verify')) {
+                        if (helper_warning.get('l2_id_corr'))
+                            html_warning += _open + 'belum disetujui oleh ' + helper_warning.get('l2_name') + _close;
+                        else
+                            html_warning += _open + 'NID pembimbing 2 salah' + _close;
+                        warning_count++;
+                    }
+                    else if (!helper_warning.get('l1_verify') && !helper_warning.get('l2_verify')) {
+                        if (helper_warning.get('l1_id_corr') && helper_warning.get('l2_id_corr')) {
+                            html_warning += _open + 'belum disetujui oleh kedua pembimbing' + _close;
+                        }
+                        else if (!helper_warning.get('l1_id_corr') && helper_warning.get('l2_id_corr')) {
+                            html_warning += _open + 'NID pembimbing 1 salah' + _close;
+                            html_warning += _open + 'belum disetujui oleh ' + helper_warning.get('l2_name') + _close;
+                            warning_count++;
+                        }
+                        else if (helper_warning.get('l1_id_corr') && !helper_warning.get('l2_id_corr')) {
+                            html_warning += _open + 'belum disetujui oleh ' + helper_warning.get('l1_name') + _close;
+                            html_warning += _open + 'NID pembimbing 2 salah' + _close;
+                            warning_count++;
+                        }
+                        else {
+                            html_warning += _open + 'NID kedua pembimbing salah' + _close;
+                        }
+                        warning_count++;
+                    }
                 }
                 else {
+                    html_warning += _open + 'tidak ada pembimbing' + _close;
+                    warning_count++;
+                }
+
+                if (!skrip_d.hasBab_i()) {
+                    html_warning += _open + 'BAB I tidak ada' + _close;
+                    warning_count++;
+                }
+                if (!skrip_d.hasBab_ii()) {
+                    html_warning += _open + 'BAB II tidak ada' + _close;
+                    warning_count++;
+                }
+                if (!skrip_d.hasBab_iii()) {
+                    html_warning += _open + 'BAB III tidak ada' + _close;
+                    warning_count++;
+                }
+                if (!skrip_d.hasBab_iv()) {
+                    html_warning += _open + 'BAB IV tidak ada' + _close;
+                    warning_count++;
+                }
+                if (!skrip_d.hasBab_v()) {
+                    html_warning += _open + 'BAB V tidak ada' + _close;
+                    warning_count++;
+                }
+                if (!skrip_d.hasLatar_belakang()) {
+                    html_warning += _open + 'tidak ada latar belakang' + _close;
+                    warning_count++;
+                }
+                if (!skrip_d.hasRumusan_masalah()) {
+                    html_warning += _open + 'tidak ada rumusan masalah' + _close;
+                    warning_count++;
+                }
+                if (!skrip_d.hasTujuan_penelitian()) {
+                    html_warning += _open + 'tidak ada tujuan penelitian' + _close;
                     warning_count++;
                 }
 
