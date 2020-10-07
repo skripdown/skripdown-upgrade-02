@@ -19,13 +19,17 @@ With simple, expressive and intuitive syntax made **Skripdown** so powerfull to 
 We would like to extend our thanks to the following names for funding **Skripown** development. If you are interested in funding this project or contributing with your great skill, feel free to contact me on [instagram](https://instagram.com/malkolp).
 
 ## Funder
+- **Rina** (Rina Fachriani Putri)
+- **Dino** (Sahabuddin Lapele)
+- **Erwin** (Erwin Fachriani)
+- **Fransiska** (Fransiska Tan)
+- **Melky** (Syamsul Rizal)
 - **Fathir** (Fathir Fakriansyah)
 - **Wahyu** (Wahyu Hadi Saptura)
 - **8-ball** (Ahmad Iqbal Harianto)
-- **Rin** (Rina Fachriani Putri)
 - **Inna** (Aldina Fariza)
 - **Dea** (Rahmah Fadilah)
-- **Sugab** (Bagus Putra Widadi)
+- **Salma** (Salma Qatrunada Alfaranandi)
 
 ## Users
 Thank you for writing your thesis with **Skripdown**! 
