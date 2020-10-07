@@ -78,8 +78,8 @@ class Data {
         $student = Student::find(Auth::user()->identity);
         if ($student->identity_l1 == null) {
             if ($student->identity_l2 == null) return false;
-            return $student->identity_l2 == $lecturer_id;
+            return $student->identity_l2 == $lecturer_id && $student->status != -1;
         }
-        return $student->identity_l1 == $lecturer_id;
+        return $student->identity_l1 == $lecturer_id && $student->status != -1;
     }
 }
