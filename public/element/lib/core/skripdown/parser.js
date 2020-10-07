@@ -18,6 +18,16 @@ class Skripdown {
         this.text       = '';
         this.parsed     = '';
         this.set_foreign_word(for_words, trans_words);
+
+        //helper_autocorrection
+        this.bab_i          = false;
+        this.bab_ii         = false;
+        this.bab_iii        = false;
+        this.bab_iv         = false;
+        this.bab_v          = false;
+        this.latar_belakang = false;
+        this.rmsn_masalah   = false;
+        this.tjuan_pnlitian = false;
     }
 
     parse(input) {
@@ -45,7 +55,15 @@ class Skripdown {
             $abstract_key_value     = '',
             $lem_persetujuan_value  = '',
             $lem_pengesahan_value   = '',
-            $lem_pernyataan_value   = '';
+            $lem_pernyataan_value   = '',
+            bab_i                   = false,
+            bab_ii                  = false,
+            bab_iii                 = false,
+            bab_iv                  = false,
+            bab_v                   = false,
+            latar_belakang          = false,
+            rmsn_masalah            = false,
+            tjuan_pnlitian          = false;
 
         let foreign_regex           = this.foreign_regex;
         let foreign_regex_inv       = this.foreign_regex_inv;
@@ -270,22 +288,27 @@ class Skripdown {
                     if (result[1] === 'i') {
                         reg_bab_value.push(1);
                         markup = '<div id="bab-i" class="bab"></div><span id="set-bab-i"></span>';
+                        bab_i = true;
                     }
                     else if (result[1] === 'ii') {
                         reg_bab_value.push(2);
                         markup = '<div id="bab-ii" class="bab"></div><span id="set-bab-ii"></span>';
+                        bab_ii = true;
                     }
                     else if (result[1] === 'iii') {
                         reg_bab_value.push(3);
                         markup = '<div id="bab-iii" class="bab"></div><span id="set-bab-iii"></span>';
+                        bab_iii = true;
                     }
                     else if (result[1] === 'iv') {
                         reg_bab_value.push(4);
                         markup = '<div id="bab-iv" class="bab"></div><span id="set-bab-iv"></span>';
+                        bab_iv = true;
                     }
                     else if (result[1] === 'v') {
                         reg_bab_value.push(5);
                         markup = '<div id="bab-v" class="bab"></div><span id="set-bab-v"></span>';
+                        bab_v = true;
                     }
                     markup = markup
                         + '<span class="reset-sub"></span><span class="reset-img"></span><span class="reset-tbl"></span>'
@@ -297,6 +320,9 @@ class Skripdown {
                     if (result[1] === '#') {
                         reg_sub_level.push(1);
                         markup = '<div id="##REP-ID##" class="sub-1 sub">'+autocorrect(result[2])+'</div>';
+                        if (result[2] === 'latar belakang') latar_belakang = true;
+                        else if (result[2] === 'rumusan masalah') rmsn_masalah = true;
+                        else if (result[2] === 'tujuan penelitian') tjuan_pnlitian = true;
                     }
                     else if (result[1] === '#2') {
                         reg_sub_level.push(2);
@@ -965,21 +991,29 @@ class Skripdown {
             if (type === 3) return kata_pengantar_def(data);
         }
 
-        const result    = construct(lex(inline(input)));
-        this.title      = $title_value;
-        this.author     = $author_value;
-        this.id         = $id_value;
-        this.abstract   = $abstract_value;
-        this.abs_key    = $abstract_key_value;
-        this.university = $university_value;
-        this.faculty    = $faculty_value;
-        this.department = $department_value;
-        this.text       = input;
-        this.parsed     = result;
-        this.lec_1_id   = $dosen_i_id_value;
-        this.lec_2_id   = $dosen_ii_id_value;
-        this.lec_1_name = $dosen_i_name_value;
-        this.lec_2_name = $dosen_ii_name_value;
+        const result        = construct(lex(inline(input)));
+        this.title          = $title_value;
+        this.author         = $author_value;
+        this.id             = $id_value;
+        this.abstract       = $abstract_value;
+        this.abs_key        = $abstract_key_value;
+        this.university     = $university_value;
+        this.faculty        = $faculty_value;
+        this.department     = $department_value;
+        this.text           = input;
+        this.parsed         = result;
+        this.lec_1_id       = $dosen_i_id_value;
+        this.lec_2_id       = $dosen_ii_id_value;
+        this.lec_1_name     = $dosen_i_name_value;
+        this.lec_2_name     = $dosen_ii_name_value;
+        this.bab_i          = bab_i;
+        this.bab_ii         = bab_ii;
+        this.bab_iii        = bab_iii;
+        this.bab_iv         = bab_iv;
+        this.bab_v          = bab_v;
+        this.latar_belakang = latar_belakang;
+        this.rmsn_masalah   = rmsn_masalah;
+        this.tjuan_pnlitian = tjuan_pnlitian;
 
         return result;
     }
@@ -1074,6 +1108,38 @@ class Skripdown {
         if (this.parsed === '')
             return 'has no parsed text';
         return this.parsed;
+    }
+
+    hasBab_i() {
+        return this.bab_i;
+    }
+
+    hasBab_ii() {
+        return this.bab_ii;
+    }
+
+    hasBab_iii() {
+        return this.bab_iii;
+    }
+
+    hasBab_iv() {
+        return this.bab_iv;
+    }
+
+    hasBab_v() {
+        return this.bab_v;
+    }
+
+    hasLatar_belakang() {
+        return this.latar_belakang;
+    }
+
+    hasRumusan_masalah() {
+        return this.rmsn_masalah;
+    }
+
+    hasTujuan_penelitian() {
+        return this.tjuan_pnlitian;
     }
 }
 

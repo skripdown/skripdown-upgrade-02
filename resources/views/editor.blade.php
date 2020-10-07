@@ -106,38 +106,18 @@
                     </div>
                 </div>
             </div>
-            <ul class="navbar-nav float-right">
-                <li class="nav-item">
-                    <a id="display-warning" href="javascript:void(0)" class="nav-link">
-                        <span class="d-none d-lg-inline-block">
+            <ul class="navbar-nav float-right" >
+                <li class="nav-item" id="display-warning">
+                    <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
+                        <span class="d-none d-inline-block">
                             <span class="text-dark">
-                                <i data-feather="alert-triangle" class="svg-icon">
-                                    <span id="warning-count"></span>
-                                </i>
+                                <i data-feather="alert-triangle" class="svg-icon"></i>
                             </span>
                         </span>
                     </a>
+                    <div id="warning-list" class="dropdown-menu dropdown-menu-right">
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <span class="nav-link">
-                        <span class="d-none d-lg-inline-block">
-                            <span class="text-dark">
-                                Skripsi belum diverifikasi dua pembimbing
-                            </span>
-                        </span>
-                    </span>
-                </li>
-                <li class="nav-item">
-                    <span class="nav-link">
-                        <span class="d-none d-lg-inline-block">
-                            <span class="text-dark">
-                                NID dosen pembimbing sama
-                            </span>
-                        </span>
-                    </span>
-                </li>
-            </ul>
-            <ul class="navbar-nav float-right" >
                 <li class="nav-item">
                     <a id="display-code" href="javascript:void(0)" class="nav-link d-none">
                             <span class="d-none d-lg-inline-block">
