@@ -50,7 +50,7 @@ class Helper {
             $lect_2 = Data::getLecturer($l2_id);
             $json_3 = '1';
             $json_5 = $lect_2->name;
-            Maker::setAdvisor($l1_id, '2');
+            Maker::setAdvisor($l2_id, '2');
             if ($json_5 == $l2_nm)
                 $json_4 = '1';
         }
