@@ -122,4 +122,15 @@ class Maker {
             $writer->save();
         }
     }
+
+    public static function advisorVerify($student_id) {
+        $writer = Data::getAdvisorWriter($student_id);
+        if ($writer->identity_l1 == Auth::user()->identity) {
+            $writer->status_1 = 1;
+        }
+        else {
+            $writer->status_2 = 1;
+        }
+        $writer->save();
+    }
 }

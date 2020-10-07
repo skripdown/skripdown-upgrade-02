@@ -17,6 +17,12 @@ class Data {
             ->first();
     }
 
+    public static function getAdvisorWriter($id_writer) {
+        return DB::table('students')
+            ->where('identity',$id_writer)
+            ->first();
+    }
+
     public static function getStudent_thesis($identity) {
         return DB::table('documents')
             ->where('id_',$identity)
@@ -75,11 +81,18 @@ class Data {
     }
 
     public static function isVerified_thesis_by($lecturer_id) {
-        $student = Student::find(Auth::user()->identity);
-        if ($student->identity_l1 == null) {
-            if ($student->identity_l2 == null) return false;
-            return $student->identity_l2 == $lecturer_id && $student->status != -1;
+        $student = self::getWriter();
+        if ($student->identity_l1 != null) {
+            if ($student->identity_l1 == $lecturer_id && $student->status_1 == 1)
+                return true;
+            elseif ($student->identity_l2 != null)
+                return $student->identity_l2 == $lecturer_id && $student->status_2 == 1;
         }
-        return $student->identity_l1 == $lecturer_id && $student->status != -1;
+        elseif ($student->identity_l2 != null) {
+            return $student->identity_l2 == $lecturer_id && $student->status_2 == 1;
+        }
+        else
+            return false;
+
     }
 }
