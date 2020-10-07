@@ -40,6 +40,8 @@ let conn_bool;
 
 let university,faculty,department;
 
+let helper_warning;
+
 $(document).ready(()=>{
 
     form              = $('#form').get(0);
@@ -82,6 +84,19 @@ $(document).ready(()=>{
     skripd_link       = $('meta[name=skripd_f_words]').attr('content');
     skripd_autosave   = $('meta[name=skripd_autosave]').attr('content');
     skripd_token      = $('meta[name=skripd_token]').attr('content');
+
+    helper_warning    = new Map();
+    helper_warning.set('l1_id_corr',true);
+    helper_warning.set('l1_name_corr',true);
+    helper_warning.set('l1_name','');
+    helper_warning.set('l2_id_corr',true);
+    helper_warning.set('l2_name_corr',true);
+    helper_warning.set('l2_name','');
+    helper_warning.set('l1_verify',true);
+    helper_warning.set('l2_verify',true);
+    helper_warning.set('l1_progress','');
+    helper_warning.set('l2_progress','');
+    helper_warning.set('l_id_dup',false);
 
     temp_conn_status  = '';
 
@@ -212,6 +227,28 @@ $(document).ready(()=>{
                             l2_id        : dosen_data[2],
                             l2_name      : dosen_data[3],
                             conf_font    : $(input_conf_font).val()
+                        },
+                        success : response=>{
+                            if (response.json_0 === '1') helper_warning.set('l1_id_corr', true);
+                            else helper_warning.set('l1_id_corr', false);
+                            if (response.json_1 === '1') helper_warning.set('l1_name_corr', true);
+                            else helper_warning.set('l1_name_corr', false);
+                            helper_warning.set('l1_name', response.json_2);
+                            if (response.json_3 === '1') helper_warning.set('l2_id_corr', true);
+                            else helper_warning.set('l2_id_corr', false);
+                            if (response.json_4 === '1') helper_warning.set('l2_name_corr', true);
+                            else helper_warning.set('l2_name_corr', false);
+                            helper_warning.set('l2_name', response.json_5);
+                            if (response.json_6 === '1') helper_warning.set('l1_verify', true);
+                            else helper_warning.set('l1_verify', false);
+                            if (response.json_7 === '1') helper_warning.set('l2_verify', true);
+                            else helper_warning.set('l2_verify', false);
+                            if (response.json_8 === '1') helper_warning.set('l1_progress', true);
+                            else helper_warning.set('l1_progress', false);
+                            if (response.json_9 === '1') helper_warning.set('l2_progress', true);
+                            else helper_warning.set('l2_progress', false);
+                            if (response.json_10 === '1') helper_warning.set('l_id_dup', true);
+                            else helper_warning.set('l_id_dup', false);
                         }
                     });
                 },500);
