@@ -111,4 +111,15 @@ class Maker {
             'translate_word'=>$skripdown->translate_words
         );
     }
+
+    public static function setAdvisor($id, $type) {
+        $writer   = Data::getWriter();
+        if ($writer->status != 1) {
+            if ($type == '1' && $writer->identity_l1 == null)
+                $writer->identity_l1 = $id;
+            if ($type == '2' && $writer->identity_l2 == null)
+                $writer->identity_l2 = $id;
+            $writer->save();
+        }
+    }
 }

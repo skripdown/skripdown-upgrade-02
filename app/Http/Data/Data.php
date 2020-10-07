@@ -10,6 +10,13 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class Data {
+
+    public static function getWriter() {
+        return DB::table('students')
+            ->where('identity',Auth::user()->identity)
+            ->first();
+    }
+
     public static function getStudent_thesis($identity) {
         return DB::table('documents')
             ->where('id_',$identity)
