@@ -366,7 +366,7 @@ window.setInterval(()=>{
             conn_bool = true;
         },
         error: ()=>{
-            temp_conn_status = '<span class="bg-danger text-white p-1 rounded">Tidak Terhubung !</span>';
+            temp_conn_status = '<span class="bg-danger text-white p-1 mr-3 rounded">Tidak Terhubung !</span>';
             $(skrip_input).addClass('muted');
             $(skrip_input).attr('contenteditable','false');
             $(conn_status).html(temp_conn_status);
