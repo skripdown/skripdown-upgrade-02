@@ -30,7 +30,7 @@ class Maker {
                      .'<div>@citation : APA</div>'
                      .'<div>@watermark : on</div>'
                      .'<div>@preface : default</div>'
-                     .'<div>@date : 20 - 10 - 2020</div>'
+                     .'<div>@date : 20-10-2020</div>'
                      .'<div>@location : malang</div>';
         $item->university = $user->identity_univ;
         $item->department = $user->identity_dep;

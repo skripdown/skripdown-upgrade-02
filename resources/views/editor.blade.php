@@ -112,6 +112,7 @@
                         <span class="d-none d-inline-block">
                             <span class="text-danger">
                                 <i data-feather="alert-triangle" class="svg-icon"></i>
+                                <span id="total-warning" class="font-weight-bold"></span>
                             </span>
                         </span>
                     </a>

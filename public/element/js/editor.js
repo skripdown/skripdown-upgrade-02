@@ -43,6 +43,7 @@ let university,faculty,department;
 let helper_warning;
 let disp_warning;
 let list_warning;
+let total_warning;
 
 $(document).ready(()=>{
 
@@ -89,6 +90,7 @@ $(document).ready(()=>{
 
     disp_warning      = $('#display-warning').get(0);
     list_warning      = $('#warning-list').get(0);
+    total_warning     = $('#total-warning').get(0);
 
     helper_warning    = new Map();
     helper_warning.set('l1_id_corr',true);
@@ -254,6 +256,89 @@ $(document).ready(()=>{
                             else helper_warning.set('l2_progress', false);
                             if (response.json_10 === '1') helper_warning.set('l_id_dup', true);
                             else helper_warning.set('l_id_dup', false);
+                            let warning_count = 0;
+                            let html_warning  = '';
+                            const _open       = '<span class="dropdown-item">';
+                            const _close      = '</span>';
+                            if (dosen_data[0] !== 'noid' && dosen_data[2] !== 'noid') {
+                                if (!helper_warning.get('l1_verify') && helper_warning.get('l2_verify')) {
+                                    if (helper_warning.get('l1_id_corr'))
+                                        html_warning += _open + 'belum disetujui oleh ' + helper_warning.get('l1_name') + _close;
+                                    else
+                                        html_warning += _open + 'NID pembimbing 1 salah' + _close;
+                                    warning_count++;
+                                }
+                                else if (helper_warning.get('l1_verify') && !helper_warning.get('l2_verify')) {
+                                    if (helper_warning.get('l2_id_corr'))
+                                        html_warning += _open + 'belum disetujui oleh ' + helper_warning.get('l2_name') + _close;
+                                    else
+                                        html_warning += _open + 'NID pembimbing 2 salah' + _close;
+                                    warning_count++;
+                                }
+                                else if (!helper_warning.get('l1_verify') && !helper_warning.get('l2_verify')) {
+                                    if (helper_warning.get('l1_id_corr') && helper_warning.get('l2_id_corr')) {
+                                        html_warning += _open + 'belum disetujui oleh kedua pembimbing' + _close;
+                                    }
+                                    else if (!helper_warning.get('l1_id_corr') && helper_warning.get('l2_id_corr')) {
+                                        html_warning += _open + 'NID pembimbing 1 salah' + _close;
+                                        html_warning += _open + 'belum disetujui oleh ' + helper_warning.get('l2_name') + _close;
+                                        warning_count++;
+                                    }
+                                    else if (helper_warning.get('l1_id_corr') && !helper_warning.get('l2_id_corr')) {
+                                        html_warning += _open + 'belum disetujui oleh ' + helper_warning.get('l1_name') + _close;
+                                        html_warning += _open + 'NID pembimbing 2 salah' + _close;
+                                        warning_count++;
+                                    }
+                                    else {
+                                        html_warning += _open + 'NID kedua pembimbing salah' + _close;
+                                    }
+                                    warning_count++;
+                                }
+                            }
+                            else {
+                                html_warning += _open + 'tidak ada pembimbing' + _close;
+                                warning_count++;
+                            }
+
+                            if (!skrip_d.hasBab_i()) {
+                                html_warning += _open + 'BAB I tidak ada' + _close;
+                                warning_count++;
+                            }
+                            if (!skrip_d.hasBab_ii()) {
+                                html_warning += _open + 'BAB II tidak ada' + _close;
+                                warning_count++;
+                            }
+                            if (!skrip_d.hasBab_iii()) {
+                                html_warning += _open + 'BAB III tidak ada' + _close;
+                                warning_count++;
+                            }
+                            if (!skrip_d.hasBab_iv()) {
+                                html_warning += _open + 'BAB IV tidak ada' + _close;
+                                warning_count++;
+                            }
+                            if (!skrip_d.hasBab_v()) {
+                                html_warning += _open + 'BAB V tidak ada' + _close;
+                                warning_count++;
+                            }
+                            if (!skrip_d.hasLatar_belakang()) {
+                                html_warning += _open + 'tidak ada latar belakang' + _close;
+                                warning_count++;
+                            }
+                            if (!skrip_d.hasRumusan_masalah()) {
+                                html_warning += _open + 'tidak ada rumusan masalah' + _close;
+                                warning_count++;
+                            }
+                            if (!skrip_d.hasTujuan_penelitian()) {
+                                html_warning += _open + 'tidak ada tujuan penelitian' + _close;
+                                warning_count++;
+                            }
+
+                            if (warning_count > 0) {
+                                $(disp_warning).removeClass('d-none');
+                                $(total_warning).text(warning_count);
+                            }
+                            else $(disp_warning).addClass('d-none');
+                            $(list_warning).html(html_warning);
                         }
                     });
                 },500);
@@ -277,89 +362,6 @@ window.setInterval(()=>{
             $(skrip_input).attr('contenteditable','true');
             $(btn_setting).removeClass('d-none');
             conn_bool = true;
-            if (helper_warning != null) {
-                let warning_count = 0;
-                let html_warning  = '';
-                const _open       = '<span class="dropdown-item">';
-                const _close      = '</span>';
-                const dosen_data  = skrip_d.getLecturer();
-                if (dosen_data[0] !== 'noid' && dosen_data[2] !== 'noid') {
-                    if (!helper_warning.get('l1_verify') && helper_warning.get('l2_verify')) {
-                        if (helper_warning.get('l1_id_corr'))
-                            html_warning += _open + 'belum disetujui oleh ' + helper_warning.get('l1_name') + _close;
-                        else
-                            html_warning += _open + 'NID pembimbing 1 salah' + _close;
-                        warning_count++;
-                    }
-                    else if (helper_warning.get('l1_verify') && !helper_warning.get('l2_verify')) {
-                        if (helper_warning.get('l2_id_corr'))
-                            html_warning += _open + 'belum disetujui oleh ' + helper_warning.get('l2_name') + _close;
-                        else
-                            html_warning += _open + 'NID pembimbing 2 salah' + _close;
-                        warning_count++;
-                    }
-                    else if (!helper_warning.get('l1_verify') && !helper_warning.get('l2_verify')) {
-                        if (helper_warning.get('l1_id_corr') && helper_warning.get('l2_id_corr')) {
-                            html_warning += _open + 'belum disetujui oleh kedua pembimbing' + _close;
-                        }
-                        else if (!helper_warning.get('l1_id_corr') && helper_warning.get('l2_id_corr')) {
-                            html_warning += _open + 'NID pembimbing 1 salah' + _close;
-                            html_warning += _open + 'belum disetujui oleh ' + helper_warning.get('l2_name') + _close;
-                            warning_count++;
-                        }
-                        else if (helper_warning.get('l1_id_corr') && !helper_warning.get('l2_id_corr')) {
-                            html_warning += _open + 'belum disetujui oleh ' + helper_warning.get('l1_name') + _close;
-                            html_warning += _open + 'NID pembimbing 2 salah' + _close;
-                            warning_count++;
-                        }
-                        else {
-                            html_warning += _open + 'NID kedua pembimbing salah' + _close;
-                        }
-                        warning_count++;
-                    }
-                }
-                else {
-                    html_warning += _open + 'tidak ada pembimbing' + _close;
-                    warning_count++;
-                }
-
-                if (!skrip_d.hasBab_i()) {
-                    html_warning += _open + 'BAB I tidak ada' + _close;
-                    warning_count++;
-                }
-                if (!skrip_d.hasBab_ii()) {
-                    html_warning += _open + 'BAB II tidak ada' + _close;
-                    warning_count++;
-                }
-                if (!skrip_d.hasBab_iii()) {
-                    html_warning += _open + 'BAB III tidak ada' + _close;
-                    warning_count++;
-                }
-                if (!skrip_d.hasBab_iv()) {
-                    html_warning += _open + 'BAB IV tidak ada' + _close;
-                    warning_count++;
-                }
-                if (!skrip_d.hasBab_v()) {
-                    html_warning += _open + 'BAB V tidak ada' + _close;
-                    warning_count++;
-                }
-                if (!skrip_d.hasLatar_belakang()) {
-                    html_warning += _open + 'tidak ada latar belakang' + _close;
-                    warning_count++;
-                }
-                if (!skrip_d.hasRumusan_masalah()) {
-                    html_warning += _open + 'tidak ada rumusan masalah' + _close;
-                    warning_count++;
-                }
-                if (!skrip_d.hasTujuan_penelitian()) {
-                    html_warning += _open + 'tidak ada tujuan penelitian' + _close;
-                    warning_count++;
-                }
-
-                if (warning_count > 1) $(disp_warning).removeClass('d-none');
-                else $(disp_warning).addClass('d-none');
-                $(list_warning).html(html_warning);
-            }
         },
         error: ()=>{
             temp_conn_status = '<span class="bg-danger text-white p-1 rounded">Tidak Terhubung !</span>';

@@ -1058,15 +1058,19 @@ class Skripdown {
     }
 
     getLecturer() {
-        let lec_1_id   = '';
-        let lec_2_id   = '';
-        let lec_1_name = '';
-        let lec_2_name = '';
+        let lec_1_id;
+        let lec_2_id;
+        let lec_1_name;
+        let lec_2_name;
 
         if (this.lec_1_id === '') lec_1_id = 'noid';
+        else lec_1_id = this.lec_1_id;
         if (this.lec_2_id === '') lec_2_id = 'noid';
+        else lec_2_id = this.lec_2_id;
         if (this.lec_1_name === '') lec_1_name = 'noname';
+        else lec_1_name = this.lec_1_name;
         if (this.lec_2_name === '') lec_2_name = 'noname';
+        else lec_2_name = this.lec_2_name;
 
         return [
             lec_1_id,lec_1_name,
