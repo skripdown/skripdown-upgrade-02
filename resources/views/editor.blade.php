@@ -51,7 +51,7 @@
     </div>
 </div>
 <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-boxed-layout="full">
-    <header class="topbar bg-white">
+    <header class="topbar" style="background-color: rgba(234, 250, 241, 0.25)">
         <nav class="navbar top-navbar navbar-expand">
             <div class="navbar-nav pl-4" style="max-width: 10vw;min-width: 10vw;overflow-x: hidden">
                 <img src="{{asset(env('ICON_PATH'))}}" alt="" style="height: 80px">
