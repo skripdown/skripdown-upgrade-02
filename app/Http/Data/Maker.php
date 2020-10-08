@@ -26,7 +26,7 @@ class Maker {
                      .'<div>@watermark : on</div>'
                      .'<div>@preface : default</div>'
                      .'<div>@date : 20-10-2020</div>'
-                     .'<div>@location : malang</div>';
+                     .'<div>@location : Malang</div>';
         $item->text = '<div>//start writing now. 😉</div><div>//SKRIPDOWN : fast end thesis writing</div>'
                      .'<div>//this is a comment</div>'
                      .'<div><br></div>'
