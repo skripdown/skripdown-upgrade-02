@@ -66,8 +66,7 @@ $(document).ready(()=>{
     input_lec2_id     = $('#lec2-val').get(0);
     input_lec2_name   = $('#lec2-name-val').get(0);
     skrip_input       = $('#skrip').get(0);
-    meta_info         = $('#meta-info').get(0);
-    meta_info         = meta_info.innerText;
+    meta_info         = $('#meta-info').text().replace(/@/gm,'\n@');
     preview_output    = $('#preview-skrip').get(0);
     preview_code      = $('#preview-code').get(0);
 

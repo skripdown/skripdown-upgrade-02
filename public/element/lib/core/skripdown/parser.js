@@ -949,8 +949,6 @@ class Skripdown {
                         + '<span>program studi ' +data[2]+ '</span><br><span>fakultas ' +data[5]+ '</span><br><span>' +data[6]+ '</span><br><span>'
                         + data[7]+ '</span></div></div>';
 
-                console.log(res);
-
                 return res;
             }
 
