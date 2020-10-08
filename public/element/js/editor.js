@@ -39,6 +39,7 @@ let temp_conn_status;
 let conn_bool;
 
 let university,faculty,department;
+let meta_info;
 
 let helper_warning;
 let disp_warning;
@@ -65,6 +66,8 @@ $(document).ready(()=>{
     input_lec2_id     = $('#lec2-val').get(0);
     input_lec2_name   = $('#lec2-name-val').get(0);
     skrip_input       = $('#skrip').get(0);
+    meta_info         = $('#meta-info').get(0);
+    meta_info         = meta_info.innerText;
     preview_output    = $('#preview-skrip').get(0);
     preview_code      = $('#preview-code').get(0);
 
@@ -203,7 +206,7 @@ $(document).ready(()=>{
         const code = e.keyCode;
         if (code !== 37 && code !== 38 && code !== 39 && code !== 40) {
             if ($(input_url).val() !== 'none') {
-                const for_parse = skrip_d.parse(skrip_input.innerText+'\n');
+                const for_parse = skrip_d.parse(meta_info+skrip_input.innerText+'\n');
                 $(input_text).val(skrip_input.innerHTML);
                 $(input_parse).val(for_parse);
                 $(preview_output).html(for_parse);

@@ -27,6 +27,7 @@ class CreateDocumentsTable extends Migration
             $table->string('conf_font');
             $table->text('parse');
             $table->text('text');
+            $table->text('meta');
             $table->timestamps();
         });
     }

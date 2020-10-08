@@ -17,12 +17,7 @@ class Maker {
         $user = DB::table('students')->where('identity',Auth::user()->identity)->first();
         $user = Student::find($user->id);
         $item = new Document();
-
-        $item->text = '<div>//start writing now. 😉</div><div>//SKRIPDOWN : fast end thesis writing</div>'
-                     .'<div>//this is a comment</div>'
-                     .'<div><br></div>'
-                     .'<div>@title : </div>'
-                     .'<div>@author : '.Auth::user()->name.'</div>'
+        $item->meta = '<div>@author : '.Auth::user()->name.'</div>'
                      .'<div>@id : '.$user->identity.'</div>'
                      .'<div>@department : '.$user->identity_dep.'</div>'
                      .'<div>@faculty : '.$user->identity_fac.'</div>'
@@ -32,6 +27,10 @@ class Maker {
                      .'<div>@preface : default</div>'
                      .'<div>@date : 20-10-2020</div>'
                      .'<div>@location : malang</div>';
+        $item->text = '<div>//start writing now. 😉</div><div>//SKRIPDOWN : fast end thesis writing</div>'
+                     .'<div>//this is a comment</div>'
+                     .'<div><br></div>'
+                     .'<div>@title : judul skripsi</div>';
         $item->university = $user->identity_univ;
         $item->department = $user->identity_dep;
         $item->faculty = $user->identity_fac;

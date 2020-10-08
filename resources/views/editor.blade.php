@@ -212,30 +212,16 @@
                 <div class="col-12">
                     <div class="row mt5 bg-white border-top" style="height: 86.5vh;">
                         <div id="panel-1" class="col-xl-12 col-lg-12 col-m-12 mr-auto ml-auto" style="height: 86.5vh; overflow-y: auto">
+                            <div id="meta-info" class="d-none">
+                                {!! $doc->meta !!}
+                            </div>
                             <div id="skrip" class="container pl-5 pr-5"
-                                 @if ($doc != null)
                                  data-font-editor="{{$doc->conf_font}}"
                                  contenteditable="true"
                                  spellcheck="false"
                                  style="padding: 3vh; min-height: 80vh;font-size: {{$doc->conf_font}}pt"
-                                 @else
-                                 data-font-editor="16"
-                                 contenteditable="true"
-                                 spellcheck="false"
-                                 style="padding: 3vh; min-height: 80vh;font-size: 16pt;"
-                                @endif
                             >
-                                @if ($doc != null)
-                                    {!! $doc->text !!}
-                                @else
-                                    <div>//start writing now. 😉</div>
-                                    <div>//SKRIPDOWN : fast end thesis writing</div>
-                                    <div>//this is a comment</div>
-                                    <div><br></div>
-                                    <div>@title : </div>
-                                    <div>@author : </div>
-                                    <div>@id : </div>
-                                @endif
+                                {!! $doc->text !!}
                             </div>
                         </div>
                         <div id="panel-2" class="d-none col-6"  style="overflow-y: auto; border-left: solid 2px #eee;height: 86.5vh;">
