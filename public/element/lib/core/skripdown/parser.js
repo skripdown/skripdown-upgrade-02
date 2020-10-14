@@ -67,6 +67,9 @@ class Skripdown {
 
         let foreign_regex           = this.foreign_regex;
         let foreign_regex_inv       = this.foreign_regex_inv;
+        let raw_foreign             = this.raw_foreign;
+        let raw_trans               = this.raw_trans;
+        let vocabularity            = this.vocabularity;
 
         function autocorrect(text) {
             let temp;
@@ -146,25 +149,23 @@ class Skripdown {
             raw = raw.replace(/[ \u00A0][ \u00A0]*/gm, ' ');
             raw = raw.replace(/^\/\/[\w\S ]*$/gm, '');
 
-            while ((result = /\*\*([^~][ \w\S]+)\*\*/gm.exec(raw)) != null) {
+            while ((result = /\*\*([ \w\S]+)\*\*/gm.exec(raw)) != null) {
                 raw = raw.replace('**'+result[1]+'**','<b>'+result[1]+'</b>');
             }
 
-            while ((result = /\*([^~][ \w\S]+)\*/gm.exec(raw)) != null) {
+            while ((result = /\*([ \w\S]+)\*/gm.exec(raw)) != null) {
                 raw = raw.replace('*'+result[1]+'*','<em>'+result[1]+'</em>');
-                if (!this.vocabularity.has(result[1])) {
-                    this.vocabularity.set(result[1],'0');
-                    this.raw_foreign        += ('|'+result[1]);
-                    this.raw_trans          += ('|0');
-                    this.foreign_regex      = null;
-                    this.foreign_regex      = new RegExp('\b('+this.raw_foreign+')\b','i');
-                    this.foreign_regex_inv  = new RegExp('<em>('+this.raw_foreign+')<\/em>','i');
-                    foreign_regex           = this.foreign_regex;
-                    foreign_regex_inv       = this.foreign_regex_inv;
+                if (!vocabularity.has(result[1])) {
+                    vocabularity.set(result[1],'0');
+                    raw_foreign        += ('|'+result[1]);
+                    raw_trans          += ('|0');
+                    foreign_regex      = null;
+                    foreign_regex      = new RegExp('\b('+raw_foreign+')\b','i');
+                    foreign_regex_inv  = new RegExp('<em>('+raw_foreign+')<\/em>','i');
                 }
             }
 
-            while ((result = /__([^~][ \w\S]+)__/gm.exec(raw)) != null) {
+            while ((result = /__([ \w\S]+)__/gm.exec(raw)) != null) {
                 raw = raw.replace('__'+result[1]+'__','<u>'+result[1]+'</u>');
             }
 
@@ -1012,6 +1013,9 @@ class Skripdown {
         this.latar_belakang = latar_belakang;
         this.rmsn_masalah   = rmsn_masalah;
         this.tjuan_pnlitian = tjuan_pnlitian;
+        this.vocabularity   = vocabularity;
+        this.raw_trans      = raw_trans;
+        this.raw_foreign    = raw_foreign;
 
         return result;
     }

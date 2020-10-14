@@ -19,9 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="editor top-bar style">
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="advisor feature devs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/editor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/editor.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/element/lib/core/skripdown/parser.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/element/lib/core/skripdown/parser.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +222,7 @@
       <workItem from="1602041521319" duration="7463000" />
       <workItem from="1602070480009" duration="27221000" />
       <workItem from="1602225976545" duration="163000" />
-      <workItem from="1602306323424" duration="4331000" />
+      <workItem from="1602306323424" duration="5825000" />
     </task>
     <task id="LOCAL-00001" summary="update README.md">
       <created>1600374939544</created>
@@ -553,7 +553,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602135708982</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="advisor feature devs">
+      <created>1602678387344</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1602678387344</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,7 +600,8 @@
     <MESSAGE value="editor helper devs" />
     <MESSAGE value="editor simplify meta info" />
     <MESSAGE value="editor top-bar style" />
-    <option name="LAST_COMMIT_MESSAGE" value="editor top-bar style" />
+    <MESSAGE value="advisor feature devs" />
+    <option name="LAST_COMMIT_MESSAGE" value="advisor feature devs" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600922526929">
