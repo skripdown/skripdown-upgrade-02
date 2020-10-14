@@ -146,12 +146,22 @@
                                 </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-                        @if ($doc != null)
-                            <a href="{{url('/parse/'.$doc->url)}}" class="dropdown-item" target="_blank">
-                                <i data-feather="printer" class="svg-icon mr-2 ml-1"></i>
-                                Parse
-                            </a>
-                        @endif
+                        <a href="javascript:void(0)" class="dropdown-item">
+                            <i data-feather="share" class="svg-icon mr-2 ml-1"></i>
+                            Submit Proposal
+                        </a>
+                        <a href="javascript:void(0)" class="dropdown-item">
+                            <i data-feather="share" class="svg-icon mr-2 ml-1"></i>
+                            Submit Revisi
+                        </a>
+                        <a href="javascript:void(0)" class="dropdown-item">
+                            <i data-feather="book" class="svg-icon mr-2 ml-1"></i>
+                            Submit Repositori
+                        </a>
+                        <a href="{{url('/parse/'.$doc->url)}}" class="dropdown-item" target="_blank">
+                            <i data-feather="printer" class="svg-icon mr-2 ml-1"></i>
+                            Parse
+                        </a>
                         <a href="javascript:void(0)" id="btn-font-up" class="dropdown-item">
                             <i data-feather="zoom-in" class="svg-icon mr-2 ml-1"></i>
                             Perbesar
