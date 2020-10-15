@@ -150,12 +150,19 @@ class Skripdown {
             raw = raw.replace(/^\/\/[\w\S ]*$/gm, '');
 
             while ((result = /\*\*([ \w\S]+)\*\*/gm.exec(raw)) != null) {
+                if (result[1].includes('**')) {
+                    let inside = result[1].split('**');
+                    result[1] = inside[0];
+                }
                 raw = raw.replace('**'+result[1]+'**','<b>'+result[1]+'</b>');
             }
 
             while ((result = /\*([ \w\S]+)\*/gm.exec(raw)) != null) {
-                raw = raw.replace('*'+result[1]+'*','<em>'+result[1]+'</em>');
-                if (!vocabularity.has(result[1])) {
+                if (result[1].includes('*')) {
+                    let inside = result[1].split('*');
+                    result[1] = inside[0];
+                }
+                if (result[1] !== '' && !vocabularity.has(result[1])) {
                     vocabularity.set(result[1],'0');
                     raw_foreign        += ('|'+result[1]);
                     raw_trans          += ('|0');
@@ -163,9 +170,14 @@ class Skripdown {
                     foreign_regex      = new RegExp('\b('+raw_foreign+')\b','i');
                     foreign_regex_inv  = new RegExp('<em>('+raw_foreign+')<\/em>','i');
                 }
+                raw = raw.replace('*'+result[1]+'*','<em>'+result[1]+'</em>');
             }
 
             while ((result = /__([ \w\S]+)__/gm.exec(raw)) != null) {
+                if (result[1].includes('__')) {
+                    let inside = result[1].split('__');
+                    result[1] = inside[0];
+                }
                 raw = raw.replace('__'+result[1]+'__','<u>'+result[1]+'</u>');
             }
 
