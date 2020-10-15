@@ -953,7 +953,7 @@ class Skripdown {
 
                 if (data[4] !== 'majoring')
                     res +=
-                          '<span>bidang minat<br>'+data[4]+'</span><br></div><div id="cov-footer">'
+                          '<span>bidang minat<br>'+data[4]+'</span><br><span style="opacity: 0">hid</span></div><div id="cov-footer">'
                         + '<span>program studi ' +data[2]+ '</span><br><span>fakultas ' +data[5]+ '</span><br><span>' +data[6]+ '</span><br><span>'
                         + data[7]+ '</span></div></div>';
                 else
