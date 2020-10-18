@@ -19,6 +19,7 @@ Route::get('logout', 'Auth\LoginController@logout');
 Route::get('/dashboard', 'Controller@dashboard');
 Route::post('submit_autosave','Controller@submit_autosave');
 Route::post('post_foreign_words','Controller@skripdownForeignWords');
+Route::post('post_editor_update','Controller@editor_update');
 
 
 //STUDENT

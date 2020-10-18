@@ -5,8 +5,6 @@
 
 namespace App\Http\Data;
 
-use App\Models\Student;
-use App\Models\SubmitRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -140,5 +138,38 @@ class Data {
             ->where('doc_link', $url)
             ->first();
         return $temp->status_1 != 2 && $temp->status_2 != 2;
+    }
+
+    public static function getNotification() {
+        $role = Auth::user()->role;
+        if ($role == 'student') {
+            $user = self::getWriter();
+            $request_revision_1 = '0';
+            $request_revision_2 = '0';
+            $request_submit     = '0';
+            if ($user->l1_revision_request)
+                $request_revision_1 = '1';
+            if ($user->l2_revision_request)
+                $request_revision_2 = '1';
+            if (DB::table('submit_requests')
+                ->where('author_id', $user->identity)
+                ->count() > 0)
+                $request_submit = '1';
+            return array(
+                'revision_1'=>$request_revision_1,
+                'revision_2'=>$request_revision_2,
+                'request_submit'=>$request_submit,
+                'message'=>self::getRevisionMessages('desc')->toArray()
+            );
+        }
+        elseif ($role == 'lecturer') {
+
+        }
+        elseif ($role == 'department') {
+
+        }
+        else {
+
+        }
     }
 }

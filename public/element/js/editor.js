@@ -28,10 +28,12 @@ let code_panel;
 let preview_panel;
 let preview_code;
 let rev;
-let submit_rev;
+let submit_rev_1;
+let submit_rev_2;
 let submit_rep;
 
 let skrip_d;
+let skripd_editor;
 let skripd_link;
 let skripd_autosave;
 let skripd_token;
@@ -71,7 +73,8 @@ $(document).ready(()=>{
     meta_info         = $('#meta-info').text().replace(/@/gm,'\n@');
     preview_output    = $('#preview-skrip').get(0);
     preview_code      = $('#preview-code').get(0);
-    submit_rev        = $('#sub-rev').get(0);
+    submit_rev_1      = $('#sub-rev-1').get(0);
+    submit_rev_2      = $('#sub-rev-2').get(0);
     submit_rep        = $('#sub-rep').get(0);
     rev               = $('#rev').get(0);
 
@@ -90,6 +93,7 @@ $(document).ready(()=>{
     conn_bool         = false;
 
     skrip_d           = new Skripdown('','');
+    skripd_editor     = $('meta[name=skripd_editor_update]').attr('content');
     skripd_link       = $('meta[name=skripd_f_words]').attr('content');
     skripd_autosave   = $('meta[name=skripd_autosave]').attr('content');
     skripd_token      = $('meta[name=skripd_token]').attr('content');
@@ -354,6 +358,40 @@ window.setInterval(()=>{
             $(skrip_input).attr('contenteditable','true');
             $(btn_setting).removeClass('d-none');
             conn_bool = true;
+            $.ajax({
+                type    : 'POST',
+                url     : ''+skripd_editor+'',
+                data    : {_token:skripd_token},
+                success : response=>{
+                    if (response.revision_1 === '1')
+                        $(submit_rev_1).addClass('d-none');
+                    else
+                        $(submit_rev_1).removeClass('d-none');
+                    if (response.revision_2 === '1')
+                        $(submit_rev_2).addClass('d-none');
+                    else
+                        $(submit_rev_2).removeClass('d-none');
+                    if (response.request_submit === '1')
+                        $(submit_rep).addClass('d-none');
+                    else {
+                        if (helper_warning.get('l1_verify') &&
+                            helper_warning.get('l2_verify') &&
+                            response.revision_1 === '0' &&
+                            response.revision_2 === '0' )
+                            $(submit_rep).removeClass('d-none');
+                    }
+                    if (response.message.length > 0) {
+                        $(rev).removeClass('d-none');
+                        response.message.forEach((item)=>{
+                            //providing popup to see revision
+                           console.log(item.message);
+                        });
+                    }
+                    else {
+                        $(rev).addClass('d-none');
+                    }
+                }
+            });
         },
         error: ()=>{
             temp_conn_status = '<span class="bg-danger text-white p-1 mr-3 rounded">Tidak Terhubung !</span>';

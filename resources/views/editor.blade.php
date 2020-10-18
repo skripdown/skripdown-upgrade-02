@@ -4,6 +4,7 @@
     <title>editor | {{env('APP_NAME')}}</title>
     <meta name="viewport" content="{{env('APP_VIEWPORT')}}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="skripd_editor_update" content="{{url('post_editor_update')}}">
     <meta name="skripd_f_words" content="{{url('post_foreign_words')}}">
     <meta name="skripd_autosave" content="{{url('submit_autosave')}}">
     <meta name="skripd_token" content="{{csrf_token()}}">
@@ -146,9 +147,13 @@
                                 </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-                        <a href="javascript:void(0)" class="dropdown-item d-none" id="sub-rev">
+                        <a href="javascript:void(0)" class="dropdown-item d-none" id="sub-rev-1">
                             <i data-feather="share" class="svg-icon mr-2 ml-1"></i>
-                            Submit Revisi
+                            Submit Revisi Pembimbing 1
+                        </a>
+                        <a href="javascript:void(0)" class="dropdown-item d-none" id="sub-rev-2">
+                            <i data-feather="share" class="svg-icon mr-2 ml-1"></i>
+                            Submit Revisi Pembimbing 2
                         </a>
                         <a href="javascript:void(0)" class="dropdown-item d-none" id="rev">
                             <i data-feather="flag" class="svg-icon mr-2 ml-1"></i>

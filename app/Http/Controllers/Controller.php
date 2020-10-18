@@ -49,6 +49,10 @@ class Controller extends BaseController
         return response()->json(Helper::check($request),200);
     }
 
+    public function editor_update(Request $request) {
+        return response()->json(Data::getNotification(),200);
+    }
+
     public function openDoc($url) {
         if (Data::isURL_thesis($url)) {
             if (Data::isSubmitedThesis($url))
