@@ -146,15 +146,15 @@
                                 </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-                        <a href="javascript:void(0)" class="dropdown-item">
-                            <i data-feather="share" class="svg-icon mr-2 ml-1"></i>
-                            Submit Proposal
-                        </a>
-                        <a href="javascript:void(0)" class="dropdown-item">
+                        <a href="javascript:void(0)" class="dropdown-item d-none" id="sub-rev">
                             <i data-feather="share" class="svg-icon mr-2 ml-1"></i>
                             Submit Revisi
                         </a>
-                        <a href="javascript:void(0)" class="dropdown-item">
+                        <a href="javascript:void(0)" class="dropdown-item d-none" id="rev">
+                            <i data-feather="flag" class="svg-icon mr-2 ml-1"></i>
+                            Revisi
+                        </a>
+                        <a href="javascript:void(0)" class="dropdown-item d-none" id="sub-rep">
                             <i data-feather="book" class="svg-icon mr-2 ml-1"></i>
                             Submit Repositori
                         </a>

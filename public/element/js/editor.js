@@ -27,8 +27,10 @@ let btn_disp_rendered;
 let code_panel;
 let preview_panel;
 let preview_code;
+let rev;
+let submit_rev;
+let submit_rep;
 
-let save_btn;
 let skrip_d;
 let skripd_link;
 let skripd_autosave;
@@ -69,6 +71,9 @@ $(document).ready(()=>{
     meta_info         = $('#meta-info').text().replace(/@/gm,'\n@');
     preview_output    = $('#preview-skrip').get(0);
     preview_code      = $('#preview-code').get(0);
+    submit_rev        = $('#sub-rev').get(0);
+    submit_rep        = $('#sub-rep').get(0);
+    rev               = $('#rev').get(0);
 
     code_panel        = $('#panel-1').get(0);
     preview_panel     = $('#panel-2').get(0);
@@ -84,7 +89,6 @@ $(document).ready(()=>{
     conn_status       = $('#connection-status').get(0);
     conn_bool         = false;
 
-    save_btn          = $('#save').get(0);
     skrip_d           = new Skripdown('','');
     skripd_link       = $('meta[name=skripd_f_words]').attr('content');
     skripd_autosave   = $('meta[name=skripd_autosave]').attr('content');
@@ -108,28 +112,6 @@ $(document).ready(()=>{
     helper_warning.set('l_id_dup',false);
 
     temp_conn_status  = '';
-
-    $(save_btn).click(()=>{
-        const _text = $(skrip_input).html();
-        const dept  = skrip_d.getDepartment();
-        const fclt  = skrip_d.getFaculty();
-        const univ  = skrip_d.getUniversity();
-        const auth  = skrip_d.getAuthor();
-        const id    = skrip_d.getId();
-        const abst  = skrip_d.getAbstract();
-        const ttle  = skrip_d.getTitle();
-        $(input_text).val(_text);
-        $(input_department).val(dept);
-        $(input_faculty).val(fclt);
-        $(input_university).val(univ);
-        $(input_author).val(auth);
-        $(input_id).val(id);
-        $(input_abstract).val(abst);
-        $(input_abs_key).val('no abstract key');
-        $(input_title).val(ttle);
-        $(input_conf_font).val($(skrip_input).data('font-editor'));
-        $(form).submit();
-    });
 
     $(btn_font_up).click(()=>{
         let size = parseInt($(skrip_input).data('font-editor'));
@@ -341,6 +323,9 @@ $(document).ready(()=>{
                             }
                             else $(disp_warning).addClass('d-none');
                             $(list_warning).html(html_warning);
+                            if (helper_warning.get('l1_verify') && helper_warning.get('l2_verify')) {
+
+                            }
                         }
                     });
                 },500);

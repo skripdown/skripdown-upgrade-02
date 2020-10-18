@@ -27,6 +27,8 @@ class CreateStudentsTable extends Migration
             $table->string('identity_dep')->nullable();
             $table->string('identity_fac')->nullable();
             $table->string('identity_univ')->nullable();
+            $table->float('thesis_score_l1')->default(0.0);
+            $table->float('thesis_score_l2')->default(0.0);
             $table->timestamps();
         });
     }

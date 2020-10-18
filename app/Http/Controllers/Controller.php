@@ -51,6 +51,8 @@ class Controller extends BaseController
 
     public function openDoc($url) {
         if (Data::isURL_thesis($url)) {
+            if (Data::isSubmitedThesis($url))
+                return 'THESIS HAS BEEN SUBMITED AND CAN NOT BE EDITED!';
             $doc = Data::getStudent_thesis(Auth::user()->identity);
             return view('editor',compact('doc'));
         }

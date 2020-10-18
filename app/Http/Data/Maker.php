@@ -6,8 +6,11 @@
 namespace App\Http\Data;
 
 use App\Models\Document;
+use App\Models\Revision;
+use App\Models\RevisionMessage;
 use App\Models\Skripdown;
 use App\Models\Student;
+use App\Models\SubmitRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -131,5 +134,69 @@ class Maker {
             $writer->status_2 = 1;
         }
         $writer->save();
+    }
+
+    public static function makeRevision($lec_1_id, $lec_2_id) {
+        $revision = new Revision();
+        $revision->author_id = Auth::user()->identity;
+        $revision->lec_1_id = $lec_1_id;
+        $revision->lec_2_id = $lec_2_id;
+        $revision->save();
+    }
+
+    public static function makeRevisionMessage($message, $from) {
+        $revision = Data::getRevision();
+        $revMsg = new RevisionMessage();
+        if ($revision->lec_1_id == $from) {
+            $index = $revision->lec_1_revision;
+            $index += 1;
+            $revision->lec_1_revision = $index;
+        }
+        else {
+            $index = $revision->lec_2_revision;
+            $index += 1;
+            $revision->lec_2_revision = $index;
+        }
+        $revMsg->index = $index;
+        $revMsg->lec_id = $from;
+        $revMsg->message = $message;
+
+        $revMsg->save();
+        $revision->save();
+    }
+
+    public static function readMessage($idMessage) {
+        $message = Data::getRevisionMessage($idMessage);
+        $message->read = true;
+        $message->save();
+    }
+
+    public static function requestSubmit() {
+        $student = Data::getWriter();
+        $request = new SubmitRequest();
+        $request->author_id = $student->identity;
+        $request->l1_id = $student->identity_l1;
+        $request->l2_id = $student->identity_l2;
+        $request->save();
+    }
+
+    public static function fireSubmit($author_id, $lecturer_id, $score) {
+        $author = Data::getAdvisorWriter($author_id);
+        $score = floatval($score);
+        if ($author->identity_l1 == $lecturer_id) {
+            $author->status_1 = 2;
+            $author->thesis_score_l1 = $score;
+        }
+        else {
+            $author->status_2 = 2;
+            $author->thesis_score_l2 = $score;
+        }
+        $author->save();
+        if ($author->status_1 == 2 && $author->status_2 == 2) {
+            $submit = Data::getSubmitRequest($author->identity, '');
+            $submit = SubmitRequest::find($submit->id);
+            $submit->delete();
+        }
+
     }
 }
