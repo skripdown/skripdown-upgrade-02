@@ -19,21 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="parser cover bug fixed">
-      <change afterPath="$PROJECT_DIR$/app/Models/Revision.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/RevisionMessage.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/SubmitRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_17_194655_create_revisions_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_17_194717_create_revision_messages_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_18_113835_create_submit_requests_table.php" afterDir="false" />
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="thesis revision feature devs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Data/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Data/Maker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Maker.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_23_042042_create_students_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_23_042042_create_students_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Data/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Helper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/element/js/editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/element/js/editor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/editor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/editor.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/element/lib/core/skripdown/parser.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/element/lib/core/skripdown/parser.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,14 +229,7 @@
       <workItem from="1602845939982" duration="2898000" />
       <workItem from="1602957654304" duration="96000" />
       <workItem from="1602960082409" duration="6566000" />
-      <workItem from="1603013494119" duration="2842000" />
-    </task>
-    <task id="LOCAL-00003" summary="update README.md">
-      <created>1600375456009</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1600375456009</updated>
+      <workItem from="1603013494119" duration="6671000" />
     </task>
     <task id="LOCAL-00004" summary="update README.md">
       <created>1600375513380</created>
@@ -584,7 +567,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602740033219</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="thesis revision feature devs">
+      <created>1603022991809</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1603022991810</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -628,7 +618,8 @@
     <MESSAGE value="parser foreign regex bug fixed" />
     <MESSAGE value="parser inline regex bug fixed" />
     <MESSAGE value="parser cover bug fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="parser cover bug fixed" />
+    <MESSAGE value="thesis revision feature devs" />
+    <option name="LAST_COMMIT_MESSAGE" value="thesis revision feature devs" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600922526929">
@@ -667,10 +658,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="507" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1600920212231" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1602741611372">
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1603022997698">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602741611372" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603022997698" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1602072002937">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

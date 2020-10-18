@@ -17,6 +17,8 @@ class Skripdown {
         this.abs_key    = '';
         this.text       = '';
         this.parsed     = '';
+        this.lock_1     = false;
+        this.lock_2     = false;
         this.set_foreign_word(for_words, trans_words);
 
         //helper_autocorrection
@@ -64,6 +66,9 @@ class Skripdown {
             latar_belakang          = false,
             rmsn_masalah            = false,
             tjuan_pnlitian          = false;
+
+        let lock_1                  = this.lock_1;
+        let lock_2                  = this.lock_2;
 
         let foreign_regex           = this.foreign_regex;
         let foreign_regex_inv       = this.foreign_regex_inv;
@@ -271,12 +276,16 @@ class Skripdown {
                         $year_value = result[3];
                     }
                     else if ((result = /^[ ]*@dosen_i[ ]*:[ ]*([\w .,]+)[ ]*&[ ]*([\d]+)$/m.exec(raw[i])) != null) {
-                        $dosen_i_name_value = result[1];
-                        $dosen_i_id_value = result[2];
+                        if (!lock_1) {
+                            $dosen_i_name_value = result[1];
+                            $dosen_i_id_value = result[2];
+                        }
                     }
                     else if ((result = /^[ ]*@dosen_ii[ ]*:[ ]*([\w .,]+)[ ]*&[ ]*([\d]+)$/m.exec(raw[i])) != null) {
-                        $dosen_ii_name_value = result[1];
-                        $dosen_ii_id_value = result[2];
+                        if (!lock_2) {
+                            $dosen_ii_name_value = result[1];
+                            $dosen_ii_id_value = result[2];
+                        }
                     }
                     else if ((result = /^[ ]*@preface[ ]*:[ ]*(basmallah|default)[ ]*$/m.exec(raw[i])) != null) {
                         $preface_value = result[1];
@@ -1013,10 +1022,6 @@ class Skripdown {
         this.department     = $department_value;
         this.text           = input;
         this.parsed         = result;
-        this.lec_1_id       = $dosen_i_id_value;
-        this.lec_2_id       = $dosen_ii_id_value;
-        this.lec_1_name     = $dosen_i_name_value;
-        this.lec_2_name     = $dosen_ii_name_value;
         this.bab_i          = bab_i;
         this.bab_ii         = bab_ii;
         this.bab_iii        = bab_iii;
@@ -1028,6 +1033,14 @@ class Skripdown {
         this.vocabularity   = vocabularity;
         this.raw_trans      = raw_trans;
         this.raw_foreign    = raw_foreign;
+        if (!lock_1) {
+            this.lec_1_id   = $dosen_i_id_value;
+            this.lec_1_name = $dosen_i_name_value;
+        }
+        if (!lock_2) {
+            this.lec_2_id   = $dosen_ii_id_value;
+            this.lec_2_name = $dosen_ii_name_value;
+        }
 
         return result;
     }
@@ -1158,6 +1171,19 @@ class Skripdown {
 
     hasTujuan_penelitian() {
         return this.tjuan_pnlitian;
+    }
+
+    setLock(type, l_id, l_name) {
+        if (type === 1 && !this.lock_1) {
+            this.lec_1_id   = l_id;
+            this.lec_1_name = l_name;
+            this.lock_1     = true;
+        }
+        else if (!this.lock_2) {
+            this.lec_2_id   = l_id;
+            this.lec_2_name = l_name;
+            this.lock_2     = true;
+        }
     }
 }
 

@@ -19,6 +19,8 @@ class Helper {
     //8: lecturer_1 progress
     //9: lecturer_2 progress
     //10: lecturer identity duplicated
+    //11: lecturer_1 identity
+    //12: lecturer_2 identity
 
     public static function check($request) {
         $l1_id = $request->l1_id;
@@ -37,6 +39,8 @@ class Helper {
         $json_8  = '0';
         $json_9  = '0';
         $json_10 = '0';
+        $json_11 = 'noid';
+        $json_12 = 'noid';
 
         if (Data::hasLecturer($l1_id)) {
             $lect_1 = Data::getLecturer($l1_id);
@@ -55,8 +59,14 @@ class Helper {
                 $json_4 = '1';
         }
 
-        if ($json_0 == '1' && Data::isVerified_thesis_by($l1_id)) $json_6 = '1';
-        if ($json_3 == '1' && Data::isVerified_thesis_by($l2_id)) $json_7 = '1';
+        if ($json_0 == '1' && Data::isVerified_thesis_by($l1_id)) {
+            $json_6  = '1';
+            $json_11 = $request->l1_id;
+        }
+        if ($json_3 == '1' && Data::isVerified_thesis_by($l2_id)) {
+            $json_7  = '1';
+            $json_12 = $request->l2_id;
+        }
 
         if ($json_0 == '1' && $json_3 == '1' && $l1_id == $l2_id) $json_10 = '1';
 
@@ -71,7 +81,9 @@ class Helper {
             'json_7'=>$json_7,
             'json_8'=>$json_8,
             'json_9'=>$json_9,
-            'json_10'=>$json_10
+            'json_10'=>$json_10,
+            'json_11'=>$json_11,
+            'json_12'=>$json_12
         );
     }
 }

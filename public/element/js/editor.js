@@ -110,6 +110,8 @@ $(document).ready(()=>{
     helper_warning.set('l1_progress','');
     helper_warning.set('l2_progress','');
     helper_warning.set('l_id_dup',false);
+    helper_warning.set('l1_id','');
+    helper_warning.set('l2_id','');
 
     temp_conn_status  = '';
 
@@ -324,7 +326,10 @@ $(document).ready(()=>{
                             else $(disp_warning).addClass('d-none');
                             $(list_warning).html(html_warning);
                             if (helper_warning.get('l1_verify') && helper_warning.get('l2_verify')) {
-
+                                if (helper_warning.get('l1_verify'))
+                                    skrip_d.setLock(1, helper_warning.get('l1_id'), helper_warning.get('l1_name'));
+                                if (helper_warning.get('l2_verify'))
+                                    skrip_d.setLock(2, helper_warning.get('l2_id'), helper_warning.get('l2_name'));
                             }
                         }
                     });
