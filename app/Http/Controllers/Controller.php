@@ -67,6 +67,22 @@ class Controller extends BaseController
         return Maker::parseDoc($url);
     }
 
+    public function proprseAdvisor(Request $request) {
+
+    }
+
+    public function submitRevision(Request $request) {
+
+    }
+
+    public function submitRepository(Request $request) {
+
+    }
+
+    public function readMessage(Request $request) {
+
+    }
+
     public function skripdownForeignWords(Request $request) {
         $response = Maker::skripdown($request);
         return response()->json($response,200);

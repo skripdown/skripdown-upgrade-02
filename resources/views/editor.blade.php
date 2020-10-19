@@ -4,6 +4,10 @@
     <title>editor | {{env('APP_NAME')}}</title>
     <meta name="viewport" content="{{env('APP_VIEWPORT')}}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="skripd_read_message" content="{{url('post_read_message')}}">
+    <meta name="skripd_propose_advisor" content="{{url('post_propose_advisor')}}">
+    <meta name="skripd_submit_repository" content="{{url('post_submit_repository')}}">
+    <meta name="skripd_submit_revision" content="{{url('post_submit_revision')}}">
     <meta name="skripd_editor_update" content="{{url('post_editor_update')}}">
     <meta name="skripd_f_words" content="{{url('post_foreign_words')}}">
     <meta name="skripd_autosave" content="{{url('submit_autosave')}}">
