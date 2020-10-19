@@ -20,10 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="revision feature and submit repository devs">
+      <change afterPath="$PROJECT_DIR$/SKRIPDOWN.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Proposal.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_19_014637_create_proposals_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/editor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/editor.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/element/js/editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/element/js/editor.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,14 +231,8 @@
       <workItem from="1602957654304" duration="96000" />
       <workItem from="1602960082409" duration="6566000" />
       <workItem from="1603013494119" duration="13028000" />
-      <workItem from="1603046673770" duration="3996000" />
-    </task>
-    <task id="LOCAL-00006" summary="update README.md">
-      <created>1600375576789</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1600375576789</updated>
+      <workItem from="1603046673770" duration="5306000" />
+      <workItem from="1603077113140" duration="218000" />
     </task>
     <task id="LOCAL-00007" summary="integrating version 0.1">
       <created>1600536959882</created>
@@ -575,7 +570,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603049077505</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="revision feature and submit repository devs">
+      <created>1603071479630</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1603071479630</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -659,10 +661,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="507" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1600920212231" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1603049082836">
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1603071486624">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603049082836" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603071486624" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1602072002937">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
