@@ -39,6 +39,8 @@ let skripd_editor;
 let skripd_link;
 let skripd_autosave;
 let skripd_read_msg;
+let skripd_sub_rep;
+let skripd_sub_revs;
 let skripd_token;
 
 let conn_status;
@@ -104,6 +106,8 @@ $(document).ready(()=>{
     skripd_link       = $('meta[name=skripd_f_words]').attr('content');
     skripd_autosave   = $('meta[name=skripd_autosave]').attr('content');
     skripd_read_msg   = $('meta[name=skripd_read_message]').attr('content');
+    skripd_sub_rep    = $('meta[name=skripd_submit_repository]').attr('content');
+    skripd_sub_revs   = $('meta[name=skripd_submit_revision]').attr('content');
     skripd_token      = $('meta[name=skripd_token]').attr('content');
 
     disp_warning      = $('#display-warning').get(0);
@@ -148,6 +152,42 @@ $(document).ready(()=>{
                 }
             }
         }, 1000);
+    });
+
+    $(submit_rep).click(()=>{
+       $.ajax({
+           type     : 'POST',
+           url      : ''+skripd_sub_rep+'',
+           data     : {_token: skripd_token},
+           success  : (data)=>{
+               console.log('submit repository status = '+data.status);
+               $(submit_rep).addClass('d-none');
+           }
+       });
+    });
+
+    $(submit_rev_1).click(()=>{
+        $.ajax({
+            type     : 'POST',
+            url      : ''+skripd_sub_revs+'',
+            data     : {_token: skripd_token, lectype: '1'},
+            success  : (data)=>{
+                console.log('submit repository status = '+data.status);
+                $(submit_rev_1).addClass('d-none');
+            }
+        });
+    });
+
+    $(submit_rev_2).click(()=>{
+        $.ajax({
+            type     : 'POST',
+            url      : ''+skripd_sub_revs+'',
+            data     : {_token: skripd_token, lectype: '2'},
+            success  : (data)=>{
+                console.log('submit repository status = '+data.status);
+                $(submit_rev_2).addClass('d-none');
+            }
+        });
     });
 
     $(btn_font_up).click(()=>{
