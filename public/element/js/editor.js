@@ -31,11 +31,14 @@ let rev;
 let submit_rev_1;
 let submit_rev_2;
 let submit_rep;
+let msg_container;
+let msg_notif;
 
 let skrip_d;
 let skripd_editor;
 let skripd_link;
 let skripd_autosave;
+let skripd_read_msg;
 let skripd_token;
 
 let conn_status;
@@ -78,6 +81,8 @@ $(document).ready(()=>{
     submit_rev_2      = $('#sub-rev-2').get(0);
     submit_rep        = $('#sub-rep').get(0);
     rev               = $('#rev').get(0);
+    msg_container     = $('#message-container').get(0);
+    msg_notif         = $('#message-amount').get(0);
 
     code_panel        = $('#panel-1').get(0);
     preview_panel     = $('#panel-2').get(0);
@@ -98,6 +103,7 @@ $(document).ready(()=>{
     skripd_editor     = $('meta[name=skripd_editor_update]').attr('content');
     skripd_link       = $('meta[name=skripd_f_words]').attr('content');
     skripd_autosave   = $('meta[name=skripd_autosave]').attr('content');
+    skripd_read_msg   = $('meta[name=skripd_read_message]').attr('content');
     skripd_token      = $('meta[name=skripd_token]').attr('content');
 
     disp_warning      = $('#display-warning').get(0);
@@ -120,6 +126,29 @@ $(document).ready(()=>{
     helper_warning.set('l2_id','');
 
     temp_conn_status  = '';
+
+    $(rev).mouseup(()=>{
+        setTimeout(()=>{
+            const readed = $(msg_container).find('.bg-danger').get();
+            if (readed != null) {
+                if (readed.length > 0) {
+                    for (let i = 0; i < readed.length; i++) {
+                        $(readed[i]).removeClass('bg-danger');
+                    }
+                    $.ajax({
+                        type    : 'POST',
+                        url     : ''+skripd_read_msg+'',
+                        data    : {_token:skripd_token},
+                        success : data => {
+                            console.log('read response = '+data.status);
+                            $(msg_notif).addClass('d-none');
+                            $(msg_notif).text('0');
+                        }
+                    });
+                }
+            }
+        }, 1000);
+    });
 
     $(btn_font_up).click(()=>{
         let size = parseInt($(skrip_input).data('font-editor'));
@@ -391,10 +420,23 @@ window.setInterval(()=>{
                     }
                     if (response.message.length > 0) {
                         $(rev).removeClass('d-none');
+                        let msgCounter = 0;
+                        let msg_row    = '';
                         response.message.forEach((item)=>{
-                            //providing popup to see revision
-                           console.log(item.message);
+                            msgCounter += 1;
+                            if (item.read)
+                                msg_row += '<tr class="bg-danger">';
+                            else
+                                msg_row += '<tr>';
+                            msg_row += '<th scope="row">'+(item.index+1)+'</th>';
+                            msg_row += '<td>'+item.lec_id+'</td>';
+                            msg_row += '<td>'+item.message+'</td></tr>';
                         });
+                        $(msg_container).html(msg_row);
+                        if (msgCounter > 0) {
+                            $(msg_notif).removeClass('d-none');
+                            $(msg_notif).text(msgCounter+'');
+                        }
                     }
                     else {
                         $(rev).addClass('d-none');

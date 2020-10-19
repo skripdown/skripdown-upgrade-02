@@ -159,9 +159,9 @@
                             <i data-feather="share" class="svg-icon mr-2 ml-1"></i>
                             Submit Revisi Pembimbing 2
                         </a>
-                        <a href="javascript:void(0)" class="dropdown-item d-none" id="rev">
+                        <a href="javascript:void(0)" class="dropdown-item d-none" id="rev" data-toggle="modal" data-target="#popup_revisi">
                             <i data-feather="flag" class="svg-icon mr-2 ml-1"></i>
-                            Revisi
+                            Revisi <span id="message-amount" class="text-danger">0</span>
                         </a>
                         <a href="javascript:void(0)" class="dropdown-item d-none" id="sub-rep">
                             <i data-feather="book" class="svg-icon mr-2 ml-1"></i>
@@ -259,6 +259,34 @@
                     </div>
                     <div class="d-flex align-items-center font-20 mr-3 text-black-50">
 
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="popup_revisi" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Riwayat Revisi</h4>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead class="thead-light">
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Oleh</th>
+                                                <th scope="col">Pesan</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="message-container">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
