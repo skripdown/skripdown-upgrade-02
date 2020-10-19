@@ -252,15 +252,17 @@ $(document).ready(()=>{
                             const _close      = '</span>';
                             if (dosen_data[0] !== 'noid' && dosen_data[2] !== 'noid') {
                                 if (!helper_warning.get('l1_verify') && helper_warning.get('l2_verify')) {
-                                    if (helper_warning.get('l1_id_corr'))
+                                    if (helper_warning.get('l1_id_corr')) {
                                         html_warning += _open + 'belum disetujui oleh ' + helper_warning.get('l1_name') + _close;
+                                    }
                                     else
                                         html_warning += _open + 'NID pembimbing 1 salah' + _close;
                                     warning_count++;
                                 }
                                 else if (helper_warning.get('l1_verify') && !helper_warning.get('l2_verify')) {
-                                    if (helper_warning.get('l2_id_corr'))
+                                    if (helper_warning.get('l2_id_corr')) {
                                         html_warning += _open + 'belum disetujui oleh ' + helper_warning.get('l2_name') + _close;
+                                    }
                                     else
                                         html_warning += _open + 'NID pembimbing 2 salah' + _close;
                                     warning_count++;

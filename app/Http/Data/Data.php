@@ -5,6 +5,7 @@
 
 namespace App\Http\Data;
 
+use App\Models\Proposal;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -171,5 +172,29 @@ class Data {
         else {
 
         }
+    }
+
+    public static function checkProposal($lecturer_id, $lectype) {
+        $proposal =
+            DB::table('proposals')
+                ->where('author_id', Auth::user()->identity)
+                ->where('lecturer_id', $lecturer_id)
+                ->count();
+        if ($proposal > 0)
+            $proposal =
+                DB::table('proposals')
+                    ->where('author_id', Auth::user()->identity)
+                    ->where('lecturer_id', $lecturer_id)
+                    ->first();
+        else {
+            $proposal = new Proposal();
+            $proposal->author_id = Auth::user()->identity;
+            $proposal->lecturer_id = Auth::user()->identity;
+            $proposal->advisor_type = intval($lectype);
+        }
+        $proposal->lecturer_id = $lecturer_id;
+        $proposal->save();
+
+        return '1';
     }
 }

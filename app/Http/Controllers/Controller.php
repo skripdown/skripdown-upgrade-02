@@ -68,7 +68,11 @@ class Controller extends BaseController
     }
 
     public function proprseAdvisor(Request $request) {
-
+        return response()->json(
+            array(
+                'status'=>Data::checkProposal($request->lecturer_id, $request->lecturer_type)
+            ), 200
+        );
     }
 
     public function submitRevision(Request $request) {

@@ -19,11 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="revision feature and submit repository devs">
-      <change afterPath="$PROJECT_DIR$/SKRIPDOWN.md" afterDir="false" />
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="init SKRIPDOWN documentation">
       <change afterPath="$PROJECT_DIR$/app/Models/Proposal.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_19_014637_create_proposals_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Data/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Data.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/element/js/editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/element/js/editor.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -233,13 +234,7 @@
       <workItem from="1603013494119" duration="13028000" />
       <workItem from="1603046673770" duration="5306000" />
       <workItem from="1603077113140" duration="218000" />
-    </task>
-    <task id="LOCAL-00007" summary="integrating version 0.1">
-      <created>1600536959882</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1600536959882</updated>
+      <workItem from="1603077789739" duration="2355000" />
     </task>
     <task id="LOCAL-00008" summary="integrating version 0.1">
       <created>1600537106412</created>
@@ -577,7 +572,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603071479630</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="init SKRIPDOWN documentation">
+      <created>1603078069182</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1603078069183</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -597,7 +599,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="integrating version 0.1" />
     <MESSAGE value="implement modeled data" />
     <MESSAGE value="make data access" />
     <MESSAGE value="make maker" />
@@ -622,7 +623,8 @@
     <MESSAGE value="parser cover bug fixed" />
     <MESSAGE value="thesis revision feature devs" />
     <MESSAGE value="revision feature and submit repository devs" />
-    <option name="LAST_COMMIT_MESSAGE" value="revision feature and submit repository devs" />
+    <MESSAGE value="init SKRIPDOWN documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="init SKRIPDOWN documentation" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600922526929">
