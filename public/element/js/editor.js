@@ -41,6 +41,7 @@ let skripd_token;
 let conn_status;
 let temp_conn_status;
 let conn_bool;
+let allow_submit;
 
 let university,faculty,department;
 let meta_info;
@@ -91,6 +92,7 @@ $(document).ready(()=>{
 
     conn_status       = $('#connection-status').get(0);
     conn_bool         = false;
+    allow_submit      = false;
 
     skrip_d           = new Skripdown('','');
     skripd_editor     = $('meta[name=skripd_editor_update]').attr('content');
@@ -328,8 +330,12 @@ $(document).ready(()=>{
                             if (warning_count > 0) {
                                 $(disp_warning).removeClass('d-none');
                                 $(total_warning).text(warning_count);
+                                allow_submit = false;
                             }
-                            else $(disp_warning).addClass('d-none');
+                            else {
+                                $(disp_warning).addClass('d-none');
+                                allow_submit = true;
+                            }
                             $(list_warning).html(html_warning);
                             if (helper_warning.get('l1_verify') && helper_warning.get('l2_verify')) {
                                 if (helper_warning.get('l1_verify'))
@@ -379,7 +385,8 @@ window.setInterval(()=>{
                         if (helper_warning.get('l1_verify') &&
                             helper_warning.get('l2_verify') &&
                             response.revision_1 === '0' &&
-                            response.revision_2 === '0' )
+                            response.revision_2 === '0' &&
+                            allow_submit)
                             $(submit_rep).removeClass('d-none');
                     }
                     if (response.message.length > 0) {

@@ -144,6 +144,24 @@ class Maker {
         $revision->save();
     }
 
+    public static function updateRevision($lectype) {
+        $revision = Data::getRevision();
+        $student  = Data::getWriter();
+        if (intval($lectype) == 1 ) {
+            $idx = $revision->lec_1_revision + 1;
+            $revision->lec_1_revision = $idx;
+            $student->l1_revision_request = true;
+        }
+        else {
+            $idx = $revision->lec_2_revision + 1;
+            $revision->lec_2_revision = $idx;
+            $student->l2_revision_request = true;
+        }
+        $revision->save();
+        $student->save();
+        return array('status'=>'1');
+    }
+
     public static function makeRevisionMessage($message, $from) {
         $revision = Data::getRevision();
         $revMsg = new RevisionMessage();
@@ -169,6 +187,8 @@ class Maker {
         $message = Data::getRevisionMessage($idMessage);
         $message->read = true;
         $message->save();
+
+        return array('status'=>'1');
     }
 
     public static function requestSubmit() {
@@ -178,6 +198,8 @@ class Maker {
         $request->l1_id = $student->identity_l1;
         $request->l2_id = $student->identity_l2;
         $request->save();
+
+        return array('status'=>'1');
     }
 
     public static function fireSubmit($author_id, $lecturer_id, $score) {

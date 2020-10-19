@@ -76,15 +76,15 @@ class Controller extends BaseController
     }
 
     public function submitRevision(Request $request) {
-
+        return response()->json(Maker::updateRevision($request->lectype),200);
     }
 
     public function submitRepository(Request $request) {
-
+        return response()->json(Maker::requestSubmit(), 200);
     }
 
     public function readMessage(Request $request) {
-
+        return response()->json(Maker::readMessage($request->idMsg), 200);
     }
 
     public function skripdownForeignWords(Request $request) {
