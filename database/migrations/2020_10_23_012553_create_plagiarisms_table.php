@@ -21,6 +21,7 @@ class CreatePlagiarismsTable extends Migration
             $table->double('bab_iii')->default(0.0);
             $table->double('bab_iv')->default(0.0);
             $table->double('bab_v')->default(0.0);
+            $table->boolean('pass')->default(false);
             $table->timestamps();
         });
     }

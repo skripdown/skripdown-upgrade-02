@@ -19,12 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="system functionality devs">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Data/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Data/Maker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Maker.php" afterDir="false" />
-    </list>
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="department account configuration" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -242,14 +237,7 @@
       <workItem from="1603384228155" duration="272000" />
       <workItem from="1603384638075" duration="4734000" />
       <workItem from="1603441365487" duration="4885000" />
-      <workItem from="1603460791393" duration="334000" />
-    </task>
-    <task id="LOCAL-00013" summary="integrate maker">
-      <created>1600902827785</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1600902827785</updated>
+      <workItem from="1603460791393" duration="739000" />
     </task>
     <task id="LOCAL-00014" summary="integrate maker">
       <created>1600903448327</created>
@@ -587,7 +575,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603448669744</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="department account configuration">
+      <created>1603461267710</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1603461267711</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -607,7 +602,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="integrate maker" />
     <MESSAGE value="integrate Helper.php" />
     <MESSAGE value="integrate Middleware" />
     <MESSAGE value="suppress .muted class" />
@@ -632,7 +626,8 @@
     <MESSAGE value="student functionality feature devs" />
     <MESSAGE value="student functionality feature devs (no message)" />
     <MESSAGE value="system functionality devs" />
-    <option name="LAST_COMMIT_MESSAGE" value="system functionality devs" />
+    <MESSAGE value="department account configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="department account configuration" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600922526929">
@@ -671,10 +666,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="507" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1600920212231" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1603448674719">
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1603461271982">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603448674719" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603461271982" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1602072002937">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

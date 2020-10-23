@@ -240,10 +240,12 @@ class Maker {
             $plagiarism->bab_iv > $department->plagiarism_biv &&
             $plagiarism->bab_v > $department->plagiarism_bv
         ) {
+            $plagiarism->pass = true;
             $status = Data::getAdvisorWriter($author_id);
             $status->status_1 = 3;
             $status->status_2 = 3;
             $status->save();
+            $plagiarism->save();
             return array('status'=>'1');
         }
         return array('status'=>'0');
