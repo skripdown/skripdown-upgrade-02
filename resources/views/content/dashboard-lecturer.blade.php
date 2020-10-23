@@ -16,21 +16,21 @@
                         <table id="default_order" class="table table-striped table-bordered display no-wrap">
                             <thead>
                             <tr>
-                                <th style="width: 150px">NIM</th>
                                 <th>Judul</th>
-                                <th style="width: 150px">Status Terakhir</th>
+                                <th>Penulis</th>
+                                <th style="width: 150px">Status</th>
                                 <th style="width: 100px">Aksi</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($data as $user)
                                 <tr>
-                                    <td>{{$user->nim}}</td>
                                     <td>
                                         <a href="{{$user->doc_link}}" class="text-black-50">
                                             {!! $user->doc_title !!}
                                         </a>
                                     </td>
+                                    <td>{{$user->nim}}</td>
                                     @if ($user->status == -1)
                                         <td class="text-danger">belum disetujui</td>
                                     @elseif($user->status == 0)

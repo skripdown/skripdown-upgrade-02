@@ -20,8 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="student functionality feature devs (no message)">
+      <change afterPath="$PROJECT_DIR$/app/Models/Exam.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Plagiarism.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/RejectedProposal.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_20_032921_create_rejected_proposals_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_22_163228_create_exams_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_23_012553_create_plagiarisms_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/element/js/editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/element/js/editor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Data/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Data.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Data/Maker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Maker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_23_042110_create_departments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_23_042110_create_departments_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/dashboard-lecturer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/dashboard-lecturer.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,14 +241,15 @@
       <workItem from="1603046673770" duration="5306000" />
       <workItem from="1603077113140" duration="218000" />
       <workItem from="1603077789739" duration="3840000" />
-      <workItem from="1603097035372" duration="4773000" />
-    </task>
-    <task id="LOCAL-00011" summary="make data access">
-      <created>1600899892963</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1600899892963</updated>
+      <workItem from="1603097035372" duration="4819000" />
+      <workItem from="1603107842548" duration="86000" />
+      <workItem from="1603111066954" duration="218000" />
+      <workItem from="1603120871096" duration="9000" />
+      <workItem from="1603134211897" duration="142000" />
+      <workItem from="1603134590396" duration="6535000" />
+      <workItem from="1603384228155" duration="272000" />
+      <workItem from="1603384638075" duration="4734000" />
+      <workItem from="1603441365487" duration="4780000" />
     </task>
     <task id="LOCAL-00012" summary="make maker">
       <created>1600902406636</created>
@@ -576,7 +587,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603107024325</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="student functionality feature devs (no message)">
+      <created>1603107707103</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1603107707103</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -660,10 +678,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="507" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1600920212231" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1603107030138">
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1603107711507">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603107030138" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603107711507" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1602072002937">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

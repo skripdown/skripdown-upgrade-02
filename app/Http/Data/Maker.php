@@ -116,13 +116,11 @@ class Maker {
 
     public static function setAdvisor($id, $type) {
         $writer   = Data::getWriter();
-        if ($writer->status != 1) {
-            if ($type == '1' && $writer->identity_l1 == null)
-                $writer->identity_l1 = $id;
-            if ($type == '2' && $writer->identity_l2 == null)
-                $writer->identity_l2 = $id;
-            $writer->save();
-        }
+        if ($writer->status_1 != 1 && $type == '1' && $writer->identity_l1 == null)
+            $writer->identity_l1 = $id;
+        if ($writer->status_2 != 1 &&$type == '2' && $writer->identity_l2 == null)
+            $writer->identity_l2 = $id;
+        $writer->save();
     }
 
     public static function advisorVerify($student_id) {
@@ -162,18 +160,15 @@ class Maker {
         return array('status'=>'1');
     }
 
-    public static function makeRevisionMessage($message, $from) {
+    public static function makeRevisionMessage($message) {
+        $from = Auth::user()->identity;
         $revision = Data::getRevision();
         $revMsg = new RevisionMessage();
         if ($revision->lec_1_id == $from) {
             $index = $revision->lec_1_revision;
-            $index += 1;
-            $revision->lec_1_revision = $index;
         }
         else {
             $index = $revision->lec_2_revision;
-            $index += 1;
-            $revision->lec_2_revision = $index;
         }
         $revMsg->index = $index;
         $revMsg->lec_id = $from;
@@ -181,6 +176,7 @@ class Maker {
 
         $revMsg->save();
         $revision->save();
+        return array('status'=>'1');
     }
 
     public static function readMessage($idMessage) {
@@ -202,7 +198,8 @@ class Maker {
         return array('status'=>'1');
     }
 
-    public static function fireSubmit($author_id, $lecturer_id, $score) {
+    public static function fireSubmit($author_id, $score) {
+        $lecturer_id = Auth::user()->identity;
         $author = Data::getAdvisorWriter($author_id);
         $score = floatval($score);
         if ($author->identity_l1 == $lecturer_id) {
@@ -218,7 +215,71 @@ class Maker {
             $submit = Data::getSubmitRequest($author->identity, '');
             $submit = SubmitRequest::find($submit->id);
             $submit->delete();
+            Data::getPlagiarism($author_id);
+            return array('status'=>'1');
         }
+        return array('status'=>'0');
+    }
 
+    public static function scorePlagiarism($request) {
+        $author_id = $request->author_id;
+        $plagiarism = Data::getPlagiarism($author_id);
+        $plagiarism->bab_i = $request->bab_i;
+        $plagiarism->bab_ii = $request->bab_i;
+        $plagiarism->bab_iii = $request->bab_i;
+        $plagiarism->bab_iv = $request->bab_i;
+        $plagiarism->bab_v = $request->bab_i;
+        $plagiarism->save();
+
+        $department = Data::getDepartment($author_id,'l');
+        if (
+            $plagiarism->bab_i > $department->plagiarism_bi &&
+            $plagiarism->bab_ii > $department->plagiarism_bii &&
+            $plagiarism->bab_iii > $department->plagiarism_biii &&
+            $plagiarism->bab_iv > $department->plagiarism_biv &&
+            $plagiarism->bab_v > $department->plagiarism_bv
+        ) {
+            $status = Data::getAdvisorWriter($author_id);
+            $status->status_1 = 3;
+            $status->status_2 = 3;
+            $status->save();
+            return array('status'=>'1');
+        }
+        return array('status'=>'0');
+    }
+
+    public static function acceptProposal($student_id) {
+        $student  = Data::getAdvisorWriter($student_id);
+        $lec_id   = Auth::user()->identity;
+        if ($student->identity_l1 == $lec_id) {
+            $student->status_1 = 1;
+        }
+        else {
+            $student->status_2 = 1;
+        }
+        if ($student->status_1 == 1 && $student->status_2 == 1) {
+            self::makeRevision($student->identity_l1, $student->identity_l2);
+            return array('status'=>'1');
+        }
+        $student->save();
+        return array('status'=>'0');
+    }
+
+    public static function rejectProposal($student_id, $title) {
+        $lec_id = Auth::user()->identity;
+        if (!Data::wasRejected($student_id, $lec_id, $title))
+            Data::newRejected($student_id, $title);
+        return array('status'=>'1');
+    }
+
+    public static function confPlagiarism($request) {
+        $conf = Data::getDepartment('','d');
+        $conf->plagiarism_bi = $request->bi;
+        $conf->plagiarism_bii = $request->bii;
+        $conf->plagiarism_biii = $request->biii;
+        $conf->plagiarism_biv = $request->biv;
+        $conf->plagiarism_bv = $request->bv;
+        $conf->save();
+        return array('status'=>'1');
     }
 }

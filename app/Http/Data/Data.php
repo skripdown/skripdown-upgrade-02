@@ -5,7 +5,10 @@
 
 namespace App\Http\Data;
 
+use App\Models\Exam;
+use App\Models\Plagiarism;
 use App\Models\Proposal;
+use App\Models\RejectedProposal;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -80,6 +83,14 @@ class Data {
                 ->first();
     }
 
+    public static function getDepartment($identity,$role) {
+        if ($role == 'l') {
+            $stud = DB::table('students')->where('identity', $identity)->first();
+            return DB::table('departments')->where('identity',$stud->identity_dep)->first();
+        }
+        return DB::table('departments')->where('identity',Auth::user()->identity)->first();
+    }
+
     public static function isVerified_thesis_by($lecturer_id) {
         $student = self::getWriter();
         if ($student->identity_l1 != null) {
@@ -141,6 +152,39 @@ class Data {
         return $temp->status_1 != 2 && $temp->status_2 != 2;
     }
 
+    public static function getThesisExam($identity, $role) {
+        if ($role == 'l') {
+            return DB::table('exams')
+                ->where('examiner1_id',$identity)
+                ->orWhere('examiner2_id',$identity)
+                ->first();
+        }
+        if (DB::table('exams')->where('examiner1_id',$identity)->count() < 1) {
+            $exam = new Exam();
+            $exam->author_id = $identity;
+            $exam->save();
+            return $exam;
+        }
+        return DB::table('exams')
+            ->where('author_id_id',$identity)
+            ->first();
+    }
+
+    public static function getPlagiarism($identity) {
+        $data = null;
+        if (DB::table('plagiarisms')->where('author_id')->count() < 1) {
+            $data = new Plagiarism();
+            $data->author_id = $identity;
+            $data->save();
+        }
+        else {
+            $data = DB::table('plagiarisms')
+                ->where('author_id')
+                ->first();
+        }
+        return $data;
+    }
+
     public static function getNotification() {
         $role = Auth::user()->role;
         if ($role == 'student') {
@@ -196,5 +240,21 @@ class Data {
         $proposal->save();
 
         return '1';
+    }
+
+    public static function wasRejected($author_id, $lecturer_id, $title) {
+        return DB::table('rejected_proposals')
+            ->where('author_id', $author_id)
+            ->where('lec_id', $lecturer_id)
+            ->where('title', $title)
+            ->count() > 0;
+    }
+
+    public static function newRejected($author_id, $title) {
+        $rejected = new RejectedProposal();
+        $rejected->author_id = $author_id;
+        $rejected->lec_id = Auth::user()->identity;
+        $rejected->title = $title;
+        $rejected->save();
     }
 }

@@ -93,16 +93,31 @@ class Controller extends BaseController
     }
 
     //-----------------------------LECTURER-----------------------------//
-    public function acceptThesis(Request $request) {
 
+    public function acceptSubmit(Request $request) {
+        return response()->json(Maker::fireSubmit($request->student_id, $request->score), 200);
+    }
+
+    public function acceptThesis(Request $request) {
+        return response()->json(Maker::acceptProposal($request->student_id), 200);
     }
 
     public function rejectThesis(Request $request) {
-
+        return response()->json(Maker::rejectProposal($request->student_id, $request->title),200);
     }
 
     public function progresThesis(Request $request) {
+        return response()->json(Maker::makeRevisionMessage($request->message), 200);
+    }
 
+    //-----------------------------DEPARTMENT-----------------------------//
+
+    public function plagiarismCheck(Request $request) {
+        return response()->json(Maker::scorePlagiarism($request), 200);
+    }
+
+    public function plagiarismConf(Request $request) {
+        return response()->json(Maker::confPlagiarism($request), 200);
     }
 
 }

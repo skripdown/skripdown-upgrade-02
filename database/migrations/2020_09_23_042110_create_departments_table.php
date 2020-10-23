@@ -17,6 +17,11 @@ class CreateDepartmentsTable extends Migration
             $table->id();
             $table->string('identity');
             $table->string('keyword')->default('');
+            $table->double('plagiarism_bi')->default(25);
+            $table->double('plagiarism_bii')->default(25);
+            $table->double('plagiarism_biii')->default(25);
+            $table->double('plagiarism_biv')->default(25);
+            $table->double('plagiarism_bv')->default(25);
             $table->timestamps();
         });
     }
