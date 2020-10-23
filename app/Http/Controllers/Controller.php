@@ -93,7 +93,6 @@ class Controller extends BaseController
     }
 
     //-----------------------------LECTURER-----------------------------//
-
     public function acceptSubmit(Request $request) {
         return response()->json(Maker::fireSubmit($request->student_id, $request->score), 200);
     }
@@ -115,7 +114,6 @@ class Controller extends BaseController
     }
 
     //-----------------------------DEPARTMENT-----------------------------//
-
     public function plagiarismCheck(Request $request) {
         return response()->json(Maker::scorePlagiarism($request), 200);
     }
@@ -131,5 +129,7 @@ class Controller extends BaseController
     public function initExaminer(Request $request) {
         return response()->json(Maker::setExaminer($request),200);
     }
+
+    //-----------------------------UNIVERSITY-----------------------------//
 
 }
