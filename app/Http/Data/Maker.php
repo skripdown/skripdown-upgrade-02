@@ -13,6 +13,7 @@ use App\Models\Student;
 use App\Models\SubmitRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class Maker {
 
@@ -279,6 +280,13 @@ class Maker {
         $conf->plagiarism_biii = $request->biii;
         $conf->plagiarism_biv = $request->biv;
         $conf->plagiarism_bv = $request->bv;
+        $conf->save();
+        return array('status'=>'1');
+    }
+
+    public static function confPassword($request) {
+        $conf = Data::getDepartmentConf();
+        $conf->password = Hash::make($request->password);
         $conf->save();
         return array('status'=>'1');
     }

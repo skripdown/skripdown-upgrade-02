@@ -120,4 +120,8 @@ class Controller extends BaseController
         return response()->json(Maker::confPlagiarism($request), 200);
     }
 
+    public function deptPassword(Request $request) {
+        return response()->json(Maker::confPassword($request),200);
+    }
+
 }

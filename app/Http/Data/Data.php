@@ -91,6 +91,10 @@ class Data {
         return DB::table('departments')->where('identity',Auth::user()->identity)->first();
     }
 
+    public static function getDepartmentConf() {
+        return DB::table('users')->where('id',Auth::user()->id)->first();
+    }
+
     public static function isVerified_thesis_by($lecturer_id) {
         $student = self::getWriter();
         if ($student->identity_l1 != null) {
