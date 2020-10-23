@@ -110,6 +110,10 @@ class Controller extends BaseController
         return response()->json(Maker::makeRevisionMessage($request->message), 200);
     }
 
+    public function exam(Request $request) {
+        return response()->json(Maker::examinerPass($request),200);
+    }
+
     //-----------------------------DEPARTMENT-----------------------------//
 
     public function plagiarismCheck(Request $request) {
@@ -126,10 +130,6 @@ class Controller extends BaseController
 
     public function initExaminer(Request $request) {
         return response()->json(Maker::setExaminer($request),200);
-    }
-
-    public function exam(Request $request) {
-        return response()->json(Maker::examinerPass($request),200);
     }
 
 }
