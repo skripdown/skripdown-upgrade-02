@@ -128,4 +128,8 @@ class Controller extends BaseController
         return response()->json(Maker::setExaminer($request),200);
     }
 
+    public function exam(Request $request) {
+        return response()->json(Maker::examinerPass($request),200);
+    }
+
 }

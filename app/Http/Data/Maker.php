@@ -300,4 +300,32 @@ class Maker {
         $exam->save();
         return array('status'=>'1');
     }
+
+    public static function examinerPass($request) {
+        $exam = Data::getThesisExam($request->author_id,'s');
+        if ($request->type == '1') {
+            if ($request->pass == '1')
+                $exam->examiner1_pass = true;
+            $exam->examiner1_msg = $request->msg;
+        }
+        else {
+            if ($request->pass == '1')
+                $exam->examiner2_pass = true;
+            $exam->examiner2_msg = $request->msg;
+        }
+        $exam->save();
+        if ($exam->examiner1_pass && $exam->examiner2_pass) {
+            $submit = Data::getSubmitRequest($request->author_id, '');
+            $submit->status_1 = 4;
+            $submit->status_2 = 4;
+            $submit->save();
+            try {
+                $exam->delete();
+            } catch (\Exception $e) {
+                return array('status'=>'-1');
+            }
+            return array('status'=>'1');
+        }
+        return array('status'=>'0');
+    }
 }
