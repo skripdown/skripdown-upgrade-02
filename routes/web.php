@@ -31,8 +31,17 @@ Route::post('post_read_message','Controller@readMessage');
 
 //LECTURER
 Route::get('/history-bimbingan', 'Controller@historyBimbingan');
+Route::post('accsubmit', 'Controller@acceptSubmit');
+Route::post('accthesis', 'Controller@acceptThesis');
+Route::post('rejthesis', 'Controller@rejectThesis');
+Route::post('progthesis', 'Controller@progresThesis');
+Route::post('exampass','Controller@exam');
 
 //DEPARTMENT
 Route::get('/thesis-topic', 'Controller@historyBimbingan');
+Route::post('plagcheck','Controller@plagiarismCheck');
+Route::post('plagconf','Controller@plagiarismConf');
+Route::post('deptpass','Controller@deptPassword');
+Route::post('initexam','Controller@initExaminer');
 
 //UNIVERSITY
