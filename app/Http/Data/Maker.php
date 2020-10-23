@@ -292,4 +292,12 @@ class Maker {
         $conf->save();
         return array('status'=>'1');
     }
+
+    public static function setExaminer($request) {
+        $exam = Data::getThesisExam($request->author_id,'s');
+        $exam->examiner1_id = $request->examiner1_id;
+        $exam->examiner2_id = $request->examiner2_id;
+        $exam->save();
+        return array('status'=>'1');
+    }
 }

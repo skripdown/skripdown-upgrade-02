@@ -19,7 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="department account configuration" />
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="department plagiarism configuration">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -237,14 +240,7 @@
       <workItem from="1603384228155" duration="272000" />
       <workItem from="1603384638075" duration="4734000" />
       <workItem from="1603441365487" duration="4885000" />
-      <workItem from="1603460791393" duration="739000" />
-    </task>
-    <task id="LOCAL-00014" summary="integrate maker">
-      <created>1600903448327</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1600903448327</updated>
+      <workItem from="1603460791393" duration="1669000" />
     </task>
     <task id="LOCAL-00015" summary="integrate maker">
       <created>1600904360785</created>
@@ -582,7 +578,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603461267711</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="department plagiarism configuration">
+      <created>1603461820911</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1603461820911</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -602,7 +605,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="integrate Helper.php" />
     <MESSAGE value="integrate Middleware" />
     <MESSAGE value="suppress .muted class" />
     <MESSAGE value="editor.js helper integrate" />
@@ -627,7 +629,8 @@
     <MESSAGE value="student functionality feature devs (no message)" />
     <MESSAGE value="system functionality devs" />
     <MESSAGE value="department account configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="department account configuration" />
+    <MESSAGE value="department plagiarism configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="department plagiarism configuration" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600922526929">

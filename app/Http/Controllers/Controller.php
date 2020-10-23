@@ -124,4 +124,8 @@ class Controller extends BaseController
         return response()->json(Maker::confPassword($request),200);
     }
 
+    public function initExaminer(Request $request) {
+        return response()->json(Maker::setExaminer($request),200);
+    }
+
 }
