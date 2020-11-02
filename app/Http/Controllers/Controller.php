@@ -93,6 +93,10 @@ class Controller extends BaseController
     }
 
     //-----------------------------LECTURER-----------------------------//
+    public function bimbingan() {
+
+    }
+
     public function acceptSubmit(Request $request) {
         return response()->json(Maker::fireSubmit($request->student_id, $request->score), 200);
     }

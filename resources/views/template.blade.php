@@ -91,9 +91,9 @@
                     </li>
                     @can('isULecturer')
                         <li class="sidebar-item">
-                            <a class="sidebar-link sidebar-link" href="{{url('/history-bimbingan')}}" aria-expanded="false">
+                            <a class="sidebar-link sidebar-link" href="{{url('/bimbingan')}}" aria-expanded="false">
                                 <i data-feather="clock" class="feather-icon"></i>
-                                <span class="hide-menu">Riwayat Bimbingan</span>
+                                <span class="hide-menu">Bimbingan</span>
                             </a>
                         </li>
                     @elsecan('isUDepartment')
@@ -120,7 +120,7 @@
                                 <li class="breadcrumb-item">
                                     <a href="{{url('/dashboard')}}">
                                         @can('isULecturer')
-                                            Beranda Manajemen Bimbingan Skripsi
+                                            Beranda Informasi Bimbingan Skripsi
                                         @elsecan('isUDepartment')
                                             Beranda Manajemen Skripsi
                                         @elsecan('isUSuper')

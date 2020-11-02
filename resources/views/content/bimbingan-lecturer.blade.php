@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('app_subname')
-    Dashboard
+    Lecturer
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header bg-white pt-3" style="margin-bottom: -1.5em">
-                    <h3 class="card-title">Riwayat Bimbingan Skripsi</h3>
+                    <h3 class="card-title">Bimbingan Skripsi</h3>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -18,8 +18,8 @@
                             <tr>
                                 <th>Judul</th>
                                 <th>Penulis</th>
-                                <th>Nilai</th>
-                                <th>Kata Kunci</th>
+                                <th style="width: 150px">Status</th>
+                                <th style="width: 100px">Aksi</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -84,10 +84,10 @@
                                                 >progres</a>
                                             @endif
                                         @endif
-                                            <a href="{{url('parse/'.$user->doc_url)}}"
-                                               class="btn btn-primary btn-sm btn-info"
-                                               target="_blank"
-                                            >progres</a>
+                                        <a href="{{url('parse/'.$user->doc_url)}}"
+                                           class="btn btn-primary btn-sm btn-info"
+                                           target="_blank"
+                                        >progres</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -166,8 +166,8 @@
 @section('script-body')
     <script>
         $('#popup_tolak').on('show.bs.modal', e=>{
-           $(e.currentTarget).find('#doc_id').val(e.relatedTarget.data('doc-id'));
-           $(e.currentTarget).find('#user_id').val(e.relatedTarget.data('user-id'));
+            $(e.currentTarget).find('#doc_id').val(e.relatedTarget.data('doc-id'));
+            $(e.currentTarget).find('#user_id').val(e.relatedTarget.data('user-id'));
         });
         $('#popup_progres').on('show.bs.modal', e=>{
             $(e.currentTarget).find('#progres_doc_id').val(e.relatedTarget.data('doc-id'));

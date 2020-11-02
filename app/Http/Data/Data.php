@@ -261,4 +261,12 @@ class Data {
         $rejected->title = $title;
         $rejected->save();
     }
+
+    public static function dataRouteDashboard_lecturer() {
+
+    }
+
+    public static function dataRouteBimbingan_lecturer() {
+
+    }
 }
