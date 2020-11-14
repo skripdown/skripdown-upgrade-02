@@ -103,19 +103,23 @@ class Controller extends BaseController
     }
 
     public function acceptSubmit(Request $request) {
-        return response()->json(Maker::fireSubmit($request->student_id, $request->score), 200);
+        return response()->json(Maker::fireSubmit($request->author_id, $request->score), 200);
+    }
+
+    public function rejectSubmit(Request $request) {
+        return response()->json(Maker::clearSubmit($request->author_id),200);
     }
 
     public function acceptThesis(Request $request) {
-        return response()->json(Maker::acceptProposal($request->student_id), 200);
+        return response()->json(Maker::acceptProposal($request->author_id), 200);
     }
 
     public function rejectThesis(Request $request) {
-        return response()->json(Maker::rejectProposal($request->student_id, $request->title),200);
+        return response()->json(Maker::rejectProposal($request->author_id, $request->title),200);
     }
 
     public function progresThesis(Request $request) {
-        return response()->json(Maker::makeRevisionMessage($request->message), 200);
+        return response()->json(Maker::makeRevisionMessage($request->author_id,$request->message), 200);
     }
 
     public function exam(Request $request) {

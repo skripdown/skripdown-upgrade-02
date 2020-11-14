@@ -32,6 +32,7 @@ Route::post('post_read_message','Controller@readMessage');
 //LECTURER
 Route::get('/bimbingan', 'Controller@bimbinganHistory');
 Route::post('accsubmit', 'Controller@acceptSubmit');
+Route::post('rejsubmit', 'Controller@rejectSubmit');
 Route::post('accthesis', 'Controller@acceptThesis');
 Route::post('rejthesis', 'Controller@rejectThesis');
 Route::post('progthesis', 'Controller@progresThesis');

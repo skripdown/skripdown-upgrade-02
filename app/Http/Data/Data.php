@@ -111,8 +111,10 @@ class Data {
         return false;
     }
 
-    public static function getRevision() {
-        return DB::table('revisions')->where('author_id',Auth::user()->identity)->first();
+    public static function getRevision($student_id) {
+        if ($student_id == '')
+            return DB::table('revisions')->where('author_id',Auth::user()->identity)->first();
+        return DB::table('revisions')->where('author_id',$student_id)->first();
     }
 
     public static function getRevisionMessages($order) {

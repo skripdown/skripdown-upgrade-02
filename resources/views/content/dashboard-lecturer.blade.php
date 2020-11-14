@@ -26,8 +26,11 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header bg-white pt-3" style="margin-bottom: -1.5em">
-                    <h3 class="card-title">Bimbingan Skripsi<button type="button" class="btn btn-light btn-sm ml-4"><i
-                                class="ti-arrow-up"></i></button></h3>
+                    <h3 class="card-title">Bimbingan Skripsi
+                        <button type="button" class="btn btn-light btn-sm ml-4 rotateable">
+                            <i class="ti-arrow-up"></i>
+                        </button>
+                    </h3>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -182,7 +185,9 @@
                         </div>
                     </div>
                     <div class="float-right d-block">
-                        <form action="">
+                        <form action="{{url('rejthesis')}}" method="post">
+                            @csrf
+                            <input type="hidden" id="popup_tolak_proposal_author_id" name="author_id">
                             <button class="btn btn-primary btn-sm btn-info">tidak</button>
                             <input type="submit" value="iya" class="btn btn-primary btn-sm btn-danger">
                         </form>
@@ -207,7 +212,9 @@
                         </div>
                     </div>
                     <div class="float-right d-block">
-                        <form action="">
+                        <form action="{{url('accthesis')}}" method="post">
+                            @csrf
+                            <input type="hidden" id="popup_setuju_proposal_author_id" name="author_id">
                             <button class="btn btn-primary btn-sm btn-danger">tidak</button>
                             <input type="submit" value="iya" class="btn btn-primary btn-sm btn-danger">
                         </form>
@@ -241,7 +248,9 @@
                         </div>
                     </div>
                     <div class="float-right d-block">
-                        <form action="">
+                        <form action="{{url('accsubmit')}}" method="post">
+                            @csrf
+                            <input type="hidden" id="popup_setuju_submit_author_id" name="author_id">
                             <input type="hidden" name="score" id="thesis-score">
                             <button class="btn btn-primary btn-sm btn-danger">tidak</button>
                             <input type="submit" value="iya" class="btn btn-primary btn-sm btn-info">
@@ -267,7 +276,9 @@
                         </div>
                     </div>
                     <div class="float-right d-block">
-                        <form action="">
+                        <form action="{{url('rejsubmit')}}" method="post">
+                            @csrf
+                            <input type="hidden" id="popup_tolak_submit_author_id" name="author_id">
                             <button class="btn btn-primary btn-sm btn-info">tidak</button>
                             <input type="submit" value="iya" class="btn btn-primary btn-sm btn-danger">
                         </form>
@@ -296,7 +307,9 @@
                         </div>
                     </div>
                     <div class="float-right d-block">
-                        <form action="">
+                        <form action="{{url('progthesis')}}" method="post">
+                            @csrf
+                            <input type="hidden" id="popup_revisi_author_id" name="author_id">
                             <input type="hidden" name="pesan-revisi" id="form-pesan-revisi">
                             <button class="btn btn-primary btn-sm btn-danger">batal</button>
                             <input type="submit" value="submit" class="btn btn-primary btn-sm btn-info">
@@ -309,6 +322,27 @@
 @endsection
 
 @section('script-body')
+    <script src="{{asset(env('JS_PATH').'rotateable.js')}}"></script>
     <script>
+        $('#popup_tolak_proposal').on('show.bs.modal',e=>{
+            $(e.currentTarget).find('#popup_tolak_proposal_author_id').val($(e.relatedTarget).data('author_id'));
+        });
+        $('#popup_setuju_proposal').on('show.bs.modal',e=>{
+           $(e.currentTarget).find('#popup_setuju_proposal_author_id').val($(e.relatedTarget).data('author_id'));
+        });
+        $('#popup_tolak_submit').on('show.bs.modal',e=>{
+            $(e.currentTarget).find('#popup_tolak_submit_author_id').val($(e.relatedTarget).data('author_id'));
+        });
+        $('#popup_setuju_submit').on('show.bs.modal',e=>{
+            $(e.currentTarget).find('#popup_setuju_submit_author_id').val($(e.relatedTarget).data('author_id'));
+        }).on('hide.bs.modal',e=>{
+            $(e.currentTarget).find('#score-input').val(0);
+            $(e.currentTarget).find('#score-input').val(0);
+        });
+        $('#popup_revisi').on('show.bs.modal',e=>{
+            $(e.currentTarget).find('#popup_revisi_author_id').val($(e.relatedTarget).data('author_id'));
+        }).on('hide.bs.modal',e=>{
+            $(e.currentTarget).find('#pesan-revisi').val('');
+        });
     </script>
 @endsection

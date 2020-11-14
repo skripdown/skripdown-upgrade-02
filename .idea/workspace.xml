@@ -20,15 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="functionality mark check">
-      <change afterPath="$PROJECT_DIR$/resources/views/content/dashboard-department.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/content/dashboard-super.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/element/js/rotateable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SKRIPDOWN.md" beforeDir="false" afterPath="$PROJECT_DIR$/SKRIPDOWN.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Data/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Data.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Data/Maker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Maker.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/content/dashboard-lecturer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/dashboard-lecturer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/template.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +36,13 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -274,6 +278,8 @@
       <workItem from="1605254621529" duration="4527000" />
       <workItem from="1605313827011" duration="2763000" />
       <workItem from="1605322378387" duration="1214000" />
+      <workItem from="1605341557923" duration="3470000" />
+      <workItem from="1605345211998" duration="786000" />
     </task>
     <task id="LOCAL-00021" summary="suppress .muted class">
       <created>1600913816450</created>

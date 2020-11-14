@@ -144,7 +144,7 @@ class Maker {
     }
 
     public static function updateRevision($lectype) {
-        $revision = Data::getRevision();
+        $revision = Data::getRevision('');
         $student  = Data::getWriter();
         if (intval($lectype) == 1 ) {
             $idx = $revision->lec_1_revision + 1;
@@ -161,9 +161,9 @@ class Maker {
         return array('status'=>'1');
     }
 
-    public static function makeRevisionMessage($message) {
+    public static function makeRevisionMessage($student_id, $message) {
         $from = Auth::user()->identity;
-        $revision = Data::getRevision();
+        $revision = Data::getRevision($student_id);
         $revMsg = new RevisionMessage();
         if ($revision->lec_1_id == $from) {
             $index = $revision->lec_1_revision;
@@ -220,6 +220,19 @@ class Maker {
             return array('status'=>'1');
         }
         return array('status'=>'0');
+    }
+
+    public static function clearSubmit($author_id) {
+        $author = Data::getAdvisorWriter($author_id);
+        $author->status_1 = 1;
+        $author->status_2 = 1;
+        $author->thesis_score_l1 = 0.0;
+        $author->thesis_score_l2 = 0.0;
+        $author->save();
+        $submit = Data::getSubmitRequest($author->identity,'');
+        $submit = SubmitRequest::find($submit->id);
+        $submit->delete();
+        return array('status'=>'1');
     }
 
     public static function scorePlagiarism($request) {
