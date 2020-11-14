@@ -21,7 +21,6 @@ We would like to extend our thanks to the following names for funding **Skripown
 ## Funder
 - **Rina** (Rina Fachriani Putri)
 - **Ica** (Veronica Fachriani Putri)
-- **Dino** (Sahabuddin Lapele)
 - **Erwin** (Erwin Fachriani)
 - **Fransiska** (Fransiska Tan)
 - **Melky** (Syamsul Rizal)
@@ -30,7 +29,6 @@ We would like to extend our thanks to the following names for funding **Skripown
 - **8-ball** (Ahmad Iqbal Harianto)
 - **Inna** (Aldina Fariza)
 - **Dea** (Rahmah Fadilah)
-- **Salma** (Salma Qatrunada Alfaranandi)
 
 ## Users
 Thank you for writing your thesis with **Skripdown**! 
