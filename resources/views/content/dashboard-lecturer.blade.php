@@ -19,6 +19,10 @@
     </li>
 @endsection
 
+@section('page_focus')
+    {{url('/dashboard')}}
+@endsection
+
 @section('page-breadcrumb')
     Dashboard
 @endsection
