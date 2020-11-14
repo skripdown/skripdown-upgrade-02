@@ -155,7 +155,7 @@ class Data {
         $temp = DB::table('students')
             ->where('doc_link', $url)
             ->first();
-        return $temp->status_1 != 2 && $temp->status_2 != 2;
+        return $temp->status_1 < 2 && $temp->status_2 < 2;
     }
 
     public static function getThesisExam($identity, $role) {

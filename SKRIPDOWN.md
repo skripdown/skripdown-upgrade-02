@@ -138,7 +138,7 @@ Berikut di bawah adalah gambaran umum rancangan sistem **Skripdown**
   
   Perangkat lunak yang digunakan adalah sebagai berikut :
   
-  1. Limux sebagai sistem operasi.
+  1. Linux sebagai sistem operasi.
   2. MySQL sebagai server *RDBMS*.
   3. Apache Web Server.
   4. Laravel 8 sebagai kerangka web.

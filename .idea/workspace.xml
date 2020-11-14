@@ -19,9 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="advisor view modified">
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="advisor scoring script modified">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/content/dashboard-lecturer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/dashboard-lecturer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/bimbingan-lecturer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/bimbingan-lecturer.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,21 +274,7 @@
       <workItem from="1605313827011" duration="2763000" />
       <workItem from="1605322378387" duration="1214000" />
       <workItem from="1605341557923" duration="3470000" />
-      <workItem from="1605345211998" duration="2855000" />
-    </task>
-    <task id="LOCAL-00027" summary="fix editor autoSave bugs">
-      <created>1600949133224</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1600949133224</updated>
-    </task>
-    <task id="LOCAL-00028" summary="fix document parser template">
-      <created>1600953850992</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1600953850992</updated>
+      <workItem from="1605345211998" duration="5505000" />
     </task>
     <task id="LOCAL-00029" summary="fix logout route">
       <created>1600954224574</created>
@@ -619,7 +605,21 @@
       <option name="project" value="LOCAL" />
       <updated>1605347698504</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="advisor dashboard-lecturer.blade.php modified">
+      <created>1605348393342</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1605348393342</updated>
+    </task>
+    <task id="LOCAL-00077" summary="advisor scoring script modified">
+      <created>1605348679718</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1605348679718</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -639,8 +639,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="remove button frame" />
-    <MESSAGE value="thesis advisor functionality dev" />
     <MESSAGE value="editor warning notification devs" />
     <MESSAGE value="editor helper devs" />
     <MESSAGE value="editor simplify meta info" />
@@ -664,7 +662,9 @@
     <MESSAGE value="README.md updated" />
     <MESSAGE value="template modified" />
     <MESSAGE value="advisor view modified" />
-    <option name="LAST_COMMIT_MESSAGE" value="advisor view modified" />
+    <MESSAGE value="advisor dashboard-lecturer.blade.php modified" />
+    <MESSAGE value="advisor scoring script modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="advisor scoring script modified" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600922526929">
@@ -707,10 +707,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="507" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1600920212231" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1605347702195">
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1605348684520">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605347702195" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605348684520" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1602072002937">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
