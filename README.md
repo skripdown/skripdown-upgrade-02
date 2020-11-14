@@ -20,6 +20,7 @@ We would like to extend our thanks to the following names for funding **Skripown
 
 ## Funder
 - **Rina** (Rina Fachriani Putri)
+- **Ica** (Veronica Fachriani Putri)
 - **Dino** (Sahabuddin Lapele)
 - **Erwin** (Erwin Fachriani)
 - **Fransiska** (Fransiska Tan)
