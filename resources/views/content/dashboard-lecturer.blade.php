@@ -6,9 +6,15 @@
 
 @section('sidebar-menu')
     <li class="sidebar-item">
-        <a class="sidebar-link sidebar-link" href="{{url('/riwayat')}}" aria-expanded="false">
+        <a class="sidebar-link sidebar-link" href="{{url('/bimbingan')}}" aria-expanded="false">
             <i data-feather="clock" class="feather-icon"></i>
             <span class="hide-menu">Riwayat Bimbingan</span>
+        </a>
+    </li>
+    <li class="sidebar-item">
+        <a class="sidebar-link sidebar-link" href="{{url('/riwayat')}}" aria-expanded="false">
+            <i data-feather="file-text" class="feather-icon"></i>
+            <span class="hide-menu">Ujian Skripsi</span>
         </a>
     </li>
 @endsection
