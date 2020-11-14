@@ -35,11 +35,11 @@
     <div class="void-area"></div>
     <div class="fill-area">
         <h1 class="text-danger"><strong>Kesalahan!</strong></h1>
-        <h2 class="text-danger opacity-7"><strong>@yield('error-type')</strong></h2>
+        <h2 class="text-danger opacity-7"><strong>{!! $exception->type !!}</strong></h2>
         <p class="text-justify">
-            @yield('error-message')
+            {!! $exception->message !!}
         </p>
-        @yield('error-callback')
+        {!! $exception->callback !!}
     </div>
     <div class="void-area"></div>
 </div>

@@ -5,6 +5,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Data\ExcHandler;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
@@ -60,11 +61,11 @@ class Controller extends BaseController
     public function openDoc($url) {
         if (Data::isURL_thesis($url)) {
             if (Data::isSubmitedThesis($url))
-                return 'THESIS HAS BEEN SUBMITED AND CAN NOT BE EDITED!';
+                return ExcHandler::getException(env('ERR_EDIT_SUBMITED_DOC'),array($url));
             $doc = Data::getStudent_thesis(Auth::user()->identity);
             return view('editor',compact('doc'));
         }
-        return '404 NOT FOUND!';
+        return ExcHandler::getException(env('ERR_WRONG_URL_DOC'),array());
     }
 
     public function parseDoc($url) {

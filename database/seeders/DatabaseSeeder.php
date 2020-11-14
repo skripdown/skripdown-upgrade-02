@@ -17,10 +17,16 @@ class DatabaseSeeder extends Seeder
     {
         //----------------EXCEPTIONS---------------//
         DB::table('exceptions')->insert([
-            'error_code' => 'e01',
+            'error_code' => env('ERR_EDIT_SUBMITED_DOC'),
             'error_type' => 'Dokumen Tidak Dapat Diedit',
             'error_message' => 'Dokumen sudah ditandai selesai dan disubmit ke repository. Pastikan dokumen yang ingin anda akses masih dalam proses penulisan atau belum disubmit ke repository pusat. Mungkin anda hanya ingin membaca dokumen ini ?',
-            'error_callback' => '<a href="#URL" class="btn btn-info">baca</a>'
+            'error_callback' => '<a href="#REP1" class="btn btn-info">baca</a>'
+        ]);
+        DB::table('exceptions')->insert([
+            'error_code' => env('ERR_WRONG_URL_DOC'),
+            'error_type' => 'Dokumen Tidak Ditemukan',
+            'error_message' => 'URL dokumen salah. URL tersebut tidak mengarah pada dokumen apapun di dalam repositori.Mohon periksa kembali URL dokumen yang ingin diakses.',
+            'error_callback' => ''
         ]);
 
         //-----------------ACCOUNT-----------------//
