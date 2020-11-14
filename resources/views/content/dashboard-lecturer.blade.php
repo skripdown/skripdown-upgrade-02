@@ -152,6 +152,7 @@
                                                        data-toggle="modal"
                                                        data-target="#popup_setuju_submit"
                                                        data-author_id="{{$user->identity}}"
+                                                       data-score=""
                                                     >submit</a>
                                                     <a href="javascript:void(0)"
                                                        class="btn btn-primary btn-sm btn-danger"
@@ -341,8 +342,11 @@
         });
         $('#popup_setuju_submit').on('show.bs.modal',e=>{
             $(e.currentTarget).find('#popup_setuju_submit_author_id').val($(e.relatedTarget).data('author_id'));
+            const score = $(e.relatedTarget).data('score');
+            if (score !== '')
+                $(e.currentTarget).find('score-input').val(parseInt(score));
         }).on('hide.bs.modal',e=>{
-            $(e.currentTarget).find('#score-input').val(0);
+            $(e.relatedTarget).data('score',$(e.currentTarget).find('#score-input').val());
             $(e.currentTarget).find('#score-input').val(0);
         });
         $('#popup_revisi').on('show.bs.modal',e=>{
