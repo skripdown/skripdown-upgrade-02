@@ -4,12 +4,30 @@
     Dashboard
 @endsection
 
+@section('sidebar-menu')
+    <li class="sidebar-item">
+        <a class="sidebar-link sidebar-link" href="{{url('/riwayat')}}" aria-expanded="false">
+            <i data-feather="clock" class="feather-icon"></i>
+            <span class="hide-menu">Riwayat Bimbingan</span>
+        </a>
+    </li>
+@endsection
+
+@section('page-breadcrumb')
+    Dashboard
+@endsection
+
+@section('sub-breadcrumb')
+    Beranda Manajemen Bimbingan Skripsi
+@endsection
+
 @section('content')
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-header bg-white pt-3" style="margin-bottom: -1.5em">
-                    <h3 class="card-title">Riwayat Bimbingan Skripsi</h3>
+                    <h3 class="card-title">Bimbingan Skripsi<button type="button" class="btn btn-light btn-sm ml-4"><i
+                                class="ti-arrow-up"></i></button></h3>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -18,76 +36,123 @@
                             <tr>
                                 <th>Judul</th>
                                 <th>Penulis</th>
-                                <th>Nilai</th>
-                                <th>Kata Kunci</th>
+                                <th style="width: 150px">Status</th>
+                                <th style="width: 100px">Aksi</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($data as $user)
+                                @php
+                                    $progres = null;
+                                    $status = null;
+                                    $request_revision = null;
+                                    $request_submit = null;
+                                    if (isset($user)) {
+                                        if ($user->_identity == $user->identity_l1) {
+                                            $status = $user->status_1;
+                                            $progres = $user->lec_1_revision;
+                                            $request_revision = $user->l1_request_revision;
+                                            if ($user->l1_agrement != null) {
+                                                if ($user->l1_agrement) {
+                                                    $request_submit = true;
+                                                }
+                                            }
+                                            else
+                                                $request_submit = false;
+                                        }
+                                        else {
+                                            $status = $user->status_2;
+                                            $progres = $user->lec_2_revision;
+                                            $request_revision = $user->l2_request_revision;
+                                            $request_submit = $user->l2_agrement;
+                                            if ($user->l2_agrement != null) {
+                                                if ($user->l2_agrement) {
+                                                    $request_submit = true;
+                                                }
+                                            }
+                                            else
+                                                $request_submit = false;
+                                        }
+                                    }
+                                @endphp
                                 <tr>
                                     <td>
                                         <a href="{{$user->doc_link}}" class="text-black-50">
                                             {!! $user->doc_title !!}
                                         </a>
                                     </td>
-                                    <td>{{$user->nim}}</td>
+                                    <td>{{$user->name}}</td>
                                     @if ($user->status == -1)
                                         <td class="text-danger">belum disetujui</td>
-                                    @elseif($user->status == 0)
-                                        <td class="text-warning">belum ada progres</td>
-                                    @elseif($user->status == 1)
-                                        <td>progres pertama</td>
-                                    @elseif($user->status == 2)
-                                        <td>progres kedua</td>
-                                    @elseif($user->status == 3)
-                                        <td>progres ketiga</td>
-                                    @elseif($user->status == 4)
-                                        <td>progres keempat</td>
-                                    @elseif($user->status == 5)
-                                        <td>progres kelima</td>
-                                    @elseif($user->status == 6)
-                                        <td>progres keenam</td>
-                                    @elseif($user->status == 7)
-                                        <td>progres ketujuh</td>
-                                    @elseif($user->status == 8)
-                                        <td>progres kedelapan</td>
-                                    @elseif($user->status == 9)
-                                        <td>progres kesembilan</td>
-                                    @elseif($user->status == 10)
-                                        <td>progres kesepuluh</td>
                                     @else
-                                        <td>progres ke-{{$user->status}}</td>
+                                        @if ($progres == 0)
+                                            <td class="text-warning">belum ada progres</td>
+                                        @elseif($progres == 1)
+                                            <td>progres pertama</td>
+                                        @elseif($progres == 2)
+                                            <td>progres kedua</td>
+                                        @elseif($progres == 3)
+                                            <td>progres ketiga</td>
+                                        @elseif($progres == 4)
+                                            <td>progres keempat</td>
+                                        @elseif($progres == 5)
+                                            <td>progres kelima</td>
+                                        @elseif($progres == 6)
+                                            <td>progres keenam</td>
+                                        @elseif($progres == 7)
+                                            <td>progres ketujuh</td>
+                                        @elseif($progres == 8)
+                                            <td>progres kedelapan</td>
+                                        @elseif($progres == 9)
+                                            <td>progres kesembilan</td>
+                                        @else
+                                            <td>progres ke-{{$progres}}</td>
+                                        @endif
                                     @endif
                                     <td class="text-center">
                                         @if ($user->status == -1)
-                                            <form action="{{url('/agreethesis')}}" method="post" class="d-inline-block">
-                                                @csrf
-                                                <input type="hidden" value="{{$user->doc_id}}" name="doc_id">
-                                                <input type="hidden" value="{{$user->id}}" name="user_id">
-                                                <input type="submit" class="btn btn-primary btn-sm btn-info" value="setujui">
-                                            </form>
+                                            <a href="javascript:void(0)"
+                                               class="btn btn-primary btn-sm btn-info"
+                                               data-toggle="modal"
+                                               data-target="#popup_setuju_proposal"
+                                               data-user-id="{{$user->id}}"
+                                               data-doc-id="{{$user->doc_id}}"
+                                            >setuju</a>
                                             <a href="javascript:void(0)"
                                                class="btn btn-primary btn-sm btn-danger"
                                                data-toggle="modal"
-                                               data-target="#popup_tolak"
+                                               data-target="#popup_tolak_proposal"
                                                data-user-id="{{$user->id}}"
                                                data-doc-id="{{$user->doc_id}}"
                                             >tolak</a>
                                         @else
-                                            @if ($user->progres == 1)
+                                            @if ($request_revision)
                                                 <a href="javascript:void(0)"
                                                    class="btn btn-primary btn-sm btn-info"
                                                    data-toggle="modal"
-                                                   data-target="#popup_progres"
+                                                   data-target="#popup_revisi"
                                                    data-user-id="{{$user->id}}"
                                                    data-doc-id="{{$user->doc_id}}"
-                                                >progres</a>
+                                                >revisi</a>
+                                            @else
+                                                @if ($request_submit)
+                                                    <a href="javascript:void(0)"
+                                                       class="btn btn-primary btn-sm btn-info"
+                                                       data-toggle="modal"
+                                                       data-target="#popup_setuju_submit"
+                                                       data-user-id="{{$user->id}}"
+                                                       data-doc-id="{{$user->doc_id}}"
+                                                    >submit</a>
+                                                    <a href="javascript:void(0)"
+                                                       class="btn btn-primary btn-sm btn-danger"
+                                                       data-toggle="modal"
+                                                       data-target="#popup_tolak_submit"
+                                                       data-user-id="{{$user->id}}"
+                                                       data-doc-id="{{$user->doc_id}}"
+                                                    >tolak</a>
+                                                @endif
                                             @endif
                                         @endif
-                                            <a href="{{url('parse/'.$user->doc_url)}}"
-                                               class="btn btn-primary btn-sm btn-info"
-                                               target="_blank"
-                                            >progres</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -98,65 +163,145 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="popup_tolak" tabindex="-1" role="dialog" aria-hidden="true">
+@endsection
+
+@section('popup')
+    <div class="modal fade" id="popup_tolak_proposal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Peringatan</h4>
+                    <h4 class="modal-title">Tolak Proposal</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body">
-                    <p>
-                        Apakah anda yakin ingin menolak proposal skripsi dengan judul <span class="text-dark">JUDUL SKRIPSIKU</span> ?
-                    </p>
-                    <div class="d-block">
-                        <form action="{{url('rejectthesis')}}">
-                            @csrf
-                            <input type="hidden" value="" name="doc_id" id="doc_id">
-                            <input type="hidden" value="" name="user_id" id="user_id">
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <label for="alasan" class="d-none"></label>
-                                        <input id="alasan" type="text" class="form-text" name="alasan" placeholder="alasan">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <a href="javascript:void(0)" class="btn btn-primary btn-sm btn-info float-right">kembali</a>
-                                <input type="submit" value="tolak" class="btn btn-primary btn-sm btn-danger float-right">
-                            </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <p>Apakah anda yakin ingin menolak proposal tugas akhir dengan judul
+                                <strong><span>judul skripsi ini</span></strong>.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="float-right d-block">
+                        <form action="">
+                            <button class="btn btn-primary btn-sm btn-info">tidak</button>
+                            <input type="submit" value="iya" class="btn btn-primary btn-sm btn-danger">
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="popup_progres" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="popup_setuju_proposal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Progres</h4>
+                    <h4 class="modal-title">Setuju Proposal</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body">
-                    <form action="{{url('progresthesis')}}" method="post">
-                        @csrf
-                        <input type="hidden" value="" name="doc_id" id="progres_doc_id">
-                        <input type="hidden" value="" name="user_id" id="progres_user_id">
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-12">
-                                    <label for="alasan" class="d-none"></label>
-                                    <input id="alasan" type="text" value="tolak" class="form-text" name="alasan" placeholder="alasan">
+                    <div class="row">
+                        <div class="col-12">
+                            <p>Apakah anda yakin menyetujui pengajuan proposal tugas akhir dengan judul
+                                <strong><span>judul skripsi ini</span></strong>.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="float-right d-block">
+                        <form action="">
+                            <button class="btn btn-primary btn-sm btn-danger">tidak</button>
+                            <input type="submit" value="iya" class="btn btn-primary btn-sm btn-danger">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="popup_setuju_submit" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Setuju Submit</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <p>Apakah anda yakin untuk menyetujui submit tugas akhir tentang
+                                <strong><span>judul skripsi ini</span></strong>.
+                            </p>
+                        </div>
+                        <div class="col-12">
+                            <h6 class="card-subtitle">nilai akhir <span class="text-muted">(0 - 100)</span></h6>
+                            <form class="mt-4">
+                                <div class="form-group">
+                                    <label for="score-input" class="d-none"></label>
+                                    <input type="number" class="form-control" value="0" id="score-input" min="0" max="100">
                                 </div>
-                            </div>
+                            </form>
                         </div>
-                        <div class="form-group">
-                            <a href="javascript:void(0)" class="btn btn-primary btn-sm btn-info float-right">kembali</a>
-                            <input type="submit" value="submit" class="btn btn-primary btn-sm btn-success float-right">
+                    </div>
+                    <div class="float-right d-block">
+                        <form action="">
+                            <input type="hidden" name="score" id="thesis-score">
+                            <button class="btn btn-primary btn-sm btn-danger">tidak</button>
+                            <input type="submit" value="iya" class="btn btn-primary btn-sm btn-info">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="popup_tolak_submit" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Tolak Submit</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <p>Apakah anda yakin untuk menolak submit tugas akhir tentang
+                                <strong><span>judul skripsi ini</span></strong>.
+                            </p>
                         </div>
-                    </form>
+                    </div>
+                    <div class="float-right d-block">
+                        <form action="">
+                            <button class="btn btn-primary btn-sm btn-info">tidak</button>
+                            <input type="submit" value="iya" class="btn btn-primary btn-sm btn-danger">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="popup_revisi" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Pesan Revisi</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <form>
+                                <div class="form-group">
+                                    <label for="pesan-revisi" class="d-none"></label>
+                                    <textarea id="pesan-revisi" class="form-control" rows="3" placeholder="Pesan. . ."></textarea>
+                                    <small id="textHelp" class="form-text text-muted">Kosongkan jika tidak ada revisi</small>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="float-right d-block">
+                        <form action="">
+                            <input type="hidden" name="pesan-revisi" id="form-pesan-revisi">
+                            <button class="btn btn-primary btn-sm btn-danger">batal</button>
+                            <input type="submit" value="submit" class="btn btn-primary btn-sm btn-info">
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -165,13 +310,5 @@
 
 @section('script-body')
     <script>
-        $('#popup_tolak').on('show.bs.modal', e=>{
-           $(e.currentTarget).find('#doc_id').val(e.relatedTarget.data('doc-id'));
-           $(e.currentTarget).find('#user_id').val(e.relatedTarget.data('user-id'));
-        });
-        $('#popup_progres').on('show.bs.modal', e=>{
-            $(e.currentTarget).find('#progres_doc_id').val(e.relatedTarget.data('doc-id'));
-            $(e.currentTarget).find('#progres_user_id').val(e.relatedTarget.data('user-id'));
-        });
     </script>
 @endsection

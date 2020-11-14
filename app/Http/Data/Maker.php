@@ -232,7 +232,7 @@ class Maker {
         $plagiarism->bab_v = $request->bab_i;
         $plagiarism->save();
 
-        $department = Data::getDepartment($author_id,'l');
+        $department = Data::getDepartment($author_id,'s');
         if (
             $plagiarism->bab_i > $department->plagiarism_bi &&
             $plagiarism->bab_ii > $department->plagiarism_bii &&

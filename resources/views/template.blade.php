@@ -69,6 +69,7 @@
                         </a>
                         <!--COMPONENT:user-profile-menu-->
                         <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
+                            @yield('header-button')
                             <a href="javascript:void(0)" class="dropdown-item">
                                 <i data-feather="power" class="svg-icon mr-2 ml-1"></i>
                                 Keluar
@@ -89,21 +90,7 @@
                             <span class="hide-menu">Dashboard</span>
                         </a>
                     </li>
-                    @can('isULecturer')
-                        <li class="sidebar-item">
-                            <a class="sidebar-link sidebar-link" href="{{url('/bimbingan')}}" aria-expanded="false">
-                                <i data-feather="clock" class="feather-icon"></i>
-                                <span class="hide-menu">Bimbingan</span>
-                            </a>
-                        </li>
-                    @elsecan('isUDepartment')
-                        <li class="sidebar-item">
-                            <a class="sidebar-link sidebar-link" href="{{url('/thesis-topic')}}" aria-expanded="false">
-                                <i data-feather="clock" class="feather-icon"></i>
-                                <span class="hide-menu">Topik Skripsi</span>
-                            </a>
-                        </li>
-                    @endcan
+                    @yield('sidebar-menu')
                 </ul>
             </nav>
         </div>
@@ -113,20 +100,12 @@
         <div class="page-breadcrumb">
             <div class="row">
                 <div class="col-7 align-self-center">
-                    <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Dashboard</h3>
+                    <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">@yield('page-breadcrumb')</h3>
                     <div class="d-flex align-items-center">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb m-0 p-0">
                                 <li class="breadcrumb-item">
-                                    <a href="{{url('/dashboard')}}">
-                                        @can('isULecturer')
-                                            Beranda Informasi Bimbingan Skripsi
-                                        @elsecan('isUDepartment')
-                                            Beranda Manajemen Skripsi
-                                        @elsecan('isUSuper')
-                                            Beranda Manajemen Skripsi
-                                        @endcan
-                                    </a>
+                                    @yield('sub-breadcrumb')
                                 </li>
                             </ol>
                         </nav>
@@ -137,6 +116,7 @@
         <!--COMPONENT:main-content-->
         <div class="container-fluid">
             @yield('content')
+            @yield('popup')
         </div>
         <!--COMPONENT:main-footer-->
         <footer class="footer text-center text-muted">

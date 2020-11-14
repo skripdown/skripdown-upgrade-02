@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Auth::routes();
-Route::get('/', 'Controller@dashboard')->name('home');
+Route::get('/', 'Controller@home')->name('home');
 Route::get('logout', 'Auth\LoginController@logout');
 Route::get('/dashboard', 'Controller@dashboard');
 
@@ -30,7 +30,7 @@ Route::post('post_submit_revision','Controller@submitRevision');
 Route::post('post_read_message','Controller@readMessage');
 
 //LECTURER
-Route::get('/bimbingan', 'Controller@bimbingan');
+Route::get('/bimbingan', 'Controller@bimbinganHistory');
 Route::post('accsubmit', 'Controller@acceptSubmit');
 Route::post('accthesis', 'Controller@acceptThesis');
 Route::post('rejthesis', 'Controller@rejectThesis');

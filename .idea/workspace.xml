@@ -19,11 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="examiner exam routing">
-      <change afterPath="$PROJECT_DIR$/resources/views/content/bimbingan-lecturer.blade.php" afterDir="false" />
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="functionality mark check">
+      <change afterPath="$PROJECT_DIR$/resources/views/content/dashboard-department.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/content/dashboard-super.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SKRIPDOWN.md" beforeDir="false" afterPath="$PROJECT_DIR$/SKRIPDOWN.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Data/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Data.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Data/Maker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Maker.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/content/dashboard-lecturer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/dashboard-lecturer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/template.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
@@ -250,13 +253,27 @@
       <workItem from="1603506979632" duration="4003000" />
       <workItem from="1603517953747" duration="599000" />
       <workItem from="1603882150292" duration="7000" />
-    </task>
-    <task id="LOCAL-00020" summary="suppress .muted class">
-      <created>1600913668844</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1600913668844</updated>
+      <workItem from="1604286677944" duration="1116000" />
+      <workItem from="1604297631863" duration="532000" />
+      <workItem from="1604367217958" duration="17000" />
+      <workItem from="1604649889961" duration="565000" />
+      <workItem from="1604650560273" duration="1107000" />
+      <workItem from="1604655428047" duration="3580000" />
+      <workItem from="1604725603839" duration="796000" />
+      <workItem from="1604735484389" duration="341000" />
+      <workItem from="1604824224542" duration="669000" />
+      <workItem from="1604930303686" duration="599000" />
+      <workItem from="1604934871719" duration="31000" />
+      <workItem from="1604965049081" duration="1196000" />
+      <workItem from="1605083719006" duration="1155000" />
+      <workItem from="1605108414466" duration="1672000" />
+      <workItem from="1605140247863" duration="4085000" />
+      <workItem from="1605164754314" duration="209000" />
+      <workItem from="1605223143011" duration="321000" />
+      <workItem from="1605224849757" duration="5158000" />
+      <workItem from="1605254621529" duration="4527000" />
+      <workItem from="1605313827011" duration="2763000" />
+      <workItem from="1605322378387" duration="1214000" />
     </task>
     <task id="LOCAL-00021" summary="suppress .muted class">
       <created>1600913816450</created>
@@ -594,7 +611,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603475571927</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="functionality mark check">
+      <created>1604286776789</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1604286776790</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,7 +638,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="implement data seeder" />
     <MESSAGE value="fix editor autoSave bugs" />
     <MESSAGE value="fix document parser template" />
     <MESSAGE value="fix logout route" />
@@ -639,13 +662,18 @@
     <MESSAGE value="examiner exam pass" />
     <MESSAGE value="examiner exam pass value" />
     <MESSAGE value="examiner exam routing" />
-    <option name="LAST_COMMIT_MESSAGE" value="examiner exam routing" />
+    <MESSAGE value="functionality mark check" />
+    <option name="LAST_COMMIT_MESSAGE" value="functionality mark check" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600922526929">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600922526929" />
+    <state x="778" y="421" key="Github.CreateGistDialog" timestamp="1604658491151">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="778" y="421" key="Github.CreateGistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604658491151" />
     <state x="806" y="421" key="Github.ShareDialog" timestamp="1600374159613">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

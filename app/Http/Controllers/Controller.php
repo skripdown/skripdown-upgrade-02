@@ -16,6 +16,10 @@ class Controller extends BaseController
 {
 
     //-----------------------------ROOT-----------------------------//
+    public function home() {
+        return view('welcome');
+    }
+
     public function dashboard() {
         if (Auth::check()) {
             if (Auth::user()->role == 'student') {
@@ -28,7 +32,7 @@ class Controller extends BaseController
                 return redirect()->route('editor',array('url'=>$doc_url));
             }
             elseif (Auth::user()->role == 'lecturer') {
-                $data = Data::getStudents_data(Auth::user()->identity);
+                $data = Data::dataRouteDashboard_lecturer();
                 return view('content.dashboard-lecturer',compact('data'));
             }
             elseif (Auth::user()->role == 'department') {
@@ -40,7 +44,7 @@ class Controller extends BaseController
                 return view('content.dashboard-super',compact('data'));
             }
         }
-        return view('welcome');
+        return redirect()->route('home');
     }
 
     //-----------------------------STUDENT-----------------------------//
@@ -93,8 +97,9 @@ class Controller extends BaseController
     }
 
     //-----------------------------LECTURER-----------------------------//
-    public function bimbingan() {
-
+    public function bimbinganHistory() {
+        $data = Data::dataRouteBimbinganHistory_lecturer();
+        return view('content.bimbingan-lecturer', compact('data'));
     }
 
     public function acceptSubmit(Request $request) {

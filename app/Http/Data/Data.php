@@ -84,7 +84,7 @@ class Data {
     }
 
     public static function getDepartment($identity,$role) {
-        if ($role == 'l') {
+        if ($role == 's') {
             $stud = DB::table('students')->where('identity', $identity)->first();
             return DB::table('departments')->where('identity',$stud->identity_dep)->first();
         }
@@ -176,14 +176,14 @@ class Data {
 
     public static function getPlagiarism($identity) {
         $data = null;
-        if (DB::table('plagiarisms')->where('author_id')->count() < 1) {
+        if (DB::table('plagiarisms')->where('author_id', $identity)->count() < 1) {
             $data = new Plagiarism();
             $data->author_id = $identity;
             $data->save();
         }
         else {
             $data = DB::table('plagiarisms')
-                ->where('author_id')
+                ->where('author_id',$identity)
                 ->first();
         }
         return $data;
@@ -263,10 +263,35 @@ class Data {
     }
 
     public static function dataRouteDashboard_lecturer() {
-
+        $temp = DB::table('students')
+            ->whereRaw('status_1 < 2')
+            ->orWhereRaw('status_2 < 2')
+            ->where('identity_l1',Auth::user()->identity)
+            ->orWhere('identity_l2',Auth::user()->identity)
+            ->join('revisions','students.identity_l1','=','revisions.lec1_id')
+            ->join('revisions','students.identity_l2','=','revisions.lec2_id')
+            ->join('revisions','students.identity_l1','=','submit_requests.l1_id')
+            ->join('revisions','students.identity_l2','=','submit_requests.l2_id')
+            ->select(
+                'students.id','students.name','students.status_1','students.status_2','students.doc_title',
+                'students.identity_l1','students.identity_l2',
+                'students.doc_link','students.l1_revision_request','students.l2_revision_request',
+                'revisions.lec_1_revision','revisions.lec_2_revision','submit_requests.l1_agrement','submit_requests.l2_agrement')
+            ->get();
+        $temp["_identity"] = Auth::user()->identity;
+        return $temp;
     }
 
-    public static function dataRouteBimbingan_lecturer() {
-
+    public static function dataRouteBimbinganHistory_lecturer() {
+        return DB::table('students')
+            ->where('identity_l1', Auth::user()->identity)
+            ->orWhere('identity_l2', Auth::user()->identity)
+            ->join('documents', 'students.doc_url', '=', 'url')
+            ->select(
+                'students.id','students.name','students.status_1','students.status_2','students.doc_title',
+                'students.thesis_score_l1','students.thesis_score_l1',
+                'students.doc_link','students.identity_l1','students.identity_l2','documents.abstract_key'
+            )
+            ->get();
     }
 }
