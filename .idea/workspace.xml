@@ -19,9 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="markdown document access">
-      <change afterPath="$PROJECT_DIR$/resources/views/exception.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="exception handling functionality">
+      <change afterPath="$PROJECT_DIR$/app/Models/Exception.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_14_122727_create_exceptions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,14 +277,7 @@
       <workItem from="1605341557923" duration="3470000" />
       <workItem from="1605345211998" duration="5505000" />
       <workItem from="1605353004885" duration="605000" />
-      <workItem from="1605356321542" duration="431000" />
-    </task>
-    <task id="LOCAL-00031" summary="remove button frame">
-      <created>1601011671027</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1601011671027</updated>
+      <workItem from="1605356321542" duration="851000" />
     </task>
     <task id="LOCAL-00032" summary="thesis advisor functionality dev">
       <created>1602044093800</created>
@@ -621,7 +615,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605353288139</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="exception handling functionality">
+      <created>1605356775484</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1605356775484</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -641,7 +642,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="editor helper devs" />
     <MESSAGE value="editor simplify meta info" />
     <MESSAGE value="editor top-bar style" />
     <MESSAGE value="advisor feature devs" />
@@ -666,7 +666,8 @@
     <MESSAGE value="advisor dashboard-lecturer.blade.php modified" />
     <MESSAGE value="advisor scoring script modified" />
     <MESSAGE value="markdown document access" />
-    <option name="LAST_COMMIT_MESSAGE" value="markdown document access" />
+    <MESSAGE value="exception handling functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="exception handling functionality" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600922526929">

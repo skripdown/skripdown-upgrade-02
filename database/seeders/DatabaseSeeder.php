@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection HtmlUnknownAnchorTarget */
 
 namespace Database\Seeders;
 
@@ -15,6 +15,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        //----------------EXCEPTIONS---------------//
+        DB::table('exceptions')->insert([
+            'error_code' => 'e01',
+            'error_type' => 'Dokumen Tidak Dapat Diedit',
+            'error_message' => 'Dokumen sudah ditandai selesai dan disubmit ke repository. Pastikan dokumen yang ingin anda akses masih dalam proses penulisan atau belum disubmit ke repository pusat. Mungkin anda hanya ingin membaca dokumen ini ?',
+            'error_callback' => '<a href="#URL" class="btn btn-info">baca</a>'
+        ]);
+
         //-----------------ACCOUNT-----------------//
         DB::table('users')->insert([
             'name' => 'Universitas Muhammadiyah Malang',
