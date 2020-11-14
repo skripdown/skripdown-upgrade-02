@@ -37,7 +37,7 @@
                     <i class="ti-menu ti-close"></i>
                 </a>
                 <div class="navbar-brand">
-                    <a href="{{url('/dashboard')}}">
+                    <a href="@yield('page_focus')">
                         <b class="logo-icon">
                             <img src="{{asset(env('ICON_PATH'))}}" alt="homepage" class="dark-logo" style="width: 5.5em;margin-top: 1em;margin-left: 1em">
                             <img src="{{asset(env('ICON_PATH'))}}" alt="homepage" class="light-logo" style="width: 5.5em;margin-top: 1em;margin-left: 1em">
