@@ -128,15 +128,13 @@
                                                class="btn btn-primary btn-sm btn-info"
                                                data-toggle="modal"
                                                data-target="#popup_setuju_proposal"
-                                               data-user-id="{{$user->id}}"
-                                               data-doc-id="{{$user->doc_id}}"
+                                               data-author_id="{{$user->identity}}"
                                             >setuju</a>
                                             <a href="javascript:void(0)"
                                                class="btn btn-primary btn-sm btn-danger"
                                                data-toggle="modal"
                                                data-target="#popup_tolak_proposal"
-                                               data-user-id="{{$user->id}}"
-                                               data-doc-id="{{$user->doc_id}}"
+                                               data-author_id="{{$user->identity}}"
                                             >tolak</a>
                                         @else
                                             @if ($request_revision)
@@ -144,8 +142,8 @@
                                                    class="btn btn-primary btn-sm btn-info"
                                                    data-toggle="modal"
                                                    data-target="#popup_revisi"
-                                                   data-user-id="{{$user->id}}"
-                                                   data-doc-id="{{$user->doc_id}}"
+                                                   data-author_id="{{$user->identity}}"
+                                                   data-message=""
                                                 >revisi</a>
                                             @else
                                                 @if ($request_submit)
@@ -153,15 +151,13 @@
                                                        class="btn btn-primary btn-sm btn-info"
                                                        data-toggle="modal"
                                                        data-target="#popup_setuju_submit"
-                                                       data-user-id="{{$user->id}}"
-                                                       data-doc-id="{{$user->doc_id}}"
+                                                       data-author_id="{{$user->identity}}"
                                                     >submit</a>
                                                     <a href="javascript:void(0)"
                                                        class="btn btn-primary btn-sm btn-danger"
                                                        data-toggle="modal"
                                                        data-target="#popup_tolak_submit"
-                                                       data-user-id="{{$user->id}}"
-                                                       data-doc-id="{{$user->doc_id}}"
+                                                       data-author_id="{{$user->identity}}"
                                                     >tolak</a>
                                                 @endif
                                             @endif
@@ -351,7 +347,11 @@
         });
         $('#popup_revisi').on('show.bs.modal',e=>{
             $(e.currentTarget).find('#popup_revisi_author_id').val($(e.relatedTarget).data('author_id'));
+            const message = $(e.relatedTarget).data('message');
+            if (message !== '')
+                $(e.currentTarget).find('#pesan-revisi').val(message);
         }).on('hide.bs.modal',e=>{
+            $(e.relatedTarget).data('message',$(e.currentTarget).find('#pesan-revisi').val());
             $(e.currentTarget).find('#pesan-revisi').val('');
         });
     </script>

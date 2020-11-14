@@ -19,10 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="README.md updated">
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="advisor view modified">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/content/dashboard-lecturer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/dashboard-lecturer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,28 +274,7 @@
       <workItem from="1605313827011" duration="2763000" />
       <workItem from="1605322378387" duration="1214000" />
       <workItem from="1605341557923" duration="3470000" />
-      <workItem from="1605345211998" duration="1871000" />
-    </task>
-    <task id="LOCAL-00024" summary="editor.js helper integrate">
-      <created>1600916946335</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1600916946335</updated>
-    </task>
-    <task id="LOCAL-00025" summary="editor.js helper integrate">
-      <created>1600920423082</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1600920423082</updated>
-    </task>
-    <task id="LOCAL-00026" summary="implement data seeder">
-      <created>1600923336185</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1600923336185</updated>
+      <workItem from="1605345211998" duration="2855000" />
     </task>
     <task id="LOCAL-00027" summary="fix editor autoSave bugs">
       <created>1600949133224</created>
@@ -620,7 +598,28 @@
       <option name="project" value="LOCAL" />
       <updated>1605346214624</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="advisor view modified">
+      <created>1605347454788</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1605347454788</updated>
+    </task>
+    <task id="LOCAL-00074" summary="template modified">
+      <created>1605347636415</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1605347636415</updated>
+    </task>
+    <task id="LOCAL-00075" summary="advisor view modified">
+      <created>1605347698504</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1605347698504</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -640,8 +639,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix document parser template" />
-    <MESSAGE value="fix logout route" />
     <MESSAGE value="remove button frame" />
     <MESSAGE value="thesis advisor functionality dev" />
     <MESSAGE value="editor warning notification devs" />
@@ -665,7 +662,9 @@
     <MESSAGE value="examiner exam routing" />
     <MESSAGE value="functionality mark check" />
     <MESSAGE value="README.md updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="README.md updated" />
+    <MESSAGE value="template modified" />
+    <MESSAGE value="advisor view modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="advisor view modified" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600922526929">
@@ -708,10 +707,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="507" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1600920212231" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1605346220663">
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1605347702195">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605346220663" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605347702195" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1602072002937">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
