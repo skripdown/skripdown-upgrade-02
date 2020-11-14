@@ -19,9 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="advisor scoring script modified">
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="markdown document access">
+      <change afterPath="$PROJECT_DIR$/resources/views/exception.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/content/bimbingan-lecturer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/bimbingan-lecturer.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,20 +275,8 @@
       <workItem from="1605322378387" duration="1214000" />
       <workItem from="1605341557923" duration="3470000" />
       <workItem from="1605345211998" duration="5505000" />
-    </task>
-    <task id="LOCAL-00029" summary="fix logout route">
-      <created>1600954224574</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1600954224574</updated>
-    </task>
-    <task id="LOCAL-00030" summary="remove button frame">
-      <created>1600954483560</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1600954483560</updated>
+      <workItem from="1605353004885" duration="605000" />
+      <workItem from="1605356321542" duration="431000" />
     </task>
     <task id="LOCAL-00031" summary="remove button frame">
       <created>1601011671027</created>
@@ -619,7 +607,21 @@
       <option name="project" value="LOCAL" />
       <updated>1605348679718</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="markdown document access">
+      <created>1605353242607</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1605353242607</updated>
+    </task>
+    <task id="LOCAL-00079" summary="markdown document access">
+      <created>1605353288139</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1605353288139</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -639,7 +641,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="editor warning notification devs" />
     <MESSAGE value="editor helper devs" />
     <MESSAGE value="editor simplify meta info" />
     <MESSAGE value="editor top-bar style" />
@@ -664,7 +665,8 @@
     <MESSAGE value="advisor view modified" />
     <MESSAGE value="advisor dashboard-lecturer.blade.php modified" />
     <MESSAGE value="advisor scoring script modified" />
-    <option name="LAST_COMMIT_MESSAGE" value="advisor scoring script modified" />
+    <MESSAGE value="markdown document access" />
+    <option name="LAST_COMMIT_MESSAGE" value="markdown document access" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600922526929">
