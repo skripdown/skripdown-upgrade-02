@@ -28,6 +28,12 @@ class DatabaseSeeder extends Seeder
             'error_message' => 'URL dokumen salah. URL tersebut tidak mengarah pada dokumen apapun di dalam repositori.Mohon periksa kembali URL dokumen yang ingin diakses.',
             'error_callback' => ''
         ]);
+        DB::table('exceptions')->insert([
+            'error_code' => env('ERR_404'),
+            'error_type' => '404 Halaman Tidak Ditemukan',
+            'error_message' => 'Maaf sepertinya halaman yang ingin anda tuju tidak ada. Mohon untuk memeriksa kembali URL halaman tersebut.',
+            'error_callback' => ''
+        ]);
 
         //-----------------ACCOUNT-----------------//
         DB::table('users')->insert([

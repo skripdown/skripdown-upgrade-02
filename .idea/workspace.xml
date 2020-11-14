@@ -20,12 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="exception handling functionality">
+      <change afterPath="$PROJECT_DIR$/resources/views/errors/404.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Data/ExcHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/ExcHandler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/exception.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/exception.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -282,13 +280,7 @@
       <workItem from="1605353004885" duration="605000" />
       <workItem from="1605356321542" duration="1083000" />
       <workItem from="1605362718849" duration="2638000" />
-    </task>
-    <task id="LOCAL-00033" summary="thesis advisor functionality dev">
-      <created>1602044361875</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1602044361875</updated>
+      <workItem from="1605367407275" duration="1274000" />
     </task>
     <task id="LOCAL-00034" summary="thesis advisor functionality dev">
       <created>1602044373861</created>
@@ -626,7 +618,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605357385331</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="exception handling functionality">
+      <created>1605367596855</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1605367596856</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -710,10 +709,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="653" y="226" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605366790271" />
-    <state x="794" y="439" key="NewPhpFileDialog" timestamp="1605357344439">
+    <state x="794" y="439" key="NewPhpFileDialog" timestamp="1605368575473">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="439" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605357344439" />
+    <state x="794" y="439" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605368575473" />
     <state width="507" height="446" key="SwitcherDM" timestamp="1600920212231">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
