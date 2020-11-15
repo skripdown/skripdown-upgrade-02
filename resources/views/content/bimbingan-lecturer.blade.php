@@ -50,20 +50,35 @@
                                 <th>Judul</th>
                                 <th>Penulis</th>
                                 <th style="width: 150px">Nilai</th>
-                                <th style="width: 100px">Kata Kunci</th>
+                                <th style="max-width: 10vw">Kata Kunci</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($data as $user)
+                                @php
+                                    if (isset($user)) {
+                                        if ($user->_id == $user->identity_l1)
+                                            $score = $user->thesis_score_l1;
+                                        else
+                                            $score = $user->thesis_score_l1;
+                                        $keywords = explode(env('KEYWORD_EXPLODER'), $user->abstract_key);
+                                    }
+                                @endphp
                                 <tr>
                                     <td>
                                         <a href="{{$user->doc_link}}" class="text-black-50">
                                             {!! $user->doc_title !!}
                                         </a>
                                     </td>
-                                    <td>{{$user->nim}}</td>
-                                    <td>{{$user->nim}}</td>
-                                    <td>{{$user->nim}}</td>
+                                    <td>{{$user->name}}</td>
+                                    <td>{{$score}}</td>
+                                    <td>
+                                        @foreach($keywords as $key)
+                                            <div class="bg-purple p-2 d-inline-block text-white" style="border-radius: 5px; margin: 0.15rem 0">
+                                                {{$key}}
+                                            </div>
+                                        @endforeach
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

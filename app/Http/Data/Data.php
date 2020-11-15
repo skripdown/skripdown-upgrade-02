@@ -285,15 +285,19 @@ class Data {
     }
 
     public static function dataRouteBimbinganHistory_lecturer() {
-        return DB::table('students')
+        $temp = DB::table('students')
+            ->whereRaw('status_1 >= 2')
+            ->whereRaw('status_2 >= 2')
             ->where('identity_l1', Auth::user()->identity)
             ->orWhere('identity_l2', Auth::user()->identity)
             ->join('documents', 'students.doc_url', '=', 'url')
             ->select(
-                'students.id','students.name','students.status_1','students.status_2','students.doc_title',
-                'students.thesis_score_l1','students.thesis_score_l1',
+                'students.id','students.name','students.doc_title',
+                'students.thesis_score_l1','students.thesis_score_l2',
                 'students.doc_link','students.identity_l1','students.identity_l2','documents.abstract_key'
             )
             ->get();
+        $temp['_id'] = Auth::user()->identity;
+        return $temp;
     }
 }
