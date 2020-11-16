@@ -19,10 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="exception handling functionality">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="bimbingan advisor functionality">
+      <change afterPath="$PROJECT_DIR$/app/Models/Keyword.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_15_022452_create_keywords_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Data/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Data.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/content/bimbingan-lecturer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/bimbingan-lecturer.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -282,14 +282,11 @@
       <workItem from="1605362718849" duration="2638000" />
       <workItem from="1605367407275" duration="1274000" />
       <workItem from="1605375789728" duration="917000" />
-      <workItem from="1605404147300" duration="2452000" />
-    </task>
-    <task id="LOCAL-00035" summary="thesis advisor functionality dev">
-      <created>1602044589981</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1602044589981</updated>
+      <workItem from="1605404147300" duration="4166000" />
+      <workItem from="1605506259967" duration="8000" />
+      <workItem from="1605507868584" duration="610000" />
+      <workItem from="1605509926342" duration="887000" />
+      <workItem from="1605513743752" duration="632000" />
     </task>
     <task id="LOCAL-00036" summary="thesis advisor functionality dev">
       <created>1602050159752</created>
@@ -627,7 +624,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605375921035</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="bimbingan advisor functionality">
+      <created>1605406639909</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1605406639909</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -647,7 +651,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="editor simplify meta info" />
     <MESSAGE value="editor top-bar style" />
     <MESSAGE value="advisor feature devs" />
     <MESSAGE value="parser foreign regex bug fixed" />
@@ -672,7 +675,8 @@
     <MESSAGE value="advisor scoring script modified" />
     <MESSAGE value="markdown document access" />
     <MESSAGE value="exception handling functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="exception handling functionality" />
+    <MESSAGE value="bimbingan advisor functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="bimbingan advisor functionality" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600922526929">
@@ -719,10 +723,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="507" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1600920212231" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1605357393567">
+    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2" timestamp="1605406680583">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605357393567" />
+    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605406680583" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1602072002937">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

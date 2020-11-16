@@ -66,7 +66,7 @@
                                 @endphp
                                 <tr>
                                     <td>
-                                        <a href="{{$user->doc_link}}" class="text-black-50">
+                                        <a href="{{$user->doc_link}}" class="text-black-50" target="_blank">
                                             {!! $user->doc_title !!}
                                         </a>
                                     </td>
