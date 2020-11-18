@@ -19,10 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="bimbingan advisor functionality">
-      <change afterPath="$PROJECT_DIR$/public/asset/user/blank.jpg" afterDir="false" />
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="profile picture url for user">
+      <change afterPath="$PROJECT_DIR$/public/element/js/plagiarism.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/content/ujianPlagiasi-department.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/dashboard-department.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/dashboard-department.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/dashboard-lecturer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/dashboard-lecturer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/template.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -291,14 +294,8 @@
       <workItem from="1605506259967" duration="8000" />
       <workItem from="1605507868584" duration="610000" />
       <workItem from="1605509926342" duration="887000" />
-      <workItem from="1605513743752" duration="1996000" />
-    </task>
-    <task id="LOCAL-00037" summary="editor warning notification devs">
-      <created>1602075438104</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1602075438104</updated>
+      <workItem from="1605513743752" duration="3743000" />
+      <workItem from="1605676719806" duration="6497000" />
     </task>
     <task id="LOCAL-00038" summary="editor warning notification devs">
       <created>1602084189813</created>
@@ -636,7 +633,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605520525489</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="profile picture url for user">
+      <created>1605522452991</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1605522452992</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -656,7 +660,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="editor top-bar style" />
     <MESSAGE value="advisor feature devs" />
     <MESSAGE value="parser foreign regex bug fixed" />
     <MESSAGE value="parser inline regex bug fixed" />
@@ -681,7 +684,8 @@
     <MESSAGE value="markdown document access" />
     <MESSAGE value="exception handling functionality" />
     <MESSAGE value="bimbingan advisor functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="bimbingan advisor functionality" />
+    <MESSAGE value="profile picture url for user" />
+    <option name="LAST_COMMIT_MESSAGE" value="profile picture url for user" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600922526929">
@@ -728,10 +732,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="507" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1600920212231" />
-    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2" timestamp="1605520548957">
+    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2" timestamp="1605522482127">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605520548957" />
+    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605522482127" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1602072002937">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -345,7 +345,7 @@
             const score = $(e.relatedTarget).data('score');
             if (score !== '')
                 $(e.currentTarget).find('score-input').val(parseInt(score));
-        }).on('hide.bs.modal',e=>{
+        }).on('hidden.bs.modal',e=>{
             $(e.relatedTarget).data('score',$(e.currentTarget).find('#score-input').val());
             $(e.currentTarget).find('#score-input').val(0);
         });
@@ -354,7 +354,7 @@
             const message = $(e.relatedTarget).data('message');
             if (message !== '')
                 $(e.currentTarget).find('#pesan-revisi').val(message);
-        }).on('hide.bs.modal',e=>{
+        }).on('hidden.bs.modal',e=>{
             $(e.relatedTarget).data('message',$(e.currentTarget).find('#pesan-revisi').val());
             $(e.currentTarget).find('#pesan-revisi').val('');
         });

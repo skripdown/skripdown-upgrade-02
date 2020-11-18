@@ -19,6 +19,7 @@
     <title>{{env('APP_NAME')}} @yield('app_subname')</title>
     @yield('style-head')
     @yield('script-head')
+    @yield('response-area')
 </head>
 <body>
 <div class="preloader">
