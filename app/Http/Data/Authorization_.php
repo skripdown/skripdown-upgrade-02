@@ -39,4 +39,8 @@ class Authorization_{
     public static function user() {
         return self::login();
     }
+
+    public static function data() {
+        return Auth::user();
+    }
 }
