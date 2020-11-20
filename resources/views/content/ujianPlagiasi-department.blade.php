@@ -60,6 +60,13 @@
     </style>
 @endsection
 
+@section('header-button')
+    <a href="javascript:void(0)" class="dropdown-item">
+        <i data-feather="gear" class="svg-icon mr-2 ml-1"></i>
+        Pengaturan
+    </a>
+@endsection
+
 @section('sidebar-menu')
     <li class="sidebar-item">
         <a class="sidebar-link sidebar-link" href="{{url('/ujianPlagiasi')}}" aria-expanded="false">
