@@ -259,12 +259,7 @@
 <script src="{{asset(env('JS_PATH').'pages/datatable/datatable-basic.init.js')}}"></script>
 <script src="{{asset(env('LIB_PATH').'extra/prism/prism.js')}}"></script>
 <script>
-    let standard_bi,
-        standard_bii,
-        standard_biii,
-        standard_biv,
-        standard_bv,
-        inp_bi,
+    let inp_bi,
         inp_bii,
         inp_biii,
         inp_biv,
@@ -292,11 +287,11 @@
             url     : '{{url('getplag')}}',
             data    : {_token:'csrf_token() here'},
             success : (data)=>{
-                standard_bi     = data.b_i;
-                standard_bii    = data.b_ii;
-                standard_biii   = data.b_iii;
-                standard_biv    = data.b_iv;
-                standard_bv     = data.b_v;
+                $(inp_bi).val(data.bi);
+                $(inp_bii).val(data.bii);
+                $(inp_biii).val(data.biii);
+                $(inp_biv).val(data.biv);
+                $(inp_bv).val(data.bv);
             }
         });
         $(inp_old_pass).keyup(function () {

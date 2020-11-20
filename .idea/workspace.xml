@@ -19,10 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="department setting feature fronted">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="department setting serve routing">
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Data/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Data.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/content/setting-department.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/setting-department.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -298,14 +298,7 @@
       <workItem from="1605768672465" duration="491000" />
       <workItem from="1605771392394" duration="3893000" />
       <workItem from="1605781425473" duration="143000" />
-      <workItem from="1605837151309" duration="2095000" />
-    </task>
-    <task id="LOCAL-00041" summary="editor helper devs">
-      <created>1602110959728</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1602110959728</updated>
+      <workItem from="1605837151309" duration="2626000" />
     </task>
     <task id="LOCAL-00042" summary="editor helper devs">
       <created>1602132644577</created>
@@ -643,7 +636,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605837902673</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="department setting serve routing">
+      <created>1605839345557</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1605839345557</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -663,7 +663,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="parser cover bug fixed" />
     <MESSAGE value="thesis revision feature devs" />
     <MESSAGE value="revision feature and submit repository devs" />
     <MESSAGE value="init SKRIPDOWN documentation" />
@@ -688,7 +687,8 @@
     <MESSAGE value="ujian plagiasi view blade" />
     <MESSAGE value="ujian plagiasi view blade final" />
     <MESSAGE value="department setting feature fronted" />
-    <option name="LAST_COMMIT_MESSAGE" value="department setting feature fronted" />
+    <MESSAGE value="department setting serve routing" />
+    <option name="LAST_COMMIT_MESSAGE" value="department setting serve routing" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600922526929">

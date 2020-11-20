@@ -191,6 +191,18 @@ class Data {
         return $data;
     }
 
+    public static function getDepartmentPlagiarism() {
+        $temp = DB::table('departments')
+            ->where('identity',Auth::user()->identity)
+            ->first();
+        $data['bi']     = $temp->plagiarism_bi.'';
+        $data['bii']    = $temp->plagiarism_bii.'';
+        $data['biii']   = $temp->plagiarism_biii.'';
+        $data['biv']    = $temp->plagiarism_biv.'';
+        $data['bv']     = $temp->plagiarism_bv.'';
+        return $data;
+    }
+
     public static function getNotification() {
         $role = Auth::user()->role;
         if ($role == 'student') {

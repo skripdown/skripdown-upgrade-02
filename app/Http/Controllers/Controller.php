@@ -132,6 +132,10 @@ class Controller extends BaseController
         return response()->json(Maker::scorePlagiarism($request), 200);
     }
 
+    public function getPlagiarism(Request $request) {
+        return response()->json(Data::getDepartmentPlagiarism(),200);
+    }
+
     public function plagiarismConf(Request $request) {
         return response()->json(Maker::confPlagiarism($request), 200);
     }
