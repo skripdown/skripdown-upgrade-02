@@ -289,7 +289,7 @@
         inp_conf_pass   = $('#setting-in-confirm').get(0);
         $.ajax({
             type    : 'POST',
-            url     : 'url_here',
+            url     : '{{url('getplag')}}',
             data    : {_token:'csrf_token() here'},
             success : (data)=>{
                 standard_bi     = data.b_i;
@@ -308,13 +308,42 @@
         $(sub_std).click(function () {
             if (std_form_check) {
                 $.ajax({
-                    //standard plagiarism configuration
+                    type    : 'POST',
+                    url     : '{{url('plagconf')}}',
+                    data    : {
+                        _token:'{{csrf_token()}}',
+                        bi:$(inp_bi).val(),
+                        bii:$(inp_bii).val(),
+                        biii:$(inp_biii).val(),
+                        biv:$(inp_biv).val(),
+                        bv:$(inp_bv).val(),
+                    },
+                    success : (data)=>{
+                        console.log(data);
+                    }
                 });
             }
         });
         $(sub_pass).click(function () {
             if ($(inp_old_pass).val() !== '' && submitable_pass) {
                 $.ajax({
+                    type    : 'POST',
+                    url     : '{{url('deptpass')}}',
+                    data    : {
+                        _token:'{{csrf_token()}}',
+                        old_pass:$(inp_old_pass).val(),
+                        new_pass:$(inp_new_pass).val()
+                    },
+                    success : (data)=>{
+                        if (data.status === '0') {
+                            $(inp_old_pass).addClass('border-danger');
+                        }
+                        else {
+                            $(inp_old_pass).val('');
+                            $(inp_new_pass).val('');
+                            $(inp_conf_pass).val('');
+                        }
+                    }
                     //password configuration
                     //return nothing if success
                     //border-danger if old pass wrong
