@@ -41,7 +41,7 @@ Route::post('exampass','Controller@exam');
 
 //DEPARTMENT
 Route::get('/thesis-topic', 'Controller@historyBimbingan');
-Route::get('/pengaturan', 'Controller@historyBimbingan');
+Route::get('/pengaturan', 'Controller@deptSetting');
 Route::post('getplag','Controller@getPlagiarism');
 Route::post('plagcheck','Controller@plagiarismCheck');
 Route::post('plagconf','Controller@plagiarismConf');

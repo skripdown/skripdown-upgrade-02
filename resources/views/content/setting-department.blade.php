@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{asset(env('CSS_PATH').'style.min.css')}}">
     <script src="{{asset(env('LIB_PATH').'extra/html5shiv/html5shiv.js')}}"></script>
     <script src="{{asset(env('LIB_PATH').'extra/respond/respond.js')}}"></script>
-    <title>Pengaturan - {{}}</title>
+    <title>Pengaturan | {{$title}}</title>
 </head>
 <body>
 <div class="preloader">

@@ -128,6 +128,11 @@ class Controller extends BaseController
     }
 
     //-----------------------------DEPARTMENT-----------------------------//
+    public function deptSetting() {
+        $title = Auth::user()->name;
+        return view('content.setting-department',compact($title));
+    }
+
     public function plagiarismCheck(Request $request) {
         return response()->json(Maker::scorePlagiarism($request), 200);
     }
