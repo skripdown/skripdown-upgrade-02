@@ -19,10 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="department setting serve routing">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Data/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/content/setting-department.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/setting-department.blade.php" afterDir="false" />
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="implement async authorization">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -298,28 +296,8 @@
       <workItem from="1605768672465" duration="491000" />
       <workItem from="1605771392394" duration="3893000" />
       <workItem from="1605781425473" duration="143000" />
-      <workItem from="1605837151309" duration="2626000" />
-    </task>
-    <task id="LOCAL-00042" summary="editor helper devs">
-      <created>1602132644577</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1602132644577</updated>
-    </task>
-    <task id="LOCAL-00043" summary="editor simplify meta info">
-      <created>1602133782031</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1602133782031</updated>
-    </task>
-    <task id="LOCAL-00044" summary="editor simplify meta info">
-      <created>1602135018164</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1602135018164</updated>
+      <workItem from="1605837151309" duration="3470000" />
+      <workItem from="1605861701728" duration="632000" />
     </task>
     <task id="LOCAL-00045" summary="editor simplify meta info">
       <created>1602135304955</created>
@@ -643,7 +621,28 @@
       <option name="project" value="LOCAL" />
       <updated>1605839345557</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="department setting async backend">
+      <created>1605839878820</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1605839878820</updated>
+    </task>
+    <task id="LOCAL-00092" summary="department setting async backend">
+      <created>1605840100867</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1605840100867</updated>
+    </task>
+    <task id="LOCAL-00093" summary="implement async authorization">
+      <created>1605840307953</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1605840307953</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -663,8 +662,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="thesis revision feature devs" />
-    <MESSAGE value="revision feature and submit repository devs" />
     <MESSAGE value="init SKRIPDOWN documentation" />
     <MESSAGE value="student functionality feature devs" />
     <MESSAGE value="student functionality feature devs (no message)" />
@@ -688,7 +685,9 @@
     <MESSAGE value="ujian plagiasi view blade final" />
     <MESSAGE value="department setting feature fronted" />
     <MESSAGE value="department setting serve routing" />
-    <option name="LAST_COMMIT_MESSAGE" value="department setting serve routing" />
+    <MESSAGE value="department setting async backend" />
+    <MESSAGE value="implement async authorization" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement async authorization" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600922526929">
@@ -723,10 +722,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="746" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600523811298" />
-    <state x="653" y="226" key="NewPhpClassDialog" timestamp="1605366790271">
+    <state x="653" y="226" key="NewPhpClassDialog" timestamp="1605840068857">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="653" y="226" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605366790271" />
+    <state x="653" y="226" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605840068857" />
     <state x="794" y="439" key="NewPhpFileDialog" timestamp="1605368575473">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -735,10 +734,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="507" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1600920212231" />
-    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2" timestamp="1605838100000">
+    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2" timestamp="1605840313766">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605838100000" />
+    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605840313766" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1602072002937">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

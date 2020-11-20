@@ -35,4 +35,8 @@ class Authorization_{
             return Auth::user()->role == 'super';
         return false;
     }
+
+    public static function user() {
+        return self::login();
+    }
 }
