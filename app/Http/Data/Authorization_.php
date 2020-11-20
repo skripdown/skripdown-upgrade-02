@@ -3,7 +3,7 @@
 /** @noinspection SqlNoDataSourceInspection */
 /** @noinspection SqlDialectInspection */
 
-namespace App\Http\Authorization_;
+namespace App\Http\Data;
 
 use Illuminate\Support\Facades\Auth;
 

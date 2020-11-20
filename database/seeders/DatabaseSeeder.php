@@ -275,6 +275,7 @@ class DatabaseSeeder extends Seeder
             'translate_words' => 'daring|luring|perangkat lunak|berkas'
         ]);
 
+        //-----------------student------------------//
         DB::table('students')->insert([
             'name' => 'Moh Hermawan',
             'identity' => '201610370311101',

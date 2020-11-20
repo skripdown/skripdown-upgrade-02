@@ -5,14 +5,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Authorization_\Authorization_;
 use App\Http\Data\ExcHandler;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Data\Data;
 use App\Http\Data\Maker;
 use App\Http\Data\Helper;
+use App\Http\Data\Authorization_;
 
 class Controller extends BaseController
 {
@@ -25,7 +24,7 @@ class Controller extends BaseController
     public function dashboard() {
         if (Authorization_::student()) {
             $doc_url = null;
-            if (!Data::hasThesis(Auth::user()->identity))
+            if (!Data::hasThesis(Authorization_::data()->identity))
                 $doc_url = Maker::makeDoc();
             else
                 $doc_url = Data::getDoc_url(Authorization_::data()->identity);
@@ -37,11 +36,11 @@ class Controller extends BaseController
             return view('content.dashboard-lecturer',compact('data'));
         }
         elseif (Authorization_::department()) {
-            $data = Data::getStudents_data(Auth::user()->identity);
+            $data = Data::getStudents_data(Authorization_::data()->identity);
             return view('content.dashboard-department',compact('data'));
         }
         elseif (Authorization_::super()) {
-            $data = Data::getStudents_data(Auth::user()->identity);
+            $data = Data::getStudents_data(Authorization_::data()->identity);
             return view('content.dashboard-super',compact('data'));
         }
         return redirect()->route('home');
@@ -68,7 +67,7 @@ class Controller extends BaseController
             if (Data::isURL_thesis($url)) {
                 if (Data::isSubmitedThesis($url))
                     return ExcHandler::getException(env('ERR_EDIT_SUBMITED_DOC'),array($url));
-                $doc = Data::getStudent_thesis(Auth::user()->identity);
+                $doc = Data::getStudent_thesis(Authorization_::data()->identity);
                 return view('editor',compact('doc'));
             }
             return ExcHandler::getException(env('ERR_WRONG_URL_DOC'),array());
@@ -179,6 +178,14 @@ class Controller extends BaseController
         if (Authorization_::department()) {
             $title = Authorization_::data()->name;
             return view('content.setting-department',compact($title));
+        }
+        return 'authorization error';
+    }
+
+    public function ujianPlagiasi() {
+        if (Authorization_::department()) {
+            $data = '';
+            return view('content.ujianPlagiasi-department',compact('data'));
         }
         return 'authorization error';
     }
