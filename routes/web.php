@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 Route::get('/', 'Controller@home')->name('home');
 Route::get('logout', 'Auth\LoginController@logout');
-Route::get('/dashboard', 'Controller@dashboard');
+Route::get('/dashboard', 'Controller@dashboard')->name('dashboard');
 
 //STUDENT
 Route::get('/editor/{url}', 'Controller@openDoc')->name('editor');
