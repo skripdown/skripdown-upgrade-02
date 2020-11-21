@@ -36,11 +36,11 @@ class Controller extends BaseController
             return view('content.dashboard-lecturer',compact('data'));
         }
         elseif (Authorization_::department()) {
-            $data = Data::getStudents_data(Authorization_::data()->identity);
+            $data = Data::dataRouteDashboard_department();
             return view('content.dashboard-department',compact('data'));
         }
         elseif (Authorization_::super()) {
-            $data = Data::getStudents_data(Authorization_::data()->identity);
+            $data = Data::dataRouteDashboard_super();
             return view('content.dashboard-super',compact('data'));
         }
         return redirect()->route('home');

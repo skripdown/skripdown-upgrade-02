@@ -312,4 +312,12 @@ class Data {
         $temp['_id'] = Auth::user()->identity;
         return $temp;
     }
+
+    public static function dataRouteDashboard_department() {
+        return '';
+    }
+
+    public static function dataRouteDashboard_super() {
+        return '';
+    }
 }

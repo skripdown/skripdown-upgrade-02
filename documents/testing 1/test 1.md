@@ -10,6 +10,6 @@
 |   Aktor    | Hasil  |                          Keterangan                          |
 | :--------: | :----: | :----------------------------------------------------------: |
 |  Student   |   ?    |                              ?                               |
-|  Lecturer  | 25/100 | Tidak mengarah ke halaman dashboard<br />Pemuatan halaman klien gagal |
-| Department |   ?    |                              ?                               |
+|  Lecturer  |   ?    |                              ?                               |
+| Department | 25/100 | Tidak mengarah ke halaman dashboard<br />Pemuatan halaman klien gagal |
 
