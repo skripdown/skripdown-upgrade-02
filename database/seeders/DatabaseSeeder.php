@@ -374,5 +374,38 @@ class DatabaseSeeder extends Seeder
             'identity_fac' => 'psikologi',
             'identity_univ' => 'universitas muhammadiyah malang'
         ]);
+
+        DB::table('lecturer_deps')->insert([
+            'lecturer_id'=>'1223239090',
+            'department_id'=>'informatika'
+        ]);
+        DB::table('lecturer_deps')->insert([
+            'lecturer_id'=>'123123123',
+            'department_id'=>'informatika'
+        ]);
+        DB::table('lecturer_deps')->insert([
+            'lecturer_id'=>'12345555',
+            'department_id'=>'informatika'
+        ]);
+        DB::table('lecturer_deps')->insert([
+            'lecturer_id'=>'1209876544',
+            'department_id'=>'psikologi'
+        ]);
+        DB::table('lecturer_deps')->insert([
+            'lecturer_id'=>'1209876546',
+            'department_id'=>'psikologi'
+        ]);
+        DB::table('lecturer_deps')->insert([
+            'lecturer_id'=>'1209876547',
+            'department_id'=>'bahasa indonesia'
+        ]);
+        DB::table('lecturer_deps')->insert([
+            'lecturer_id'=>'1209876548',
+            'department_id'=>'bahasa indonesia'
+        ]);
+        DB::table('lecturer_deps')->insert([
+            'lecturer_id'=>'1209876549',
+            'department_id'=>'bahasa indonesia'
+        ]);
     }
 }

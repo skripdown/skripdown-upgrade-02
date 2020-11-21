@@ -19,9 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="department frontend bug repair">
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="controller data routing">
+      <change afterPath="$PROJECT_DIR$/app/Models/Lecturer_dep.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_21_165959_create_lecturer_deps_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documents/testing 1/test 1.md" beforeDir="false" afterPath="$PROJECT_DIR$/documents/testing 1/test 1.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Data/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Data.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/dashboard-department.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/dashboard-department.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,13 +310,10 @@
       <workItem from="1605929878607" duration="532000" />
       <workItem from="1605932321317" duration="1326000" />
       <workItem from="1605934086709" duration="3833000" />
-    </task>
-    <task id="LOCAL-00049" summary="parser foreign regex bug fixed">
-      <created>1602679687533</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1602679687533</updated>
+      <workItem from="1605941087879" duration="245000" />
+      <workItem from="1605942129643" duration="699000" />
+      <workItem from="1605943196804" duration="1951000" />
+      <workItem from="1605977752390" duration="2417000" />
     </task>
     <task id="LOCAL-00050" summary="parser inline regex bug fixed">
       <created>1602739310381</created>
@@ -650,7 +651,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605935928090</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="controller data routing">
+      <created>1605941282972</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1605941282973</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -670,7 +678,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="student functionality feature devs (no message)" />
     <MESSAGE value="system functionality devs" />
     <MESSAGE value="department account configuration" />
     <MESSAGE value="department plagiarism configuration" />
@@ -695,7 +702,8 @@
     <MESSAGE value="implement async authorization" />
     <MESSAGE value="modify backend authorization access" />
     <MESSAGE value="department frontend bug repair" />
-    <option name="LAST_COMMIT_MESSAGE" value="department frontend bug repair" />
+    <MESSAGE value="controller data routing" />
+    <option name="LAST_COMMIT_MESSAGE" value="controller data routing" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600922526929">
