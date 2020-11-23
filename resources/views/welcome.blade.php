@@ -65,25 +65,31 @@
         <section class="features-overview" id="features-section" >
             <div class="content-header">
                 <h2>Cara kerja Skripdown</h2>
-                <h6 class="section-subtitle text-muted">Skripdown didesain khusus untuk mempercepat penulisan skripsi<br>dan membantu mahasiswa tingkat akhir dalam melakukan penelitian.</h6>
+                <h6 class="section-subtitle text-muted">Skripdown didesain khusus untuk mempercepat penulisan skripsi<br>dan membantu memanajemen pengerjaan skripsi.</h6>
             </div>
             <div class="d-md-flex justify-content-between">
                 <div class="grid-margin d-flex justify-content-start">
                     <div class="features-width">
-                        <h5 class="py-3">Format<br>Otomatis</h5>
-                        <p class="text-muted">Mengatur format penulisan skripsi secara otomatis berdasarkan fakultas dan jurusan</p>
+                        <h5 class="py-4">Format<br>Otomatis</h5>
+                        <p class="text-muted">Mengatur seksi dokumen dan format penulisan skripsi secara otomatis</p>
                     </div>
                 </div>
                 <div class="grid-margin d-flex justify-content-center">
                     <div class="features-width">
-                        <h5 class="py-3">Generator<br>Isi</h5>
-                        <p class="text-muted">Men-generate cover, lembar pengesahan, daftar isi, dan masih banyak lagi.</p>
+                        <h5 class="py-4">Manajemen<br>Konten</h5>
+                        <p class="text-muted">Memanajemen pengerjaan dokumen skripsi secara otomatis dan <i>real-time</i></p>
                     </div>
                 </div>
                 <div class="grid-margin d-flex justify-content-end">
                     <div class="features-width">
-                        <h5 class="py-3">Sintaks<br>Markdown</h5>
+                        <h5 class="py-4">Sintaks<br>Markdown</h5>
                         <p class="text-muted">Penggunaan bahasa markdown sebagai sintaks penulisan dokumen.</p>
+                    </div>
+                </div>
+                <div class="grid-margin d-flex justify-content-end">
+                    <div class="features-width">
+                        <h5 class="py-4">Deteksi<br>Error</h5>
+                        <p class="text-muted">Mendeteksi error pada penulisan skripsi secara otomatis.</p>
                     </div>
                 </div>
             </div>
@@ -106,11 +112,23 @@
                     <img src="{{asset('asset/fitur-2.svg')}}" alt="" class="img-fluid">
                 </div>
                 <div class="col-12 col-lg-5 flex-item grid-margin" data-aos="fade-left">
-                    <h3 class="m-0">Format otomatis dokumen<br>sesuai dengan fakultas dan jurusan.</h3>
+                    <h3 class="m-0">Format dan generator<br>seksi dokumen skripsi secara otomatis.</h3>
                     <div class="col-lg-9 col-xl-8 p-0">
                         <p class="py-4 m-0 text-muted">Penambahan sintaks meta pada markdown membuat informasi tambahan dapat dimuat sehingga penulisan dokumen dapat dibuat lebih spesifik.</p>
                         <p class="pb-2 font-weight-medium text-muted">Selain sintaks meta, heading juga didesain sesuai dengan struktur dokumen skripsi.</p>
                     </div>
+                </div>
+            </div>
+            <div class="row align-items-center" style="margin: -10rem 0 5rem">
+                <div class="col-12 col-lg-7 grid-margin grid-margin-lg-0" data-aos="fade-right">
+                    <h3 class="m-0">Deteksi error<br>pada struktur isi dokumen skripsi</h3>
+                    <div class="col-lg-7 col-xl-6 p-0">
+                        <p class="py-4 m-0 text-muted"><b>Skripdown</b> memiliki fitur deteksi error otomatis pada editor markdown yang akan memberikan notifikasi dan jenis pesan jika mendeteksi error pada isi dokumen.</p>
+                        <p class="font-weight-medium text-muted">Pendeteksian error dapat membantu penulis dalam mengerjakan skripsi dan mengurangi jumlah revisi.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5 p-0 img-digital grid-margin grid-margin-lg-0" data-aos="fade-left">
+                    <img src="{{asset('asset/fitur-3.svg')}}" alt="" class="img-fluid">
                 </div>
             </div>
         </section>

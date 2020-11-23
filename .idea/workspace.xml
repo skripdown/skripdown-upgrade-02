@@ -19,8 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="logout added">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="README.md updated">
+      <change afterPath="$PROJECT_DIR$/public/asset/fitur-3.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,12 +184,13 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/asset" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bagus\PhpstormProjects\skripdown-upgrade-02\public\asset" />
       <recent name="C:\Users\bagus\PhpstormProjects\skripdown-upgrade-02" />
     </key>
   </component>
@@ -311,14 +314,7 @@
       <workItem from="1605977752390" duration="3378000" />
       <workItem from="1606022927602" duration="913000" />
       <workItem from="1606026124725" duration="3321000" />
-      <workItem from="1606091170140" duration="4341000" />
-    </task>
-    <task id="LOCAL-00054" summary="revision feature and submit repository devs">
-      <created>1603049077504</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1603049077505</updated>
+      <workItem from="1606091170140" duration="8380000" />
     </task>
     <task id="LOCAL-00055" summary="revision feature and submit repository devs">
       <created>1603071479630</created>
@@ -656,7 +652,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606095329142</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="README.md updated">
+      <created>1606095531734</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1606095531734</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -679,7 +682,6 @@
     <MESSAGE value="examiner exam pass value" />
     <MESSAGE value="examiner exam routing" />
     <MESSAGE value="functionality mark check" />
-    <MESSAGE value="README.md updated" />
     <MESSAGE value="template modified" />
     <MESSAGE value="advisor view modified" />
     <MESSAGE value="advisor dashboard-lecturer.blade.php modified" />
@@ -701,7 +703,8 @@
     <MESSAGE value="login redirect bug repair" />
     <MESSAGE value="login dashboard bug fixed" />
     <MESSAGE value="logout added" />
-    <option name="LAST_COMMIT_MESSAGE" value="logout added" />
+    <MESSAGE value="README.md updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="README.md updated" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600922526929">
@@ -752,10 +755,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="507" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1600920212231" />
-    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2" timestamp="1606095334397">
+    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2" timestamp="1606095537819">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606095334397" />
+    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606095537819" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1602072002937">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
