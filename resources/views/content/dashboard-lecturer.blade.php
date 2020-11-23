@@ -54,14 +54,20 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @php
+                                if (isset($data)) {
+                                    $identity = $data[0];
+                                    $data = $data[1];
+                                }
+                            @endphp
                             @foreach($data as $user)
                                 @php
                                     $progres = null;
                                     $status = null;
                                     $request_revision = null;
                                     $request_submit = null;
-                                    if (isset($user)) {
-                                        if ($user->_identity == $user->identity_l1) {
+                                    if (isset($user) && isset($identity)) {
+                                        if ($identity == $user->identity_l1) {
                                             $status = $user->status_1;
                                             $progres = $user->lec_1_revision;
                                             $request_revision = $user->l1_request_revision;

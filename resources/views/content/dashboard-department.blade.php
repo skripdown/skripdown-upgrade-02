@@ -17,7 +17,7 @@
 @section('header-button')
     <!--suppress JSUnfilteredForInLoop -->
     <a href="javascript:void(0)" class="dropdown-item">
-        <i data-feather="gear" class="svg-icon mr-2 ml-1"></i>
+        <i data-feather="settings" class="svg-icon mr-2 ml-1"></i>
         Pengaturan
     </a>
 @endsection

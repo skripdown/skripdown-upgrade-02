@@ -1,15 +1,26 @@
 # TESTING 1
 
-​																								**20 November 2020**
-​																											 **Malik Fajar Lapele**
+<div style="text-align:center;font-weight:bold">20 November 2020<br>Malik Fajar Lapele</div>
 
 ## Tahap Pengujian Fungsi
 
 ### 1. Login
 
-|   Aktor    | Hasil  |                          Keterangan                          |
-| :--------: | :----: | :----------------------------------------------------------: |
-|  Student   |   ?    |                              ?                               |
-|  Lecturer  |   ?    |                              ?                               |
-| Department | 25/100 | Tidak mengarah ke halaman dashboard<br />Pemuatan halaman klien gagal |
+| <span style="display:inline-block;text-align:center;width:100%">Aktor</span> |  Hasil  |               Keterangan                |
+| :----------------------------------------------------------- | :-----: | :-------------------------------------: |
+| Student                                                      | 100/100 | <span style="color:green">Sukses</span> |
+| Lecturer                                                     | 100/100 | <span style="color:green">Sukses</span> |
+| Department                                                   | 100/100 | <span style="color:green">Sukses</span> |
 
+### 2. Editor
+
+| <span style="display:inline-block;text-align:center;width:100%">Fungsi</span> | Hasil | Keterangan |
+| :----------------------------------------------------------- | :---: | :--------: |
+| Autosave                                                     |   ?   |     ?      |
+| Autoformat                                                   |   ?   |     ?      |
+| Error Detection                                              |   ?   |     ?      |
+| Notification                                                 |   ?   |     ?      |
+| Submit Proposal                                              |   ?   |     ?      |
+| Submit Revision                                              |   ?   |     ?      |
+| Submit Repository                                            |   ?   |     ?      |
+| Read Revision                                                |   ?   |     ?      |

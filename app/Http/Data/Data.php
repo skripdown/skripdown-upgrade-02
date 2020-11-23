@@ -277,40 +277,15 @@ class Data {
     }
 
     public static function dataRouteDashboard_lecturer() {
-        $temp = DB::table('students')
-            ->whereRaw('status_1 < 2')
-            ->orWhereRaw('status_2 < 2')
-            ->where('identity_l1',Auth::user()->identity)
-            ->orWhere('identity_l2',Auth::user()->identity)
-            ->join('revisions','students.identity_l1','=','revisions.lec1_id')
-            ->join('revisions','students.identity_l2','=','revisions.lec2_id')
-            ->join('revisions','students.identity_l1','=','submit_requests.l1_id')
-            ->join('revisions','students.identity_l2','=','submit_requests.l2_id')
-            ->select(
-                'students.id','students.name','students.status_1','students.status_2','students.doc_title',
-                'students.identity_l1','students.identity_l2',
-                'students.doc_link','students.l1_revision_request','students.l2_revision_request',
-                'revisions.lec_1_revision','revisions.lec_2_revision','submit_requests.l1_agrement','submit_requests.l2_agrement')
-            ->get();
-        $temp["_identity"] = Auth::user()->identity;
-        return $temp;
+        $identity  = Auth::user()->identity;
+        $bimbingan = DB::select("SELECT students.id AS id, students.name AS name, students.status_1 AS status_1, students.status_2 AS status_2, students.doc_title AS doc_title, students.doc_link AS doc_link, students.identity_l1 AS identity_l1, students.identity_l2 AS identity_l2, students.l1_revision_request AS l1_revision_request, students.l2_revision_request AS l2_revision_request, revisions.lec_1_revision AS lec_1_revision, revisions.lec_2_revision AS lec_2_revision, submit_requests.l1_agreement AS l1_agrement, submit_requests.l2_agreement AS l2_agrement FROM students LEFT JOIN revisions ON students.identity = revisions.author_id LEFT JOIN submit_requests ON students.identity = submit_requests.author_id WHERE students.identity_l1 = '?' OR students.identity_l2 = '?'",[$identity,$identity]);
+        return array($identity, $bimbingan);
     }
 
     public static function dataRouteBimbinganHistory_lecturer() {
-        $temp = DB::table('students')
-            ->whereRaw('status_1 >= 2')
-            ->whereRaw('status_2 >= 2')
-            ->where('identity_l1', Auth::user()->identity)
-            ->orWhere('identity_l2', Auth::user()->identity)
-            ->join('documents', 'students.doc_url', '=', 'url')
-            ->select(
-                'students.id','students.name','students.doc_title',
-                'students.thesis_score_l1','students.thesis_score_l2',
-                'students.doc_link','students.identity_l1','students.identity_l2','documents.abstract_key'
-            )
-            ->get();
-        $temp['_id'] = Auth::user()->identity;
-        return $temp;
+        $identity = Auth::user()->identity;
+        $history = DB::select("SELECT students.id AS id, students.identity AS identity, students.name AS name, students.doc_title AS doc_title, students.doc_link AS doc_link, students.identity_l1 AS identity_l1, students.identity_l2 AS identity_l2, students.thesis_score_l1 AS thesis_score_l1, students.thesis_score_l2 AS thesis_score_l2, documents.abstract_key AS abstract_key FROM students LEFT JOIN documents ON students.identity = documents.id_ WHERE students.status_1 > 1 AND students.status_2 > 1 AND students.identity_l1 = '?' OR students.identity_l2 = '?'",[$identity, $identity]);
+        return array($identity, $history);
     }
 
     public static function dataRouteDashboard_department() {
