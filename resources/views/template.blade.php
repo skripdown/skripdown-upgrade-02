@@ -71,10 +71,11 @@
                         <!--COMPONENT:user-profile-menu-->
                         <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
                             @yield('header-button')
-                            <a href="javascript:void(0)" class="dropdown-item">
+                            <form action="{{route('logout')}}" method="post" class="dropdown-item">
+                                @csrf
                                 <i data-feather="power" class="svg-icon mr-2 ml-1"></i>
-                                Keluar
-                            </a>
+                                <input type="submit" value="Keluar" class="btn">
+                            </form>
                         </div>
                     </li>
                 </ul>

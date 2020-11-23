@@ -24,3 +24,11 @@
 | Submit Revision                                              |   ?   |     ?      |
 | Submit Repository                                            |   ?   |     ?      |
 | Read Revision                                                |   ?   |     ?      |
+
+### n. Logout
+
+| <span style="display:inline-block;text-align:center;width:100%">Aktor</span> |  Hasil  |               Keterangan                |
+| :----------------------------------------------------------- | :-----: | :-------------------------------------: |
+| Student                                                      | 100/100 | <span style="color:green">Sukses</span> |
+| Lecturer                                                     | 100/100 | <span style="color:green">Sukses</span> |
+| Department                                                   | 100/100 | <span style="color:green">Sukses</span> |
