@@ -275,13 +275,13 @@ class Skripdown {
                         $date_value = date(result[1],result[2],result[3]);
                         $year_value = result[3];
                     }
-                    else if ((result = /^[ ]*@dosen_i[ ]*:[ ]*([\w .,]+)[ ]*&[ ]*([\d]+)$/m.exec(raw[i])) != null) {
+                    else if ((result = /^[ ]*@dosen_i[ ]*:[ ]*([\w .,]*[\w.,]+)[ ]*&[ ]*([\d]+)$/m.exec(raw[i])) != null) {
                         if (!lock_1) {
                             $dosen_i_name_value = result[1];
                             $dosen_i_id_value = result[2];
                         }
                     }
-                    else if ((result = /^[ ]*@dosen_ii[ ]*:[ ]*([\w .,]+)[ ]*&[ ]*([\d]+)$/m.exec(raw[i])) != null) {
+                    else if ((result = /^[ ]*@dosen_ii[ ]*:[ ]*([\w .,]*[\w.,]+)[ ]*&[ ]*([\d]+)$/m.exec(raw[i])) != null) {
                         if (!lock_2) {
                             $dosen_ii_name_value = result[1];
                             $dosen_ii_id_value = result[2];
