@@ -134,12 +134,14 @@
                                                class="btn btn-primary btn-sm btn-info"
                                                data-toggle="modal"
                                                data-target="#popup_setuju_proposal"
+                                               data-title="{!! $user->doc_title !!}"
                                                data-author_id="{{$user->identity}}"
                                             >setuju</a>
                                             <a href="javascript:void(0)"
                                                class="btn btn-primary btn-sm btn-danger"
                                                data-toggle="modal"
                                                data-target="#popup_tolak_proposal"
+                                               data-title="{!! $user->doc_title !!}"
                                                data-author_id="{{$user->identity}}"
                                             >tolak</a>
                                         @else
@@ -148,6 +150,7 @@
                                                    class="btn btn-primary btn-sm btn-info"
                                                    data-toggle="modal"
                                                    data-target="#popup_revisi"
+                                                   data-title="{!! $user->doc_title !!}"
                                                    data-author_id="{{$user->identity}}"
                                                    data-message=""
                                                 >revisi</a>
@@ -157,6 +160,7 @@
                                                        class="btn btn-primary btn-sm btn-info"
                                                        data-toggle="modal"
                                                        data-target="#popup_setuju_submit"
+                                                       data-title="{!! $user->doc_title !!}"
                                                        data-author_id="{{$user->identity}}"
                                                        data-score=""
                                                     >submit</a>
@@ -164,6 +168,7 @@
                                                        class="btn btn-primary btn-sm btn-danger"
                                                        data-toggle="modal"
                                                        data-target="#popup_tolak_submit"
+                                                       data-title="{!! $user->doc_title !!}"
                                                        data-author_id="{{$user->identity}}"
                                                     >tolak</a>
                                                 @endif
@@ -193,17 +198,16 @@
                     <div class="row">
                         <div class="col-12">
                             <p>Apakah anda yakin ingin menolak proposal tugas akhir dengan judul
-                                <strong><span>judul skripsi ini</span></strong>.
+                                <strong><span id="judul_for_tolak_proposal">judul skripsi ini</span></strong>.
                             </p>
                         </div>
                     </div>
                     <div class="float-right d-block">
-                        <form action="{{url('rejthesis')}}" method="post">
-                            @csrf
+                        <form>
                             <input type="hidden" id="popup_tolak_proposal_author_id" name="author_id">
-                            <button class="btn btn-primary btn-sm btn-info">tidak</button>
-                            <input type="submit" value="iya" class="btn btn-primary btn-sm btn-danger">
                         </form>
+                        <button class="btn btn-primary btn-sm btn-info">tidak</button>
+                        <button class="btn btn-primary btn-sm btn-danger" id="submit-tolak-proposal">iya</button>
                     </div>
                 </div>
             </div>
@@ -220,17 +224,16 @@
                     <div class="row">
                         <div class="col-12">
                             <p>Apakah anda yakin menyetujui pengajuan proposal tugas akhir dengan judul
-                                <strong><span>judul skripsi ini</span></strong>.
+                                <strong><span id="judul_for_setuju_proposal">judul skripsi ini</span></strong>.
                             </p>
                         </div>
                     </div>
                     <div class="float-right d-block">
-                        <form action="{{url('accthesis')}}" method="post">
-                            @csrf
+                        <form>
                             <input type="hidden" id="popup_setuju_proposal_author_id" name="author_id">
-                            <button class="btn btn-primary btn-sm btn-danger">tidak</button>
-                            <input type="submit" value="iya" class="btn btn-primary btn-sm btn-info">
                         </form>
+                        <button class="btn btn-primary btn-sm btn-danger">tidak</button>
+                        <button class="btn btn-primary btn-sm btn-info" id="submit-setuju-proposal">iya</button>
                     </div>
                 </div>
             </div>
@@ -247,7 +250,7 @@
                     <div class="row">
                         <div class="col-12">
                             <p>Apakah anda yakin untuk menyetujui submit tugas akhir tentang
-                                <strong><span>judul skripsi ini</span></strong>.
+                                <strong><span id="judul_for_setuju_submit">judul skripsi ini</span></strong>.
                             </p>
                         </div>
                         <div class="col-12">
@@ -261,13 +264,12 @@
                         </div>
                     </div>
                     <div class="float-right d-block">
-                        <form action="{{url('accsubmit')}}" method="post">
-                            @csrf
+                        <form>
                             <input type="hidden" id="popup_setuju_submit_author_id" name="author_id">
                             <input type="hidden" name="score" id="thesis-score">
-                            <button class="btn btn-primary btn-sm btn-danger">tidak</button>
-                            <input type="submit" value="iya" class="btn btn-primary btn-sm btn-info">
                         </form>
+                        <button class="btn btn-primary btn-sm btn-danger">tidak</button>
+                        <button class="btn btn-primary btn-sm btn-info" id="submit-setuju-submit">iya</button>
                     </div>
                 </div>
             </div>
@@ -284,17 +286,16 @@
                     <div class="row">
                         <div class="col-12">
                             <p>Apakah anda yakin untuk menolak submit tugas akhir tentang
-                                <strong><span>judul skripsi ini</span></strong>.
+                                <strong><span id="judul_for_tolak_submit">judul skripsi ini</span></strong>.
                             </p>
                         </div>
                     </div>
                     <div class="float-right d-block">
                         <form action="{{url('rejsubmit')}}" method="post">
-                            @csrf
                             <input type="hidden" id="popup_tolak_submit_author_id" name="author_id">
-                            <button class="btn btn-primary btn-sm btn-info">tidak</button>
-                            <input type="submit" value="iya" class="btn btn-primary btn-sm btn-danger">
                         </form>
+                        <button class="btn btn-primary btn-sm btn-info">tidak</button>
+                        <button class="btn btn-primary btn-sm btn-danger" id="submit-tolak-submit">iya</button>
                     </div>
                 </div>
             </div>
@@ -320,13 +321,124 @@
                         </div>
                     </div>
                     <div class="float-right d-block">
-                        <form action="{{url('progthesis')}}" method="post">
+                        <form>
                             @csrf
                             <input type="hidden" id="popup_revisi_author_id" name="author_id">
-                            <input type="hidden" name="pesan-revisi" id="form-pesan-revisi">
-                            <button class="btn btn-primary btn-sm btn-danger">batal</button>
-                            <input type="submit" value="submit" class="btn btn-primary btn-sm btn-info">
+                            <input type="hidden" name="pesan_revisi" id="form-pesan-revisi">
                         </form>
+                        <button class="btn btn-primary btn-sm btn-danger">batal</button>
+                        <button class="btn btn-primary btn-sm btn-info" id="submit-revisi">kirim</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="notification_tolak_proposal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Notifikasi</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <p>
+                                sukses menolak proposal!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="float-right d-block">
+                        <button class="btn btn-primary btn-sm btn-info">tutup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="notification_setuju_proposal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Notifikasi</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <p>
+                                sukses menyetujui proposal!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="float-right d-block">
+                        <button class="btn btn-primary btn-sm btn-info">tutup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="notification_setuju_submit" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Notifikasi</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <p>
+                                sukses menyetujui submit ke repository!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="float-right d-block">
+                        <button class="btn btn-primary btn-sm btn-info">tutup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="notification_tolak_submit" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Notifikasi</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <p>
+                                sukses menolak permintaan submit ke repository!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="float-right d-block">
+                        <button class="btn btn-primary btn-sm btn-info">tutup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="notification_revisi" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Notifikasi</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <p>
+                                sukses mengirim pesan revisi!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="float-right d-block">
+                        <button class="btn btn-primary btn-sm btn-info">tutup</button>
                     </div>
                 </div>
             </div>
@@ -337,17 +449,31 @@
 @section('script-body')
     <script src="{{asset(env('JS_PATH').'rotateable.js')}}"></script>
     <script>
+        window.focus_row = '';
+        window.focus_parent = '';
         $('#popup_tolak_proposal').on('show.bs.modal',e=>{
             $(e.currentTarget).find('#popup_tolak_proposal_author_id').val($(e.relatedTarget).data('author_id'));
+            $(e.currentTarget).find('#judul_for_tolak_proposal').html($(e.relatedTarget).data('title'));
+            window.focus_row = e.relatedTarget.parentElement.parentElement;
+            window.focus_parent = window.focus_row.parentElement;
         });
         $('#popup_setuju_proposal').on('show.bs.modal',e=>{
            $(e.currentTarget).find('#popup_setuju_proposal_author_id').val($(e.relatedTarget).data('author_id'));
+           $(e.currentTarget).find('#judul_for_setuju_proposal').html($(e.relatedTarget).data('title'));
+           window.focus_row = e.relatedTarget.parentElement.parentElement;
+           window.focus_parent = window.focus_row.parentElement;
         });
         $('#popup_tolak_submit').on('show.bs.modal',e=>{
             $(e.currentTarget).find('#popup_tolak_submit_author_id').val($(e.relatedTarget).data('author_id'));
+            $(e.currentTarget).find('#judul_for_tolak_submit').html($(e.relatedTarget).data('title'));
+            window.focus_row = e.relatedTarget.parentElement.parentElement;
+            window.focus_parent = window.focus_row.parentElement;
         });
         $('#popup_setuju_submit').on('show.bs.modal',e=>{
             $(e.currentTarget).find('#popup_setuju_submit_author_id').val($(e.relatedTarget).data('author_id'));
+            $(e.currentTarget).find('#judul_for_setuju_submit').html($(e.relatedTarget).data('title'));
+            window.focus_row = e.relatedTarget.parentElement.parentElement;
+            window.focus_parent = window.focus_row.parentElement;
             const score = $(e.relatedTarget).data('score');
             if (score !== '')
                 $(e.currentTarget).find('score-input').val(parseInt(score));
@@ -357,12 +483,81 @@
         });
         $('#popup_revisi').on('show.bs.modal',e=>{
             $(e.currentTarget).find('#popup_revisi_author_id').val($(e.relatedTarget).data('author_id'));
+            window.focus_row = e.relatedTarget.parentElement.parentElement;
+            window.focus_parent = window.focus_row.parentElement;
             const message = $(e.relatedTarget).data('message');
             if (message !== '')
                 $(e.currentTarget).find('#pesan-revisi').val(message);
         }).on('hidden.bs.modal',e=>{
             $(e.relatedTarget).data('message',$(e.currentTarget).find('#pesan-revisi').val());
             $(e.currentTarget).find('#pesan-revisi').val('');
+        });
+        $('#submit-tolak-proposal').click(function () {
+            const author_id = $('#popup_tolak_proposal_author_id').val();
+            $.ajax({
+                url     : '{{url('rejthesis')}}',
+                type    : 'POST',
+                data    : {_token:'{{csrf_token()}}',author_id:author_id},
+                success : (e)=>{
+                    console.log(e);
+                    window.focus_parent.removeChild(window.focus_row);
+                    $('#notification_tolak_proposal').modal('show');
+                }
+            });
+        });
+        $('#submit-setuju-proposal').click(function () {
+            const author_id = $('#popup_setuju_proposal_author_id').val();
+            $.ajax({
+                url     : '{{url('accthesis')}}',
+                type    : 'POST',
+                data    : {_token:'{{csrf_token()}}',author_id:author_id},
+                success : (e)=>{
+                    console.log(e);
+                    window.focus_parent.removeChild(window.focus_row);
+                    $('#notification_tolak_proposal').modal('show');
+                }
+            });
+        });
+        $('#submit-setuju-submit').click(function () {
+            const author_id = $('#popup_setuju_submit_author_id').val();
+            const score     = $('#thesis-score').val();
+            $.ajax({
+                url     : '{{url('accsubmit')}}',
+                type    : 'POST',
+                data    : {_token:'{{csrf_token()}}',author_id:author_id,score:parseFloat(score)},
+                success : (e)=>{
+                    console.log(e);
+                    window.focus_parent.removeChild(window.focus_row);
+                    $('#notification_setuju_submit').modal('show');
+                }
+            });
+        });
+        $('#submit-tolak-submit').click(function () {
+            const author_id = $('#popup_tolak_submit_author_id').val();
+            $.ajax({
+                url     : '{{url('rejsubmit')}}',
+                type    : 'POST',
+                data    : {_token:'{{csrf_token()}}',author_id:author_id},
+                success : (e)=>{
+                    console.log(e);
+                    window.focus_parent.removeChild(window.focus_row);
+                    $('#notification_tolak_submit').modal('show');
+                }
+            });
+        });
+        $('#submit-revisi').click(function () {
+            const author_id = $('#popup_tolak_submit_author_id').val();
+            const msg       = $('#form-pesan-revisi').val();
+            $.ajax({
+                url     : '{{url('progthesis')}}',
+                type    : 'POST',
+                data    : {_token:'{{csrf_token()}}',author_id:author_id,pesan_revisi:msg},
+                success : (e)=>{
+                    console.log(e);
+                    window.focus_parent.removeChild(window.focus_row);
+                    $('#notification_revisi').modal('show');
+                }
+            });
         });
     </script>
 @endsection
