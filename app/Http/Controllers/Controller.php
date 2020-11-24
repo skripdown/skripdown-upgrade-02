@@ -82,7 +82,7 @@ class Controller extends BaseController
         return 'authorization error';
     }
 
-    public function proprseAdvisor(Request $request) {
+    public function proposeAdvisor(Request $request) {
         if (Authorization_::student()) {
             return response()->json(
                 array(

@@ -9,6 +9,7 @@ use App\Models\Exam;
 use App\Models\Plagiarism;
 use App\Models\Proposal;
 use App\Models\RejectedProposal;
+use App\Models\Student;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -21,9 +22,10 @@ class Data {
     }
 
     public static function getAdvisorWriter($id_writer) {
-        return DB::table('students')
+        $temp = DB::table('students')
             ->where('identity',$id_writer)
             ->first();
+        return Student::find($temp->id);
     }
 
     public static function getStudent_thesis($identity) {
@@ -119,13 +121,18 @@ class Data {
 
     public static function getRevisionMessages($order) {
         $auth_id = Auth::user()->identity;
-        $auth_id = DB::table('revisions')
+        if (DB::table('revisions')
             ->where('author_id', $auth_id)
-            ->first()->id;
-        return DB::table('revision_messages')
-            ->where('revision', $auth_id)
-            ->orderBy('index',$order)
-            ->get();
+            ->count() > 0) {
+            $auth_id = DB::table('revisions')
+                ->where('author_id', $auth_id)
+                ->first()->id;
+            return DB::table('revision_messages')
+                ->where('revision', $auth_id)
+                ->orderBy('index',$order)
+                ->get();
+        }
+        return null;
     }
 
     public static function getRevisionMessage($idMessage) {
@@ -218,11 +225,16 @@ class Data {
                 ->where('author_id', $user->identity)
                 ->count() > 0)
                 $request_submit = '1';
+            $message = self::getRevisionMessages('desc');
+            if ($message != null)
+                $message = $message->toArray();
+            else
+                $message = array();
             return array(
                 'revision_1'=>$request_revision_1,
                 'revision_2'=>$request_revision_2,
                 'request_submit'=>$request_submit,
-                'message'=>self::getRevisionMessages('desc')->toArray()
+                'message'=>$message
             );
         }
         elseif ($role == 'lecturer') {
@@ -242,19 +254,20 @@ class Data {
                 ->where('author_id', Auth::user()->identity)
                 ->where('lecturer_id', $lecturer_id)
                 ->count();
-        if ($proposal > 0)
+        if ($proposal > 0) {
             $proposal =
                 DB::table('proposals')
                     ->where('author_id', Auth::user()->identity)
                     ->where('lecturer_id', $lecturer_id)
                     ->first();
+            $proposal = Proposal::find($proposal->id);
+        }
         else {
             $proposal = new Proposal();
             $proposal->author_id = Auth::user()->identity;
-            $proposal->lecturer_id = Auth::user()->identity;
-            $proposal->advisor_type = intval($lectype);
         }
         $proposal->lecturer_id = $lecturer_id;
+        $proposal->advisor_type = $lectype;
         $proposal->save();
 
         return '1';
@@ -278,7 +291,7 @@ class Data {
 
     public static function dataRouteDashboard_lecturer() {
         $identity  = Auth::user()->identity;
-        $bimbingan = DB::select("SELECT students.id AS id, students.name AS name, students.status_1 AS status_1, students.status_2 AS status_2, students.doc_title AS doc_title, students.doc_link AS doc_link, students.identity_l1 AS identity_l1, students.identity_l2 AS identity_l2, students.l1_revision_request AS l1_revision_request, students.l2_revision_request AS l2_revision_request, revisions.lec_1_revision AS lec_1_revision, revisions.lec_2_revision AS lec_2_revision, submit_requests.l1_agreement AS l1_agrement, submit_requests.l2_agreement AS l2_agrement FROM students LEFT JOIN revisions ON students.identity = revisions.author_id LEFT JOIN submit_requests ON students.identity = submit_requests.author_id WHERE students.identity_l1 = '?' OR students.identity_l2 = '?'",[$identity,$identity]);
+        $bimbingan = DB::select("SELECT students.id AS id, students.identity AS identity,students.name AS name, students.status_1 AS status_1, students.status_2 AS status_2, students.doc_title AS doc_title, students.doc_link AS doc_link, students.identity_l1 AS identity_l1, students.identity_l2 AS identity_l2, students.l1_revision_request AS l1_request_revision, students.l2_revision_request AS l2_request_revision, revisions.lec_1_revision AS lec_1_revision, revisions.lec_2_revision AS lec_2_revision, submit_requests.l1_agreement AS l1_agrement, submit_requests.l2_agreement AS l2_agrement, proposals.id FROM students LEFT JOIN revisions ON students.identity = revisions.author_id LEFT JOIN submit_requests ON students.identity = submit_requests.author_id LEFT JOIN proposals ON proposals.lecturer_id = ? WHERE students.identity_l1 = ? OR students.identity_l2 = ?",[$identity,$identity,$identity]);
         return array($identity, $bimbingan);
     }
 

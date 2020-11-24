@@ -6,6 +6,7 @@
 namespace App\Http\Data;
 
 use App\Models\Document;
+use App\Models\Proposal;
 use App\Models\Revision;
 use App\Models\RevisionMessage;
 use App\Models\Skripdown;
@@ -117,9 +118,10 @@ class Maker {
 
     public static function setAdvisor($id, $type) {
         $writer   = Data::getWriter();
-        if ($writer->status_1 != 1 && $type == '1' && $writer->identity_l1 == null)
+        $writer   = Student::find($writer->id);
+        if ($writer->status_1 < 1 && $type == '1' && $writer->identity_l1 == null)
             $writer->identity_l1 = $id;
-        if ($writer->status_2 != 1 &&$type == '2' && $writer->identity_l2 == null)
+        if ($writer->status_2 < 1 && $type == '2' && $writer->identity_l2 == null)
             $writer->identity_l2 = $id;
         $writer->save();
     }

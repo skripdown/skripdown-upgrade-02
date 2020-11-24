@@ -1,60 +1,10 @@
-let form;
-let input_text;
-let input_parse;
-let input_department;
-let input_university;
-let input_faculty;
-let input_conf_font;
-let input_author;
-let input_id;
-let input_abstract;
-let input_abs_key;
-let input_url;
-let input_title;
-let input_lec1_id;
-let input_lec1_name;
-let input_lec2_id;
-let input_lec2_name;
-let skrip_input;
-let preview_output;
-let btn_setting;
-let btn_font_up;
-let btn_font_down;
-let btn_live;
-let btn_code;
-let btn_disp_code;
-let btn_disp_rendered;
-let code_panel;
-let preview_panel;
-let preview_code;
-let rev;
-let submit_rev_1;
-let submit_rev_2;
-let submit_rep;
-let msg_container;
-let msg_notif;
-
-let skrip_d;
-let skripd_editor;
-let skripd_link;
-let skripd_autosave;
-let skripd_read_msg;
-let skripd_sub_rep;
-let skripd_sub_revs;
-let skripd_token;
-
-let conn_status;
-let temp_conn_status;
-let conn_bool;
-let allow_submit;
-
-let university,faculty,department;
-let meta_info;
-
-let helper_warning;
-let disp_warning;
-let list_warning;
-let total_warning;
+let form, input_text, input_parse, input_department, input_university, input_faculty, input_conf_font, input_author,
+    input_id, input_abstract, input_abs_key, input_url, input_title, input_lec1_id, input_lec1_name, input_lec2_id,
+    input_lec2_name, skrip_input, preview_output, btn_setting, btn_font_up, btn_font_down, btn_live, btn_code,
+    btn_disp_code, btn_disp_rendered, code_panel, preview_panel, preview_code, rev, submit_rev_1, submit_rev_2,
+    submit_rep, msg_container, msg_notif, skrip_d, skripd_editor, skripd_link, skripd_sub_prop, skripd_autosave,
+    skripd_read_msg, skripd_sub_rep, skripd_sub_revs, skripd_token, conn_status, temp_conn_status, conn_bool,
+    allow_submit, university,faculty,department, meta_info, helper_warning, disp_warning, list_warning, total_warning;
 
 $(document).ready(()=>{
 
@@ -105,6 +55,7 @@ $(document).ready(()=>{
     skripd_editor     = $('meta[name=skripd_editor_update]').attr('content');
     skripd_link       = $('meta[name=skripd_f_words]').attr('content');
     skripd_autosave   = $('meta[name=skripd_autosave]').attr('content');
+    skripd_sub_prop   = $('meta[name=skripd_propose_advisor]').attr('content');
     skripd_read_msg   = $('meta[name=skripd_read_message]').attr('content');
     skripd_sub_rep    = $('meta[name=skripd_submit_repository]').attr('content');
     skripd_sub_revs   = $('meta[name=skripd_submit_revision]').attr('content');
@@ -297,6 +248,8 @@ $(document).ready(()=>{
                             conf_font    : $(input_conf_font).val()
                         },
                         success : response=>{
+                            helper_warning.set('l1_id',dosen_data[0]);
+                            helper_warning.set('l2_id',dosen_data[2]);
                             if (response.json_0 === '1') helper_warning.set('l1_id_corr', true);
                             else helper_warning.set('l1_id_corr', false);
                             if (response.json_1 === '1') helper_warning.set('l1_name_corr', true);
@@ -406,11 +359,31 @@ $(document).ready(()=>{
                                 allow_submit = true;
                             }
                             $(list_warning).html(html_warning);
-                            if (helper_warning.get('l1_verify') && helper_warning.get('l2_verify')) {
+                            if (helper_warning.get('l1_verify') || helper_warning.get('l2_verify')) {
                                 if (helper_warning.get('l1_verify'))
                                     skrip_d.setLock(1, helper_warning.get('l1_id'), helper_warning.get('l1_name'));
                                 if (helper_warning.get('l2_verify'))
                                     skrip_d.setLock(2, helper_warning.get('l2_id'), helper_warning.get('l2_name'));
+                            }
+                            if (helper_warning.get('l1_id_corr')) {
+                                $.ajax({
+                                    type : 'POST',
+                                    url  : ''+skripd_sub_prop+'',
+                                    data : {_token:skripd_token,lecturer_type:1,lecturer_id:helper_warning.get('l1_id')},
+                                    success : ()=>{
+                                        skrip_d.setLock(1, helper_warning.get('l1_id'), helper_warning.get('l1_name'));
+                                    }
+                                });
+                            }
+                            if (helper_warning.get('l2_id_corr')) {
+                                $.ajax({
+                                    type : 'POST',
+                                    url  : ''+skripd_sub_prop+'',
+                                    data : {_token:skripd_token,lecturer_type:2,lecturer_id:helper_warning.get('l2_id')},
+                                    success : ()=>{
+                                        skrip_d.setLock(1, helper_warning.get('l2_id'), helper_warning.get('l_2name'));
+                                    }
+                                });
                             }
                         }
                     });

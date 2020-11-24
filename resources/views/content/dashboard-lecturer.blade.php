@@ -101,7 +101,7 @@
                                         </a>
                                     </td>
                                     <td>{{$user->name}}</td>
-                                    @if ($user->status == -1)
+                                    @if ($status == -1)
                                         <td class="text-danger">belum disetujui</td>
                                     @else
                                         @if ($progres == 0)
@@ -129,7 +129,7 @@
                                         @endif
                                     @endif
                                     <td class="text-center">
-                                        @if ($user->status == -1)
+                                        @if ($status == -1)
                                             <a href="javascript:void(0)"
                                                class="btn btn-primary btn-sm btn-info"
                                                data-toggle="modal"
@@ -229,7 +229,7 @@
                             @csrf
                             <input type="hidden" id="popup_setuju_proposal_author_id" name="author_id">
                             <button class="btn btn-primary btn-sm btn-danger">tidak</button>
-                            <input type="submit" value="iya" class="btn btn-primary btn-sm btn-danger">
+                            <input type="submit" value="iya" class="btn btn-primary btn-sm btn-info">
                         </form>
                     </div>
                 </div>
