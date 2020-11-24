@@ -6,7 +6,6 @@
 namespace App\Http\Data;
 
 use App\Models\Document;
-use App\Models\Proposal;
 use App\Models\Revision;
 use App\Models\RevisionMessage;
 use App\Models\Skripdown;
@@ -192,7 +191,10 @@ class Maker {
 
     public static function requestSubmit() {
         $student = Data::getWriter();
-        $request = new SubmitRequest();
+        if (Data::hasSubmitRequest())
+            $request = Data::getSubmitRequest(Auth::user()->identity, '');
+        else
+            $request = new SubmitRequest();
         $request->author_id = $student->identity;
         $request->l1_id = $student->identity_l1;
         $request->l2_id = $student->identity_l2;
@@ -204,19 +206,20 @@ class Maker {
     public static function fireSubmit($author_id, $score) {
         $lecturer_id = Auth::user()->identity;
         $author = Data::getAdvisorWriter($author_id);
+        $submit = Data::getSubmitRequest($author->identity, '');
         $score = floatval($score);
         if ($author->identity_l1 == $lecturer_id) {
             $author->status_1 = 2;
             $author->thesis_score_l1 = $score;
+            $submit->l1_agreement = 2;
         }
         else {
             $author->status_2 = 2;
             $author->thesis_score_l2 = $score;
+            $submit->l2_agreement = 2;
         }
         $author->save();
         if ($author->status_1 == 2 && $author->status_2 == 2) {
-            $submit = Data::getSubmitRequest($author->identity, '');
-            $submit = SubmitRequest::find($submit->id);
             $submit->delete();
             Data::getPlagiarism($author_id);
             return array('status'=>'1');
@@ -225,15 +228,15 @@ class Maker {
     }
 
     public static function clearSubmit($author_id) {
-        $author = Data::getAdvisorWriter($author_id);
-        $author->status_1 = 1;
-        $author->status_2 = 1;
-        $author->thesis_score_l1 = 0.0;
-        $author->thesis_score_l2 = 0.0;
-        $author->save();
-        $submit = Data::getSubmitRequest($author->identity,'');
-        $submit = SubmitRequest::find($submit->id);
-        $submit->delete();
+        $lec_id = Auth::user()->identity;
+        $submit = Data::getSubmitRequest($author_id,'');
+        if ($lec_id == $submit->l1_id) {
+            $submit->l1_agreement = 0;
+        }
+        else {
+            $submit->l2_agreement = 0;
+        }
+        $submit->save();
         return array('status'=>'1');
     }
 

@@ -10,6 +10,7 @@ use App\Models\Plagiarism;
 use App\Models\Proposal;
 use App\Models\RejectedProposal;
 use App\Models\Student;
+use App\Models\SubmitRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -52,25 +53,6 @@ class Data {
         return DB::table('documents')
             ->where('id_',$identity)
             ->first()->url;
-    }
-
-    public static function getStudents_data($id) {
-        if (Auth::user()->role == 'lecturer')
-            return DB::table('students')
-                ->where('identity_l1',$id)
-                ->orWhere('identity_l2',$id)
-                ->get();
-        if (Auth::user()->role == 'department')
-            return DB::table('students')
-                ->where('identity_dep',$id)
-                ->get();
-        if (Auth::user()->role == 'super')
-            return DB::table('students')
-                ->where('identity_univ',$id)
-                ->get();
-        return DB::table('students')
-            ->where('identity',$id)
-            ->first();
     }
 
     public static function hasLecturer($id) {
@@ -146,16 +128,24 @@ class Data {
             ->first();
     }
 
+    public static function hasSubmitRequest() {
+        return $temp = DB::table('submit_requests')
+            ->where('author_id', Auth::user()->identity)
+            ->count() > 0;
+    }
+
     public static function getSubmitRequest($identity, $role) {
         if ($role == 'l') {
-            return DB::table('submit_requests')
+            $temp = DB::table('submit_requests')
                 ->where('l1_id', $identity)
                 ->orWhere('l2_id', $identity)
                 ->first();
+            return SubmitRequest::find($temp->id);
         }
-        return DB::table('submit_requests')
+        $temp = DB::table('submit_requests')
             ->where('author_id', $identity)
             ->first();
+        return SubmitRequest::find($temp->id);
     }
 
     public static function isSubmitedThesis($url) {

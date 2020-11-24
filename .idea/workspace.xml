@@ -19,9 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="fix features bug 2">
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="lecturer department feature extended">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/content/dashboard-lecturer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/dashboard-lecturer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Data/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Data.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Data/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Data/Maker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Maker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/element/js/editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/element/js/editor.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -315,14 +318,8 @@
       <workItem from="1606026124725" duration="3321000" />
       <workItem from="1606091170140" duration="11605000" />
       <workItem from="1606113992825" duration="15300000" />
-      <workItem from="1606206573616" duration="8719000" />
-    </task>
-    <task id="LOCAL-00058" summary="student functionality feature devs (no message)">
-      <created>1603081727113</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1603081727113</updated>
+      <workItem from="1606206573616" duration="8970000" />
+      <workItem from="1606233163264" duration="5111000" />
     </task>
     <task id="LOCAL-00059" summary="student functionality feature devs (no message)">
       <created>1603107024325</created>
@@ -660,7 +657,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606213754513</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="lecturer department feature extended">
+      <created>1606225150861</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1606225150861</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -680,7 +684,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="template modified" />
     <MESSAGE value="advisor view modified" />
     <MESSAGE value="advisor dashboard-lecturer.blade.php modified" />
     <MESSAGE value="advisor scoring script modified" />
@@ -705,7 +708,8 @@
     <MESSAGE value="landing page content updated" />
     <MESSAGE value="fix features bug" />
     <MESSAGE value="fix features bug 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix features bug 2" />
+    <MESSAGE value="lecturer department feature extended" />
+    <option name="LAST_COMMIT_MESSAGE" value="lecturer department feature extended" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600922526929">
@@ -756,10 +760,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="507" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1600920212231" />
-    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2" timestamp="1606213761180">
+    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2" timestamp="1606225158942">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606213761180" />
+    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606225158942" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1602072002937">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -79,6 +79,8 @@ $(document).ready(()=>{
     helper_warning.set('l_id_dup',false);
     helper_warning.set('l1_id','');
     helper_warning.set('l2_id','');
+    helper_warning.set('l1_reject',false);
+    helper_warning.set('l2_reject',false);
 
     temp_conn_status  = '';
 
@@ -270,6 +272,10 @@ $(document).ready(()=>{
                             else helper_warning.set('l2_progress', false);
                             if (response.json_10 === '1') helper_warning.set('l_id_dup', true);
                             else helper_warning.set('l_id_dup', false);
+                            if (response.json_13 === '1') helper_warning.set('l1_reject', true);
+                            else helper_warning.set('l1_reject', false);
+                            if (response.json_14 === '1') helper_warning.set('l2_reject', true);
+                            else helper_warning.set('l2_reject', false);
                             let warning_count = 0;
                             let html_warning  = '';
                             const _open       = '<span class="dropdown-item">';
@@ -277,7 +283,10 @@ $(document).ready(()=>{
                             if (dosen_data[0] !== 'noid' && dosen_data[2] !== 'noid') {
                                 if (!helper_warning.get('l1_verify') && helper_warning.get('l2_verify')) {
                                     if (helper_warning.get('l1_id_corr')) {
-                                        html_warning += _open + 'belum disetujui oleh ' + helper_warning.get('l1_name') + _close;
+                                        if (helper_warning.get('l1_reject'))
+                                            html_warning += _open + 'pernah ditolak oleh ' + helper_warning.get('l1_name') + _close;
+                                        else
+                                            html_warning += _open + 'belum disetujui oleh ' + helper_warning.get('l1_name') + _close;
                                     }
                                     else
                                         html_warning += _open + 'NID pembimbing 1 salah' + _close;
@@ -285,7 +294,10 @@ $(document).ready(()=>{
                                 }
                                 else if (helper_warning.get('l1_verify') && !helper_warning.get('l2_verify')) {
                                     if (helper_warning.get('l2_id_corr')) {
-                                        html_warning += _open + 'belum disetujui oleh ' + helper_warning.get('l2_name') + _close;
+                                        if (helper_warning.get('l2_reject'))
+                                            html_warning += _open + 'pernah ditolak oleh ' + helper_warning.get('l2_name') + _close;
+                                        else
+                                            html_warning += _open + 'belum disetujui oleh ' + helper_warning.get('l2_name') + _close;
                                     }
                                     else
                                         html_warning += _open + 'NID pembimbing 2 salah' + _close;
@@ -293,15 +305,24 @@ $(document).ready(()=>{
                                 }
                                 else if (!helper_warning.get('l1_verify') && !helper_warning.get('l2_verify')) {
                                     if (helper_warning.get('l1_id_corr') && helper_warning.get('l2_id_corr')) {
-                                        html_warning += _open + 'belum disetujui oleh kedua pembimbing' + _close;
+                                        if (helper_warning.get('l1_reject') && helper_warning.get('l2_reject'))
+                                            html_warning += _open + 'pernah ditolak oleh kedua pembimbing' + _close;
+                                        else
+                                            html_warning += _open + 'belum disetujui oleh kedua pembimbing' + _close;
                                     }
                                     else if (!helper_warning.get('l1_id_corr') && helper_warning.get('l2_id_corr')) {
                                         html_warning += _open + 'NID pembimbing 1 salah' + _close;
-                                        html_warning += _open + 'belum disetujui oleh ' + helper_warning.get('l2_name') + _close;
+                                        if (helper_warning.get('l2_reject'))
+                                            html_warning += _open + 'pernah ditolak oleh ' + helper_warning.get('l2_name') + _close;
+                                        else
+                                            html_warning += _open + 'belum disetujui oleh ' + helper_warning.get('l2_name') + _close;
                                         warning_count++;
                                     }
                                     else if (helper_warning.get('l1_id_corr') && !helper_warning.get('l2_id_corr')) {
-                                        html_warning += _open + 'belum disetujui oleh ' + helper_warning.get('l1_name') + _close;
+                                        if (helper_warning.get('l1_reject'))
+                                            html_warning += _open + 'pernah ditolak oleh ' + helper_warning.get('l1_name') + _close;
+                                        else
+                                            html_warning += _open + 'belum disetujui oleh ' + helper_warning.get('l1_name') + _close;
                                         html_warning += _open + 'NID pembimbing 2 salah' + _close;
                                         warning_count++;
                                     }
@@ -365,7 +386,7 @@ $(document).ready(()=>{
                                 if (helper_warning.get('l2_verify'))
                                     skrip_d.setLock(2, helper_warning.get('l2_id'), helper_warning.get('l2_name'));
                             }
-                            if (helper_warning.get('l1_id_corr')) {
+                            if (helper_warning.get('l1_id_corr') && !helper_warning.get('l1_reject')) {
                                 $.ajax({
                                     type : 'POST',
                                     url  : ''+skripd_sub_prop+'',
@@ -375,7 +396,7 @@ $(document).ready(()=>{
                                     }
                                 });
                             }
-                            if (helper_warning.get('l2_id_corr')) {
+                            if (helper_warning.get('l2_id_corr') && !helper_warning.get('l2_reject')) {
                                 $.ajax({
                                     type : 'POST',
                                     url  : ''+skripd_sub_prop+'',

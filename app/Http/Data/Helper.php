@@ -5,6 +5,8 @@
 
 namespace App\Http\Data;
 
+use Illuminate\Support\Facades\Auth;
+
 class Helper {
 
     //JSON RETURN STRUCTURE
@@ -21,6 +23,8 @@ class Helper {
     //10: lecturer identity duplicated
     //11: lecturer_1 identity
     //12: lecturer_2 identity
+    //13: lecturer_1 reject proposal
+    //14: lecturer_2 reject proposal
 
     public static function check($request) {
         $l1_id = $request->l1_id;
@@ -41,12 +45,17 @@ class Helper {
         $json_10 = '0';
         $json_11 = 'noid';
         $json_12 = 'noid';
+        $json_13 = '0';
+        $json_14 = '0';
 
         if (Data::hasLecturer($l1_id)) {
             $lect_1 = Data::getLecturer($l1_id);
             $json_0 = '1';
             $json_2 = $lect_1->name;
-            Maker::setAdvisor($l1_id, '1');
+            if (!Data::wasRejected(Auth::user()->identity,$l1_id,Data::getWriter()->doc_title))
+                Maker::setAdvisor($l1_id, '1');
+            else
+                $json_13 = '1';
             if ($json_2 == $l1_nm)
                 $json_1 = '1';
         }
@@ -54,7 +63,10 @@ class Helper {
             $lect_2 = Data::getLecturer($l2_id);
             $json_3 = '1';
             $json_5 = $lect_2->name;
-            Maker::setAdvisor($l2_id, '2');
+            if (!Data::wasRejected(Auth::user()->identity,$l2_id,Data::getWriter()->doc_title))
+                Maker::setAdvisor($l2_id, '2');
+            else
+                $json_14 = '1';
             if ($json_5 == $l2_nm)
                 $json_4 = '1';
         }
@@ -83,7 +95,9 @@ class Helper {
             'json_9'=>$json_9,
             'json_10'=>$json_10,
             'json_11'=>$json_11,
-            'json_12'=>$json_12
+            'json_12'=>$json_12,
+            'json_13'=>$json_13,
+            'json_14'=>$json_14
         );
     }
 }
