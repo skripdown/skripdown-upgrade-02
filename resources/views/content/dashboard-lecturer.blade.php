@@ -64,11 +64,13 @@
                                 @php
                                     $progres = null;
                                     $status = null;
+                                    $status_sc = null;
                                     $request_revision = null;
                                     $request_submit = null;
                                     if (isset($user) && isset($identity)) {
                                         if ($identity == $user->identity_l1) {
                                             $status = $user->status_1;
+                                            $status_sc = $user->status_2;
                                             $progres = $user->lec_1_revision;
                                             $request_revision = $user->l1_request_revision;
                                             if ($user->l1_agrement != null) {
@@ -81,6 +83,7 @@
                                         }
                                         else {
                                             $status = $user->status_2;
+                                            $status_sc = $user->status_1;
                                             $progres = $user->lec_2_revision;
                                             $request_revision = $user->l2_request_revision;
                                             $request_submit = $user->l2_agrement;
@@ -136,6 +139,7 @@
                                                data-target="#popup_setuju_proposal"
                                                data-title="{!! $user->doc_title !!}"
                                                data-author_id="{{$user->identity}}"
+                                               data-status-sec="{{$status_sec}}"
                                             >setuju</a>
                                             <a href="javascript:void(0)"
                                                class="btn btn-primary btn-sm btn-danger"
@@ -143,15 +147,17 @@
                                                data-target="#popup_tolak_proposal"
                                                data-title="{!! $user->doc_title !!}"
                                                data-author_id="{{$user->identity}}"
+                                               data-status-sec="{{$status_sec}}"
                                             >tolak</a>
                                         @else
-                                            @if ($request_revision)
+                                            @if ($request_revision == 1)
                                                 <a href="javascript:void(0)"
                                                    class="btn btn-primary btn-sm btn-info"
                                                    data-toggle="modal"
                                                    data-target="#popup_revisi"
                                                    data-title="{!! $user->doc_title !!}"
                                                    data-author_id="{{$user->identity}}"
+                                                   data-status-sec="{{$status_sec}}"
                                                    data-message=""
                                                 >revisi</a>
                                             @else
@@ -162,6 +168,7 @@
                                                        data-target="#popup_setuju_submit"
                                                        data-title="{!! $user->doc_title !!}"
                                                        data-author_id="{{$user->identity}}"
+                                                       data-status-sec="{{$status_sec}}"
                                                        data-score=""
                                                     >submit</a>
                                                     <a href="javascript:void(0)"
@@ -170,7 +177,12 @@
                                                        data-target="#popup_tolak_submit"
                                                        data-title="{!! $user->doc_title !!}"
                                                        data-author_id="{{$user->identity}}"
+                                                       data-status-sec="{{$status_sec}}"
                                                     >tolak</a>
+                                                @else
+                                                    <span class="text-muted">
+                                                        tidak ada permintaan revisi
+                                                    </span>
                                                 @endif
                                             @endif
                                         @endif
@@ -450,30 +462,40 @@
     <script src="{{asset(env('JS_PATH').'rotateable.js')}}"></script>
     <script>
         window.focus_row = '';
+        window.focus_col = '';
         window.focus_parent = '';
+        window.status_sec = '';
         $('#popup_tolak_proposal').on('show.bs.modal',e=>{
             $(e.currentTarget).find('#popup_tolak_proposal_author_id').val($(e.relatedTarget).data('author_id'));
             $(e.currentTarget).find('#judul_for_tolak_proposal').html($(e.relatedTarget).data('title'));
-            window.focus_row = e.relatedTarget.parentElement.parentElement;
+            window.focus_col = e.relatedTarget.parentElement;
+            window.focus_row = window.focus_col.parentElement;
             window.focus_parent = window.focus_row.parentElement;
+            window.status_sec = $(e.relatedTarget).data('status-sec');
         });
         $('#popup_setuju_proposal').on('show.bs.modal',e=>{
            $(e.currentTarget).find('#popup_setuju_proposal_author_id').val($(e.relatedTarget).data('author_id'));
            $(e.currentTarget).find('#judul_for_setuju_proposal').html($(e.relatedTarget).data('title'));
-           window.focus_row = e.relatedTarget.parentElement.parentElement;
+           window.focus_col = e.relatedTarget.parentElement;
+           window.focus_row = window.focus_col.parentElement;
            window.focus_parent = window.focus_row.parentElement;
+           window.status_sec = $(e.relatedTarget).data('status-sec');
         });
         $('#popup_tolak_submit').on('show.bs.modal',e=>{
             $(e.currentTarget).find('#popup_tolak_submit_author_id').val($(e.relatedTarget).data('author_id'));
             $(e.currentTarget).find('#judul_for_tolak_submit').html($(e.relatedTarget).data('title'));
-            window.focus_row = e.relatedTarget.parentElement.parentElement;
+            window.focus_col = e.relatedTarget.parentElement;
+            window.focus_row = window.focus_col.parentElement;
             window.focus_parent = window.focus_row.parentElement;
+            window.status_sec = $(e.relatedTarget).data('status-sec');
         });
         $('#popup_setuju_submit').on('show.bs.modal',e=>{
             $(e.currentTarget).find('#popup_setuju_submit_author_id').val($(e.relatedTarget).data('author_id'));
             $(e.currentTarget).find('#judul_for_setuju_submit').html($(e.relatedTarget).data('title'));
-            window.focus_row = e.relatedTarget.parentElement.parentElement;
+            window.focus_col = e.relatedTarget.parentElement;
+            window.focus_row = window.focus_col.parentElement;
             window.focus_parent = window.focus_row.parentElement;
+            window.status_sec = $(e.relatedTarget).data('status-sec');
             const score = $(e.relatedTarget).data('score');
             if (score !== '')
                 $(e.currentTarget).find('score-input').val(parseInt(score));
@@ -483,7 +505,8 @@
         });
         $('#popup_revisi').on('show.bs.modal',e=>{
             $(e.currentTarget).find('#popup_revisi_author_id').val($(e.relatedTarget).data('author_id'));
-            window.focus_row = e.relatedTarget.parentElement.parentElement;
+            window.focus_col = e.relatedTarget.parentElement;
+            window.focus_row = window.focus_col.parentElement;
             window.focus_parent = window.focus_row.parentElement;
             const message = $(e.relatedTarget).data('message');
             if (message !== '')
@@ -491,6 +514,7 @@
         }).on('hidden.bs.modal',e=>{
             $(e.relatedTarget).data('message',$(e.currentTarget).find('#pesan-revisi').val());
             $(e.currentTarget).find('#pesan-revisi').val('');
+            window.status_sec = $(e.relatedTarget).data('status-sec');
         });
         $('#submit-tolak-proposal').click(function () {
             const author_id = $('#popup_tolak_proposal_author_id').val();
@@ -500,7 +524,11 @@
                 data    : {_token:'{{csrf_token()}}',author_id:author_id},
                 success : (e)=>{
                     console.log(e);
-                    window.focus_parent.removeChild(window.focus_row);
+                    const status = parseInt(window.status_sec);
+                    if (status > 1)
+                        $(window.focus_col).html('<span class="text-muted">proposal ditolak</span>');
+                    else
+                        window.focus_parent.removeChild(window.focus_row);
                     $('#notification_tolak_proposal').modal('show');
                 }
             });
@@ -513,7 +541,11 @@
                 data    : {_token:'{{csrf_token()}}',author_id:author_id},
                 success : (e)=>{
                     console.log(e);
-                    window.focus_parent.removeChild(window.focus_row);
+                    const status = parseInt(window.status_sec);
+                    if (status < 1)
+                        $(window.focus_col).html('<span class="text-muted">menunggu persetujuan pembimbing lain</span>');
+                    else
+                        window.focus_parent.removeChild(window.focus_row);
                     $('#notification_tolak_proposal').modal('show');
                 }
             });
@@ -527,7 +559,11 @@
                 data    : {_token:'{{csrf_token()}}',author_id:author_id,score:parseFloat(score)},
                 success : (e)=>{
                     console.log(e);
-                    window.focus_parent.removeChild(window.focus_row);
+                    const status = parseInt(window.status_sec);
+                    if (status < 2)
+                        $(window.focus_col).html('<span class="text-muted">menunggu persetujuan pembimbing lain</span>');
+                    else
+                        window.focus_parent.removeChild(window.focus_row);
                     $('#notification_setuju_submit').modal('show');
                 }
             });
@@ -540,7 +576,11 @@
                 data    : {_token:'{{csrf_token()}}',author_id:author_id},
                 success : (e)=>{
                     console.log(e);
-                    window.focus_parent.removeChild(window.focus_row);
+                    const status = parseInt(window.status_sec);
+                    if (status > 1)
+                        $(window.focus_col).html('<span class="text-muted">permintaan submit ditolak</span>');
+                    else
+                        window.focus_parent.removeChild(window.focus_row);
                     $('#notification_tolak_submit').modal('show');
                 }
             });
@@ -554,7 +594,7 @@
                 data    : {_token:'{{csrf_token()}}',author_id:author_id,pesan_revisi:msg},
                 success : (e)=>{
                     console.log(e);
-                    window.focus_parent.removeChild(window.focus_row);
+                    $(window.focus_col).html('<span class="text-muted">tidak ada permintaan revisi</span>');
                     $('#notification_revisi').modal('show');
                 }
             });
