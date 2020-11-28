@@ -291,6 +291,12 @@ class Data {
         return array($identity, $history);
     }
 
+    public static function ujianSkripsi_lecturer() {
+        $identity = Auth::user()->identity;
+        $exams = DB::select("SELECT * FROM exams WHERE examiner1_id = ? OR examiner2_id = ? AND examiner1_pass = false OR examiner2_pass = false",[$identity,$identity]);
+        return array($identity,$exams);
+    }
+
     public static function dataRouteDashboard_department() {
         $department = Auth::user()->name;
         $thesis = DB::select("SELECT students.identity,students.name,documents.title,(SELECT name FROM lecturers WHERE lecturers.identity = students.identity_l1) AS lec_1, (SELECT name FROM lecturers WHERE lecturers.identity = students.identity_l2) AS lec_2 FROM documents,students,lecturers WHERE documents.id_ = students.identity AND students.identity_dep = ? AND students.identity_l1 IN (lecturers.identity) OR students.identity_l2 IN (lecturers.identity)",[$department]);

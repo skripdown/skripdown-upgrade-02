@@ -34,7 +34,8 @@
 @section('response-area')
     @php
         if (isset($data)) {
-            $exams = $data[0];
+            $identity = $data[0];
+            $exams = $data[1];
         }
     @endphp
 @endsection
@@ -60,30 +61,39 @@
                             </thead>
                             <tbody>
                             @foreach($exams as $exam)
+                                @php
+                                if (isset($exam) && isset($identity)) {
+                                    if ($exam->examiner1_id == $identity)
+                                        $status = $exam->examiner1_pass;
+                                    else
+                                        $status = $exam->examiner2_pass;
+                                }
+                                @endphp
                                 <tr>
                                     <td>{{$exam->doc_title}}</td>
                                     <td>{{$exam->author}}</td>
-                                    @if ($exam->status == 0)
-                                        <td class="text-danger">{{$exam->status}}</td>
+                                    @if ($status == false)
+                                        <td class="text-danger">belum lulus</td>
+                                        <td class="text-center">
+                                            <a href="javascript:void(0)"
+                                               class="btn btn-primary btn-sm btn-info"
+                                               data-toggle="modal"
+                                               data-author-id="{{$exam->author_id}}"
+                                               data-title="{{$exam->doc_title}}"
+                                               data-target="#popup_lulus"
+                                            >lulus</a>
+                                            <a href="javascript:void(0)"
+                                               class="btn btn-primary btn-sm btn-danger"
+                                               data-toggle="modal"
+                                               data-author-id="{{$exam->author_id}}"
+                                               data-title="{{$exam->doc_title}}"
+                                               data-target="#popup_gagal"
+                                            >tidak</a>
+                                        </td>
                                     @else
-                                        <td class="text-info">{{$exam->status}}</td>
+                                        <td class="text-info">sudah lulus</td>
+                                        <td class="text-center"></td>
                                     @endif
-                                    <td class="text-center">
-                                        <a href="javascript:void(0)"
-                                           class="btn btn-primary btn-sm btn-info"
-                                           data-toggle="modal"
-                                           data-author-id="{{$exam->author_id}}"
-                                           data-title="{{$exam->doc_title}}"
-                                           data-target="#popup_lulus"
-                                        >lulus</a>
-                                        <a href="javascript:void(0)"
-                                           class="btn btn-primary btn-sm btn-danger"
-                                           data-toggle="modal"
-                                           data-author-id="{{$exam->author_id}}"
-                                           data-title="{{$exam->doc_title}}"
-                                           data-target="#popup_gagal"
-                                        >tidak</a>
-                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
