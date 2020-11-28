@@ -31,6 +31,15 @@
     Halaman Riwayat Bimbingan Skripsi
 @endsection
 
+@section('response-area')
+    @php
+    if (isset($data)) {
+    $identity = $data[0];
+    $data     = $data[1];
+    }
+    @endphp
+@endsection
+
 @section('content')
     <div class="row">
         <div class="col-12">
@@ -60,7 +69,7 @@
                                         if ($user->_id == $user->identity_l1)
                                             $score = $user->thesis_score_l1;
                                         else
-                                            $score = $user->thesis_score_l1;
+                                            $score = $user->thesis_score_l2;
                                         $keywords = explode(env('KEYWORD_EXPLODER'), $user->abstract_key);
                                     }
                                 @endphp

@@ -19,12 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="lecturer department feature extended">
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="thesis exam functionality">
+      <change afterPath="$PROJECT_DIR$/public/asset/bg-blank.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/content/ujianSkripsi-lecturer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Data/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Data/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Data/Maker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Maker.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/element/js/editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/element/js/editor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/bimbingan-lecturer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/bimbingan-lecturer.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -319,21 +319,17 @@
       <workItem from="1606091170140" duration="11605000" />
       <workItem from="1606113992825" duration="15300000" />
       <workItem from="1606206573616" duration="8970000" />
-      <workItem from="1606233163264" duration="5111000" />
-    </task>
-    <task id="LOCAL-00059" summary="student functionality feature devs (no message)">
-      <created>1603107024325</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1603107024325</updated>
-    </task>
-    <task id="LOCAL-00060" summary="student functionality feature devs (no message)">
-      <created>1603107707103</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1603107707103</updated>
+      <workItem from="1606233163264" duration="5439000" />
+      <workItem from="1606366396633" duration="32000" />
+      <workItem from="1606366489340" duration="831000" />
+      <workItem from="1606371684582" duration="599000" />
+      <workItem from="1606385420254" duration="607000" />
+      <workItem from="1606399824144" duration="3170000" />
+      <workItem from="1606404413780" duration="1204000" />
+      <workItem from="1606407793011" duration="2689000" />
+      <workItem from="1606508909603" duration="31000" />
+      <workItem from="1606509042468" duration="599000" />
+      <workItem from="1606573588915" duration="2024000" />
     </task>
     <task id="LOCAL-00061" summary="system functionality devs">
       <created>1603448669744</created>
@@ -664,7 +660,21 @@
       <option name="project" value="LOCAL" />
       <updated>1606225150861</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="helper addition rejected proposal">
+      <created>1606238303797</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1606238303798</updated>
+    </task>
+    <task id="LOCAL-00109" summary="parser context analysis bug fixed">
+      <created>1606238443730</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1606238443731</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -684,9 +694,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="advisor view modified" />
-    <MESSAGE value="advisor dashboard-lecturer.blade.php modified" />
-    <MESSAGE value="advisor scoring script modified" />
     <MESSAGE value="markdown document access" />
     <MESSAGE value="exception handling functionality" />
     <MESSAGE value="bimbingan advisor functionality" />
@@ -709,7 +716,10 @@
     <MESSAGE value="fix features bug" />
     <MESSAGE value="fix features bug 2" />
     <MESSAGE value="lecturer department feature extended" />
-    <option name="LAST_COMMIT_MESSAGE" value="lecturer department feature extended" />
+    <MESSAGE value="helper addition rejected proposal" />
+    <MESSAGE value="parser context analysis bug fixed" />
+    <MESSAGE value="thesis exam functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="thesis exam functionality" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600922526929">

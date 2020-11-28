@@ -287,16 +287,16 @@ class Data {
 
     public static function dataRouteBimbinganHistory_lecturer() {
         $identity = Auth::user()->identity;
-        $history = DB::select("SELECT students.id AS id, students.identity AS identity, students.name AS name, students.doc_title AS doc_title, students.doc_link AS doc_link, students.identity_l1 AS identity_l1, students.identity_l2 AS identity_l2, students.thesis_score_l1 AS thesis_score_l1, students.thesis_score_l2 AS thesis_score_l2, documents.abstract_key AS abstract_key FROM students LEFT JOIN documents ON students.identity = documents.id_ WHERE students.status_1 > 1 AND students.status_2 > 1 AND students.identity_l1 = '?' OR students.identity_l2 = '?'",[$identity, $identity]);
+        $history = DB::select("SELECT students.id AS id, students.identity AS identity, students.name AS name, students.doc_title AS doc_title, students.doc_link AS doc_link, students.identity_l1 AS identity_l1, students.identity_l2 AS identity_l2, students.thesis_score_l1 AS thesis_score_l1, students.thesis_score_l2 AS thesis_score_l2, documents.abstract_key AS abstract_key FROM students LEFT JOIN documents ON students.identity = documents.id_ WHERE students.status_1 > 1 AND students.status_2 > 1 AND students.identity_l1 = ? OR students.identity_l2 = ?",[$identity, $identity]);
         return array($identity, $history);
     }
 
     public static function dataRouteDashboard_department() {
         $department = Auth::user()->name;
-        $thesis = DB::select("SELECT students.identity,students.name,documents.title,(SELECT name FROM lecturers WHERE lecturers.identity = students.identity_l1) AS lec_1, (SELECT name FROM lecturers WHERE lecturers.identity = students.identity_l2) AS lec_2 FROM documents,students,lecturers WHERE documents.id_ = students.identity AND students.identity_dep = '?' AND students.identity_l1 IN (lecturers.identity) OR students.identity_l2 IN (lecturers.identity)",[$department]);
-        $advisors_ = DB::select("SELECT lecturer_deps.lecturer_id AS identity,lecturers.name FROM lecturer_deps,lecturers WHERE lecturers.identity = lecturer_deps.lecturer_id AND lecturer_deps.department_id = '?'",[$department]);
+        $thesis = DB::select("SELECT students.identity,students.name,documents.title,(SELECT name FROM lecturers WHERE lecturers.identity = students.identity_l1) AS lec_1, (SELECT name FROM lecturers WHERE lecturers.identity = students.identity_l2) AS lec_2 FROM documents,students,lecturers WHERE documents.id_ = students.identity AND students.identity_dep = ? AND students.identity_l1 IN (lecturers.identity) OR students.identity_l2 IN (lecturers.identity)",[$department]);
+        $advisors_ = DB::select("SELECT lecturer_deps.lecturer_id AS identity,lecturers.name FROM lecturer_deps,lecturers WHERE lecturers.identity = lecturer_deps.lecturer_id AND lecturer_deps.department_id = ?",[$department]);
         foreach ($advisors_ as $advisor) {
-            $advising = DB::select("SELECT DISTINCT students.name,students.identity,documents.title AS doc_title,users.photo_url,documents.url AS doc_url FROM students,documents,users WHERE students.identity_dep = '?' AND students.identity = documents.id_ AND students.identity_l1 = '?' OR students.identity_l2 = '?' AND students.identity = users.identity;",[$department,$advisor->identity,$advisor->identity]);
+            $advising = DB::select("SELECT DISTINCT students.name,students.identity,documents.title AS doc_title,users.photo_url,documents.url AS doc_url FROM students,documents,users WHERE students.identity_dep = ? AND students.identity = documents.id_ AND students.identity_l1 = ? OR students.identity_l2 = ? AND students.identity = users.identity;",[$department,$advisor->identity,$advisor->identity]);
             $advisor['advising'] = $advising;
         }
         return array(
