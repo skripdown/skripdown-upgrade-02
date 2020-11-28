@@ -107,7 +107,7 @@
                     <div class="row">
                         <div class="col-12">
                             <p>Apakah anda yakin ingin menandai <span class="text-info">lulus</span> skripsi dengan judul
-                                <strong><span id="judul_for_lulus">judul skripsi ini</span></strong>.
+                                <strong><span id="judul_for_lulus">judul skripsi ini</span> ?</strong>.
                             </p>
                         </div>
                     </div>
@@ -130,7 +130,7 @@
                     <div class="row">
                         <div class="col-12">
                             <p>Apakah anda yakin ingin menandai <span class="text-danger">tidak lulus</span> skripsi dengan judul
-                                <strong><span id="judul_for_gagal">judul skripsi ini</span></strong>.
+                                <strong><span id="judul_for_gagal">judul skripsi ini</span> ?</strong>.
                             </p>
                         </div>
                     </div>

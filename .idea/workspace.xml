@@ -20,11 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="thesis exam functionality">
-      <change afterPath="$PROJECT_DIR$/public/asset/bg-blank.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/content/ujianSkripsi-lecturer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Data/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/content/bimbingan-lecturer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/bimbingan-lecturer.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,13 +326,8 @@
       <workItem from="1606508909603" duration="31000" />
       <workItem from="1606509042468" duration="599000" />
       <workItem from="1606573588915" duration="2024000" />
-    </task>
-    <task id="LOCAL-00061" summary="system functionality devs">
-      <created>1603448669744</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1603448669744</updated>
+      <workItem from="1606575656376" duration="213000" />
+      <workItem from="1606575887421" duration="24000" />
     </task>
     <task id="LOCAL-00062" summary="department account configuration">
       <created>1603461267710</created>
@@ -674,7 +665,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606238443731</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="thesis exam functionality">
+      <created>1606575670136</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1606575670137</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -754,10 +752,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="746" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600523811298" />
-    <state x="540" y="254" key="IDE.errors.dialog" timestamp="1605935165714">
+    <state x="540" y="254" key="IDE.errors.dialog" timestamp="1606575743750">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="540" y="254" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605935165714" />
+    <state x="540" y="254" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606575743750" />
     <state x="653" y="226" key="NewPhpClassDialog" timestamp="1605840068857">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
