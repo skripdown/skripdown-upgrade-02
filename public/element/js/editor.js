@@ -402,7 +402,7 @@ $(document).ready(()=>{
                                     url  : ''+skripd_sub_prop+'',
                                     data : {_token:skripd_token,lecturer_type:2,lecturer_id:helper_warning.get('l2_id')},
                                     success : ()=>{
-                                        skrip_d.setLock(1, helper_warning.get('l2_id'), helper_warning.get('l_2name'));
+                                        skrip_d.setLock(2, helper_warning.get('l2_id'), helper_warning.get('l2_name'));
                                     }
                                 });
                             }

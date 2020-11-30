@@ -64,13 +64,13 @@
                                 @php
                                     $progres = null;
                                     $status = null;
-                                    $status_sc = null;
+                                    $status_sec = null;
                                     $request_revision = null;
                                     $request_submit = null;
                                     if (isset($user) && isset($identity)) {
                                         if ($identity == $user->identity_l1) {
                                             $status = $user->status_1;
-                                            $status_sc = $user->status_2;
+                                            $status_sec = $user->status_2;
                                             $progres = $user->lec_1_revision;
                                             $request_revision = $user->l1_request_revision;
                                             if ($user->l1_agrement != null) {
@@ -83,7 +83,7 @@
                                         }
                                         else {
                                             $status = $user->status_2;
-                                            $status_sc = $user->status_1;
+                                            $status_sec = $user->status_1;
                                             $progres = $user->lec_2_revision;
                                             $request_revision = $user->l2_request_revision;
                                             $request_submit = $user->l2_agrement;
@@ -99,7 +99,7 @@
                                 @endphp
                                 <tr>
                                     <td>
-                                        <a href="{{$user->doc_link}}" class="text-black-50">
+                                        <a href="/parse/{{$user->doc_link}}" class="text-black-50" target="_blank">
                                             {!! $user->doc_title !!}
                                         </a>
                                     </td>
@@ -529,6 +529,7 @@
                         $(window.focus_col).html('<span class="text-muted">proposal ditolak</span>');
                     else
                         window.focus_parent.removeChild(window.focus_row);
+                    $('#popup_tolak_proposal').modal('hide');
                     $('#notification_tolak_proposal').modal('show');
                 }
             });
@@ -546,6 +547,7 @@
                         $(window.focus_col).html('<span class="text-muted">menunggu persetujuan pembimbing lain</span>');
                     else
                         window.focus_parent.removeChild(window.focus_row);
+                    $('#popup_setuju_proposal').modal('hide');
                     $('#notification_tolak_proposal').modal('show');
                 }
             });
@@ -564,6 +566,7 @@
                         $(window.focus_col).html('<span class="text-muted">menunggu persetujuan pembimbing lain</span>');
                     else
                         window.focus_parent.removeChild(window.focus_row);
+                    $('#popup_setuju_submit').modal('hide');
                     $('#notification_setuju_submit').modal('show');
                 }
             });
@@ -581,6 +584,7 @@
                         $(window.focus_col).html('<span class="text-muted">permintaan submit ditolak</span>');
                     else
                         window.focus_parent.removeChild(window.focus_row);
+                    $('#popup_tolak_submit').modal('hide');
                     $('#notification_tolak_submit').modal('show');
                 }
             });
@@ -595,6 +599,7 @@
                 success : (e)=>{
                     console.log(e);
                     $(window.focus_col).html('<span class="text-muted">tidak ada permintaan revisi</span>');
+                    $('#popup_revisi').modal('hide');
                     $('#notification_revisi').modal('show');
                 }
             });

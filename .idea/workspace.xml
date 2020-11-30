@@ -19,10 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="thesis exam functionality">
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="thesis exam functionality update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Data/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/content/ujianSkripsi-lecturer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/ujianSkripsi-lecturer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/element/js/editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/element/js/editor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/bimbingan-lecturer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/bimbingan-lecturer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/dashboard-lecturer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/dashboard-lecturer.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,14 +332,10 @@
       <workItem from="1606573588915" duration="2024000" />
       <workItem from="1606575656376" duration="213000" />
       <workItem from="1606575887421" duration="24000" />
-      <workItem from="1606575928932" duration="1146000" />
-    </task>
-    <task id="LOCAL-00063" summary="department plagiarism configuration">
-      <created>1603461820911</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1603461820911</updated>
+      <workItem from="1606575928932" duration="1176000" />
+      <workItem from="1606707434025" duration="396000" />
+      <workItem from="1606707849581" duration="2050000" />
+      <workItem from="1606714972988" duration="1072000" />
     </task>
     <task id="LOCAL-00064" summary="examiner exam pass">
       <created>1603463869858</created>
@@ -675,7 +673,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606575985071</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="thesis exam functionality update">
+      <created>1606577085682</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1606577085682</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -695,7 +700,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="markdown document access" />
     <MESSAGE value="exception handling functionality" />
     <MESSAGE value="bimbingan advisor functionality" />
     <MESSAGE value="profile picture url for user" />
@@ -720,7 +724,8 @@
     <MESSAGE value="helper addition rejected proposal" />
     <MESSAGE value="parser context analysis bug fixed" />
     <MESSAGE value="thesis exam functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="thesis exam functionality" />
+    <MESSAGE value="thesis exam functionality update" />
+    <option name="LAST_COMMIT_MESSAGE" value="thesis exam functionality update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600922526929">

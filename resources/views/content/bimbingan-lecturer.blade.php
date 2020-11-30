@@ -65,8 +65,8 @@
                             <tbody>
                             @foreach($data as $user)
                                 @php
-                                    if (isset($user)) {
-                                        if ($user->_id == $user->identity_l1)
+                                    if (isset($user) && isset($identity)) {
+                                        if ($identity == $user->identity_l1)
                                             $score = $user->thesis_score_l1;
                                         else
                                             $score = $user->thesis_score_l2;
