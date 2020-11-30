@@ -12,7 +12,7 @@
         </a>
     </li>
     <li class="sidebar-item">
-        <a class="sidebar-link sidebar-link" href="{{url('/riwayat')}}" aria-expanded="false">
+        <a class="sidebar-link sidebar-link" href="{{url('/ujian')}}" aria-expanded="false">
             <i data-feather="file-text" class="feather-icon"></i>
             <span class="hide-menu">Ujian Skripsi</span>
         </a>

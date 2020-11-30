@@ -131,6 +131,14 @@ class Controller extends BaseController
         return 'authorization error';
     }
 
+    public function ujianSkripsi() {
+        if (Authorization_::advisor()) {
+            $data = Data::ujianSkripsi_lecturer();
+            return view('content.ujianSkripsi-lecturer', compact('data'));
+        }
+        return 'authorization error';
+    }
+
     public function acceptSubmit(Request $request) {
         if (Authorization_::advisor()) {
             return response()->json(Maker::fireSubmit($request->author_id, $request->score), 200);
