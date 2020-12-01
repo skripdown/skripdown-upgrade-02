@@ -9,6 +9,7 @@ use App\Models\Exam;
 use App\Models\Plagiarism;
 use App\Models\Proposal;
 use App\Models\RejectedProposal;
+use App\Models\Revision;
 use App\Models\Student;
 use App\Models\SubmitRequest;
 use Illuminate\Support\Facades\Auth;
@@ -17,9 +18,10 @@ use Illuminate\Support\Facades\DB;
 class Data {
 
     public static function getWriter() {
-        return DB::table('students')
+        $temp =  DB::table('students')
             ->where('identity',Auth::user()->identity)
             ->first();
+        return Student::find($temp->id);
     }
 
     public static function getAdvisorWriter($id_writer) {
@@ -97,8 +99,10 @@ class Data {
 
     public static function getRevision($student_id) {
         if ($student_id == '')
-            return DB::table('revisions')->where('author_id',Auth::user()->identity)->first();
-        return DB::table('revisions')->where('author_id',$student_id)->first();
+            $temp = DB::table('revisions')->where('author_id',Auth::user()->identity)->first();
+        else
+            $temp = DB::table('revisions')->where('author_id',$student_id)->first();
+        return Revision::find($temp->id);
     }
 
     public static function getRevisionMessages($order) {

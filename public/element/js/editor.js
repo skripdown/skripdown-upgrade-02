@@ -250,6 +250,7 @@ $(document).ready(()=>{
                             conf_font    : $(input_conf_font).val()
                         },
                         success : response=>{
+                            console.log(response);
                             helper_warning.set('l1_id',dosen_data[0]);
                             helper_warning.set('l2_id',dosen_data[2]);
                             if (response.json_0 === '1') helper_warning.set('l1_id_corr', true);
@@ -408,7 +409,7 @@ $(document).ready(()=>{
                             }
                         }
                     });
-                },500);
+                },100);
             }
         }
     });

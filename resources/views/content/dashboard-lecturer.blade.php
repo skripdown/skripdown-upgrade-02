@@ -199,7 +199,7 @@
 @endsection
 
 @section('popup')
-    <div class="modal fade" id="popup_tolak_proposal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal" id="popup_tolak_proposal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -218,14 +218,14 @@
                         <form>
                             <input type="hidden" id="popup_tolak_proposal_author_id" name="author_id">
                         </form>
-                        <button class="btn btn-primary btn-sm btn-info">tidak</button>
+                        <button class="btn btn-primary btn-sm btn-info" type="button" data-dismiss="modal" aria-hidden="true">tidak</button>
                         <button class="btn btn-primary btn-sm btn-danger" id="submit-tolak-proposal">iya</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="popup_setuju_proposal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal" id="popup_setuju_proposal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -244,14 +244,14 @@
                         <form>
                             <input type="hidden" id="popup_setuju_proposal_author_id" name="author_id">
                         </form>
-                        <button class="btn btn-primary btn-sm btn-danger">tidak</button>
+                        <button class="btn btn-primary btn-sm btn-danger" type="button" data-dismiss="modal" aria-hidden="true">tidak</button>
                         <button class="btn btn-primary btn-sm btn-info" id="submit-setuju-proposal">iya</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="popup_setuju_submit" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal" id="popup_setuju_submit" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -280,14 +280,14 @@
                             <input type="hidden" id="popup_setuju_submit_author_id" name="author_id">
                             <input type="hidden" name="score" id="thesis-score">
                         </form>
-                        <button class="btn btn-primary btn-sm btn-danger">tidak</button>
+                        <button class="btn btn-primary btn-sm btn-danger" type="button" data-dismiss="modal" aria-hidden="true">tidak</button>
                         <button class="btn btn-primary btn-sm btn-info" id="submit-setuju-submit">iya</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="popup_tolak_submit" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal" id="popup_tolak_submit" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -306,14 +306,14 @@
                         <form action="{{url('rejsubmit')}}" method="post">
                             <input type="hidden" id="popup_tolak_submit_author_id" name="author_id">
                         </form>
-                        <button class="btn btn-primary btn-sm btn-info">tidak</button>
+                        <button class="btn btn-primary btn-sm btn-info" type="button" data-dismiss="modal" aria-hidden="true">tidak</button>
                         <button class="btn btn-primary btn-sm btn-danger" id="submit-tolak-submit">iya</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="popup_revisi" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal" id="popup_revisi" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -334,19 +334,17 @@
                     </div>
                     <div class="float-right d-block">
                         <form>
-                            @csrf
                             <input type="hidden" id="popup_revisi_author_id" name="author_id">
                             <input type="hidden" name="pesan_revisi" id="form-pesan-revisi">
                         </form>
-                        <button class="btn btn-primary btn-sm btn-danger">batal</button>
+                        <button class="btn btn-primary btn-sm btn-danger" type="button" data-dismiss="modal" aria-hidden="true">batal</button>
                         <button class="btn btn-primary btn-sm btn-info" id="submit-revisi">kirim</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="modal fade" id="notification_tolak_proposal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal" id="notification_tolak_proposal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -362,13 +360,13 @@
                         </div>
                     </div>
                     <div class="float-right d-block">
-                        <button class="btn btn-primary btn-sm btn-info">tutup</button>
+                        <button class="btn btn-primary btn-sm btn-info" type="button" data-dismiss="modal" aria-hidden="true">tutup</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="notification_setuju_proposal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal" id="notification_setuju_proposal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -384,13 +382,13 @@
                         </div>
                     </div>
                     <div class="float-right d-block">
-                        <button class="btn btn-primary btn-sm btn-info">tutup</button>
+                        <button class="btn btn-primary btn-sm btn-info" type="button" data-dismiss="modal" aria-hidden="true">tutup</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="notification_setuju_submit" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal" id="notification_setuju_submit" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -406,13 +404,13 @@
                         </div>
                     </div>
                     <div class="float-right d-block">
-                        <button class="btn btn-primary btn-sm btn-info">tutup</button>
+                        <button class="btn btn-primary btn-sm btn-info" type="button" data-dismiss="modal" aria-hidden="true">tutup</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="notification_tolak_submit" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal" id="notification_tolak_submit" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -428,13 +426,13 @@
                         </div>
                     </div>
                     <div class="float-right d-block">
-                        <button class="btn btn-primary btn-sm btn-info">tutup</button>
+                        <button class="btn btn-primary btn-sm btn-info" type="button" data-dismiss="modal" aria-hidden="true">tutup</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="notification_revisi" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal" id="notification_revisi" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -450,7 +448,7 @@
                         </div>
                     </div>
                     <div class="float-right d-block">
-                        <button class="btn btn-primary btn-sm btn-info">tutup</button>
+                        <button class="btn btn-primary btn-sm btn-info" type="button" data-dismiss="modal" aria-hidden="true">tutup</button>
                     </div>
                 </div>
             </div>
@@ -461,6 +459,7 @@
 @section('script-body')
     <script src="{{asset(env('JS_PATH').'rotateable.js')}}"></script>
     <script>
+        window.obj_ = '';
         window.focus_row = '';
         window.focus_col = '';
         window.focus_parent = '';
@@ -505,6 +504,7 @@
         });
         $('#popup_revisi').on('show.bs.modal',e=>{
             $(e.currentTarget).find('#popup_revisi_author_id').val($(e.relatedTarget).data('author_id'));
+            window.obj_ = e.relatedTarget;
             window.focus_col = e.relatedTarget.parentElement;
             window.focus_row = window.focus_col.parentElement;
             window.focus_parent = window.focus_row.parentElement;
@@ -512,7 +512,7 @@
             if (message !== '')
                 $(e.currentTarget).find('#pesan-revisi').val(message);
         }).on('hidden.bs.modal',e=>{
-            $(e.relatedTarget).data('message',$(e.currentTarget).find('#pesan-revisi').val());
+            $(window.obj_).data('message',$(e.currentTarget).find('#pesan-revisi').val());
             $(e.currentTarget).find('#pesan-revisi').val('');
             window.status_sec = $(e.relatedTarget).data('status-sec');
         });
@@ -548,7 +548,7 @@
                     else
                         window.focus_parent.removeChild(window.focus_row);
                     $('#popup_setuju_proposal').modal('hide');
-                    $('#notification_tolak_proposal').modal('show');
+                    $('#notification_setuju_proposal').modal('show');
                 }
             });
         });
@@ -590,12 +590,13 @@
             });
         });
         $('#submit-revisi').click(function () {
-            const author_id = $('#popup_tolak_submit_author_id').val();
-            const msg       = $('#form-pesan-revisi').val();
+            const author_id = $('#popup_revisi_author_id').val();
+            const msg       = $('#pesan-revisi').val();
+            console.log('message : '+msg);
             $.ajax({
                 url     : '{{url('progthesis')}}',
                 type    : 'POST',
-                data    : {_token:'{{csrf_token()}}',author_id:author_id,pesan_revisi:msg},
+                data    : {_token:'{{csrf_token()}}',author_id:author_id,message:msg},
                 success : (e)=>{
                     console.log(e);
                     $(window.focus_col).html('<span class="text-muted">tidak ada permintaan revisi</span>');

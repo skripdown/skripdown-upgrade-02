@@ -136,9 +136,9 @@ class Maker {
         $writer->save();
     }
 
-    public static function makeRevision($lec_1_id, $lec_2_id) {
+    public static function makeRevision($author_id, $lec_1_id, $lec_2_id) {
         $revision = new Revision();
-        $revision->author_id = Auth::user()->identity;
+        $revision->author_id = $author_id;
         $revision->lec_1_id = $lec_1_id;
         $revision->lec_2_id = $lec_2_id;
         $revision->save();
@@ -172,6 +172,7 @@ class Maker {
         else {
             $index = $revision->lec_2_revision;
         }
+        $revMsg->revision = $revision->id;
         $revMsg->index = $index;
         $revMsg->lec_id = $from;
         $revMsg->message = $message;
@@ -278,11 +279,11 @@ class Maker {
         else {
             $student->status_2 = 1;
         }
+        $student->save();
         if ($student->status_1 == 1 && $student->status_2 == 1) {
-            self::makeRevision($student->identity_l1, $student->identity_l2);
+            self::makeRevision($student_id, $student->identity_l1, $student->identity_l2);
             return array('status'=>'1');
         }
-        $student->save();
         return array('status'=>'0');
     }
 
