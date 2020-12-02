@@ -165,11 +165,14 @@ class Maker {
     public static function makeRevisionMessage($student_id, $message) {
         $from = Auth::user()->identity;
         $revision = Data::getRevision($student_id);
+        $student = Data::getAdvisorWriter($student_id);
         $revMsg = new RevisionMessage();
         if ($revision->lec_1_id == $from) {
+            $student->l1_revision_request = false;
             $index = $revision->lec_1_revision;
         }
         else {
+            $student->l2_revision_request = false;
             $index = $revision->lec_2_revision;
         }
         $revMsg->revision = $revision->id;
@@ -179,6 +182,7 @@ class Maker {
 
         $revMsg->save();
         $revision->save();
+        $student->save();
         return array('status'=>'1');
     }
 
