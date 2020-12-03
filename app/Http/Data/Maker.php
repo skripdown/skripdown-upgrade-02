@@ -205,6 +205,8 @@ class Maker {
         $request->author_id = $student->identity;
         $request->l1_id = $student->identity_l1;
         $request->l2_id = $student->identity_l2;
+        $request->l1_agreement = 0;
+        $request->l2_agreement = 0;
         $request->save();
 
         return array('status'=>'1');
@@ -238,12 +240,17 @@ class Maker {
         $lec_id = Auth::user()->identity;
         $submit = Data::getSubmitRequest($author_id,'');
         if ($lec_id == $submit->l1_id) {
-            $submit->l1_agreement = 0;
+            $submit->l1_agreement = -1;
+            $agrr = $submit->l2_agreement;
         }
         else {
-            $submit->l2_agreement = 0;
+            $submit->l2_agreement = -1;
+            $agrr = $submit->l1_agreement;
         }
-        $submit->save();
+        if ($agrr == -1)
+            $submit->destroy();
+        else
+            $submit->save();
         return array('status'=>'1');
     }
 

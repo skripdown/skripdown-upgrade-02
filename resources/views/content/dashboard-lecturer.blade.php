@@ -73,13 +73,11 @@
                                             $status_sec = $user->status_2;
                                             $progres = $user->lec_1_revision;
                                             $request_revision = $user->l1_request_revision;
-                                            if ($user->l1_agrement != null) {
-                                                if ($user->l1_agrement) {
-                                                    $request_submit = true;
-                                                }
+                                            if (isset($user->l1_agrement)) {
+                                                $request_submit = $user->l1_agrement;
                                             }
                                             else
-                                                $request_submit = false;
+                                                $request_submit = -8;
                                         }
                                         else {
                                             $status = $user->status_2;
@@ -87,13 +85,11 @@
                                             $progres = $user->lec_2_revision;
                                             $request_revision = $user->l2_request_revision;
                                             $request_submit = $user->l2_agrement;
-                                            if ($user->l2_agrement != null) {
-                                                if ($user->l2_agrement) {
-                                                    $request_submit = true;
-                                                }
+                                            if (isset($user->l2_agrement)) {
+                                                $request_submit = $user->l2_agrement;
                                             }
                                             else
-                                                $request_submit = false;
+                                                $request_submit = -9;
                                         }
                                     }
                                 @endphp
@@ -107,28 +103,32 @@
                                     @if ($status == -1)
                                         <td class="text-danger">belum disetujui</td>
                                     @else
-                                        @if ($progres == 0)
-                                            <td class="text-warning">belum ada progres</td>
-                                        @elseif($progres == 1)
-                                            <td>progres pertama</td>
-                                        @elseif($progres == 2)
-                                            <td>progres kedua</td>
-                                        @elseif($progres == 3)
-                                            <td>progres ketiga</td>
-                                        @elseif($progres == 4)
-                                            <td>progres keempat</td>
-                                        @elseif($progres == 5)
-                                            <td>progres kelima</td>
-                                        @elseif($progres == 6)
-                                            <td>progres keenam</td>
-                                        @elseif($progres == 7)
-                                            <td>progres ketujuh</td>
-                                        @elseif($progres == 8)
-                                            <td>progres kedelapan</td>
-                                        @elseif($progres == 9)
-                                            <td>progres kesembilan</td>
+                                        @if ($request_submit == 0)
+                                            <td>permintaan submit repository</td>
                                         @else
-                                            <td>progres ke-{{$progres}}</td>
+                                            @if ($progres == 0)
+                                                <td class="text-warning">belum ada progres</td>
+                                            @elseif($progres == 1)
+                                                <td>progres pertama</td>
+                                            @elseif($progres == 2)
+                                                <td>progres kedua</td>
+                                            @elseif($progres == 3)
+                                                <td>progres ketiga</td>
+                                            @elseif($progres == 4)
+                                                <td>progres keempat</td>
+                                            @elseif($progres == 5)
+                                                <td>progres kelima</td>
+                                            @elseif($progres == 6)
+                                                <td>progres keenam</td>
+                                            @elseif($progres == 7)
+                                                <td>progres ketujuh</td>
+                                            @elseif($progres == 8)
+                                                <td>progres kedelapan</td>
+                                            @elseif($progres == 9)
+                                                <td>progres kesembilan</td>
+                                            @else
+                                                <td>progres ke-{{$progres}}</td>
+                                            @endif
                                         @endif
                                     @endif
                                     <td class="text-center">
@@ -161,7 +161,7 @@
                                                    data-message=""
                                                 >revisi</a>
                                             @else
-                                                @if ($request_submit)
+                                                @if ($request_submit == 0)
                                                     <a href="javascript:void(0)"
                                                        class="btn btn-primary btn-sm btn-info"
                                                        data-toggle="modal"
@@ -181,6 +181,7 @@
                                                     >tolak</a>
                                                 @else
                                                     <span class="text-muted">
+                                                        {{$user->l1_agrement}}
                                                         tidak ada permintaan revisi
                                                     </span>
                                                 @endif

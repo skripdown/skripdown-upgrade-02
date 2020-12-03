@@ -19,14 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="revision send bug fixed">
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="revision message bug fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Data/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Data.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Data/Maker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Maker.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/element/js/editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/element/js/editor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/element/js/pages/datatable/datatable-basic.init.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/element/js/pages/datatable/datatable-basic.init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/editor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/editor.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/dashboard-lecturer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/dashboard-lecturer.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -350,14 +346,7 @@
       <workItem from="1606912252324" duration="58000" />
       <workItem from="1606913435672" duration="20000" />
       <workItem from="1606952489571" duration="912000" />
-      <workItem from="1606953416991" duration="5270000" />
-    </task>
-    <task id="LOCAL-00069" summary="functionality mark check">
-      <created>1604286776789</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1604286776790</updated>
+      <workItem from="1606953416991" duration="8693000" />
     </task>
     <task id="LOCAL-00070" summary="functionality mark check">
       <created>1605346023793</created>
@@ -695,7 +684,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606907951213</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="revision message bug fixed">
+      <created>1606963182362</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1606963182363</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -715,7 +711,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ujian plagiasi view blade final" />
     <MESSAGE value="department setting feature fronted" />
     <MESSAGE value="department setting serve routing" />
     <MESSAGE value="department setting async backend" />
@@ -740,7 +735,8 @@
     <MESSAGE value="ujian lecturer page bug fixed" />
     <MESSAGE value="revision bug fixed" />
     <MESSAGE value="revision send bug fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="revision send bug fixed" />
+    <MESSAGE value="revision message bug fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="revision message bug fixed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600922526929">
@@ -791,10 +787,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="507" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1600920212231" />
-    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2" timestamp="1606907958059">
+    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2" timestamp="1606963187732">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606907958059" />
+    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606963187732" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1602072002937">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
