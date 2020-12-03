@@ -1,3 +1,9 @@
+@php
+    if (isset($data)) {
+        $tot_dokumen = $data[0];
+        $tot_aktif = $data[1];
+    }
+@endphp
 <!DOCTYPE html>
 <html lang="{{env('APP_LANG')}}">
 <head>
@@ -7,7 +13,7 @@
     <link rel="icon" type="image/png" sizes="{{env('ICON_SIZE')}}" href="{{asset(env('ICON_PATH'))}}">
     <link rel="stylesheet" href="{{asset(env('LIB_PATH').'extra/owl-carousel/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset(env('LIB_PATH').'extra/owl-carousel/css/owl.theme.default.css')}}">
-    <link rel="stylesheet" href="{{asset(env('LIB_PATH').'mdi/css/materialdesignicons.min.css')}}">
+    <link rel="stylesheet" href="{{asset(env('LIB_PATH').'extra/mdi/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{asset(env('LIB_PATH').'extra/aos/css/aos.css')}}">
     <link rel="stylesheet" href="{{asset(env('CSS_PATH').'landing/style.min.css')}}">
     <link rel="stylesheet" href="{{asset(env('CSS_PATH').'added.css')}}">
@@ -34,6 +40,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#header-section">Beranda <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#repository-section">Repositori</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#features-section">How?</a>
@@ -66,6 +75,19 @@
 </div>
 <div class="content-wrapper">
     <div class="container">
+        <section class="features-overview" id="repository-section" >
+            <div class="content-header">
+                <div class="span-area">
+                    <div class="ept-span"></div>
+                    <div class="fill-span">
+                        <h2>Repositori</h2>
+                        <h6 class="section-subtitle text-muted">Pencarian {{$tot_dokumen}} dokumen tugas akhir pada penyimpanan pusat<br>dengan {{$tot_aktif}} penulis aktif.</h6>
+                        <a href="" class="btn btn-lg btn-success mt-4" style="font-size: 18pt">Buka Repositori</a>
+                    </div>
+                    <div class="ept-span"></div>
+                </div>
+            </div>
+        </section>
         <section class="features-overview" id="features-section" >
             <div class="content-header">
                 <h2>Cara kerja Skripdown</h2>
@@ -137,7 +159,7 @@
             </div>
         </section>
         <footer class="border-top">
-            <p class="text-center text-muted pt-4">Copyright © 2020. Made with ❤️ by <a href="https://www.instagram.com/malkolp/" class="px-1 font-weight-bold text-dark">malkolp.</a>All rights reserved.</p>
+            <p class="text-center text-muted pt-4">Copyright © 2020. Made with ❤️ by <a href="https://www.instagram.com/malkolp/" target="_blank" class="px-1 font-weight-bold text-dark">malkolp.</a>All rights reserved.</p>
         </footer>
     </div>
 </div>

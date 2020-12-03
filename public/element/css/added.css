@@ -1,3 +1,30 @@
+html {
+    scroll-behavior: smooth!important;
+}
+
 .active,.nav-link:hover {
     color: #5ed6b3!important;
+}
+
+#repository-section {
+    height: 60vh;
+}
+#repository-section .content-header {
+    height: 100%;
+}
+
+.span-area {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.fill-span {
+    width: 100%;
+    text-align: center;
+    flex: 0;
+}
+
+.ept-span {
+    flex: 1;
 }
