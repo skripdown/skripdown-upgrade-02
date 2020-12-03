@@ -186,11 +186,13 @@ class Maker {
         return array('status'=>'1');
     }
 
-    public static function readMessage($idMessage) {
-        $message = Data::getRevisionMessage($idMessage);
-        $message->read = true;
-        $message->save();
-
+    public static function readMessage() {
+        $messages = Data::getRevisionMessages('desc');
+        foreach ($messages as $message) {
+            $message = Data::getRevisionMessage($message->id);
+            $message->read = 1;
+            $message->save();
+        }
         return array('status'=>'1');
     }
 

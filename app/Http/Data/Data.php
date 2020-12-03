@@ -10,6 +10,7 @@ use App\Models\Plagiarism;
 use App\Models\Proposal;
 use App\Models\RejectedProposal;
 use App\Models\Revision;
+use App\Models\RevisionMessage;
 use App\Models\Student;
 use App\Models\SubmitRequest;
 use Illuminate\Support\Facades\Auth;
@@ -125,11 +126,12 @@ class Data {
         $idRevision = DB::table('revisions')
             ->where('author_id', Auth::user()->identity)
             ->first()->id;
-        $id = gmp_intval(gmp_init($idRevision));
-        return DB::table('revision_messages')
+        $id = $idRevision;
+        $temp = DB::table('revision_messages')
             ->where('revision', $id)
             ->where('id',$idMessage)
             ->first();
+        return RevisionMessage::find($temp->id);
     }
 
     public static function hasSubmitRequest() {

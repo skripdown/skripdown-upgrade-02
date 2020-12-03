@@ -265,19 +265,20 @@
             <div class="modal fade" id="popup_revisi" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title">Riwayat Revisi</h4>
-                                    </div>
+                        <div class="modal-header">
+                            <h4 class="modal-title">Pesan Revisi</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-12">
                                     <div class="table-responsive">
-                                        <table class="table">
+                                        <table class="table table-striped table-bordered display no-wrap" id="no_search">
                                             <thead class="thead-light">
                                             <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Oleh</th>
-                                                <th scope="col">Pesan</th>
+                                                <th>#</th>
+                                                <th>Oleh</th>
+                                                <th>Pesan</th>
                                             </tr>
                                             </thead>
                                             <tbody id="message-container">
@@ -305,6 +306,8 @@
 <script src="{{asset(env('LIB_PATH').'extra/c3/d3.min.js')}}"></script>
 <script src="{{asset(env('LIB_PATH').'extra/c3/c3.min.js')}}"></script>
 <script src="{{asset(env('JS_PATH').'pages/dashboards/dashboard1.min.js')}}"></script>
+<script src="{{asset(env('LIB_PATH').'extra/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset(env('JS_PATH').'pages/datatable/datatable-basic.init.js')}}"></script>
 <script src="{{asset(env('LIB_PATH').'extra/prism/prism.js')}}"></script>
 <script src="{{asset(env('JS_PATH').'editor.js')}}"></script>
 </body>

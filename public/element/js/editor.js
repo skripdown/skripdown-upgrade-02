@@ -456,21 +456,27 @@ window.setInterval(()=>{
                     if (response.message.length > 0) {
                         $(rev).removeClass('d-none');
                         let msgCounter = 0;
+                        let index      = 0;
                         let msg_row    = '';
                         response.message.forEach((item)=>{
-                            msgCounter += 1;
-                            if (item.read)
+                            index++;
+                            if (!item.read) {
+                                msgCounter += 1;
                                 msg_row += '<tr class="bg-danger">';
+                            }
                             else
                                 msg_row += '<tr>';
-                            msg_row += '<th scope="row">'+(item.index+1)+'</th>';
-                            msg_row += '<td>'+item.lec_id+'</td>';
-                            msg_row += '<td>'+item.message+'</td></tr>';
+                            msg_row += '<td class="font-weight-normal text-center text-black-50">'+index+'</td>';
+                            msg_row += '<td class="font-weight-normal text-left text-black-50">'+item.lec_id+'</td>';
+                            msg_row += '<td class="font-weight-normal text-left text-black-50">'+item.message+'</td></tr>';
                         });
                         $(msg_container).html(msg_row);
                         if (msgCounter > 0) {
                             $(msg_notif).removeClass('d-none');
                             $(msg_notif).text(msgCounter+'');
+                        }
+                        else {
+                            $(msg_notif).addClass('d-none');
                         }
                     }
                     else {

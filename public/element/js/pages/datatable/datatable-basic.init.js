@@ -10,6 +10,13 @@
  ****************************************/
 $('#zero_config').DataTable();
 
+$('#no_search').DataTable({
+    'searching':false,
+    'lengthChange':false,
+    'bPaginate':false,
+    'bFilter':false
+});
+
 /****************************************
  *       Default Order Table           *
  ****************************************/

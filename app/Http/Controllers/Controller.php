@@ -109,7 +109,7 @@ class Controller extends BaseController
 
     public function readMessage(Request $request) {
         if (Authorization_::student()) {
-            return response()->json(Maker::readMessage($request->idMsg), 200);
+            return response()->json(Maker::readMessage(), 200);
         }
         return response()->json(array('auth'=>'authorization error!'),200);
     }
