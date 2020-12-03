@@ -67,10 +67,15 @@
                         </a>
                         <!--COMPONENT:user-profile-menu-->
                         <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-                            <a href="javascript:void(0)" class="dropdown-item">
-                                <i data-feather="power" class="svg-icon mr-2 ml-1"></i>
-                                Keluar
+                            <a href="{{url('/pengaturan')}}" class="dropdown-item">
+                                <i data-feather="settings" class="svg-icon mr-2 ml-1"></i>
+                                Pengaturan
                             </a>
+                            <form action="{{route('logout')}}" method="post" class="dropdown-item">
+                                @csrf
+                                <i data-feather="power" class="svg-icon mr-2 ml-1"></i>
+                                <input type="submit" value="Keluar" class="btn">
+                            </form>
                         </div>
                     </li>
                 </ul>
@@ -101,8 +106,8 @@
         <!--COMPONENT:main-content-->
         <div class="container-fluid">
             <div class="row">
-                <div class="col-3"></div>
-                <div class="col-6">
+                <div class="col-lg-3 col-md-2"></div>
+                <div class="col-lg-6 col-md-8">
                     <div class="card">
                         <div class="card-header bg-white pt-3" style="margin-bottom: -1.5em">
                             <h3 class="card-title">Pengaturan</h3>
@@ -231,7 +236,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3"></div>
+                <div class="col-lg-3 col-md-2"></div>
             </div>
         </div>
         <!--COMPONENT:main-footer-->
@@ -272,11 +277,11 @@
         inp_conf_pass;
     $(document).ready(()=>{
         submitable_pass = false;
-        inp_bi          = $('#in-bab-i').get(0);
-        inp_bii         = $('#in-bab-ii').get(0);
-        inp_biii        = $('#in-bab-iii').get(0);
-        inp_biv         = $('#in-bab-iv').get(0);
-        inp_bv          = $('#in-bab-v').get(0);
+        inp_bi          = $('#setting-in-bab-i').get(0);
+        inp_bii         = $('#setting-in-bab-ii').get(0);
+        inp_biii        = $('#setting-in-bab-iii').get(0);
+        inp_biv         = $('#setting-in-bab-iv').get(0);
+        inp_bv          = $('#setting-in-bab-v').get(0);
         sub_std         = $('#btn-sub-std').get(0);
         sub_pass        = $('#btn-sub-pass').get(0);
         inp_old_pass    = $('#setting-in-old-pass').get(0);
@@ -285,23 +290,25 @@
         $.ajax({
             type    : 'POST',
             url     : '{{url('getplag')}}',
-            data    : {_token:'csrf_token() here'},
+            data    : {_token:'{{csrf_token()}}'},
             success : (data)=>{
+                console.log('success');
                 $(inp_bi).val(data.bi);
                 $(inp_bii).val(data.bii);
                 $(inp_biii).val(data.biii);
                 $(inp_biv).val(data.biv);
                 $(inp_bv).val(data.bv);
+                console.log(data.bv);
             }
         });
         $(inp_old_pass).keyup(function () {
             $(inp_old_pass).removeClass('border-danger');
             check();
         });
-        $(inp_new_pass).keyup(check);
-        $(inp_conf_pass).keyup(check);
+        $(inp_new_pass).keyup(()=>{check()});
+        $(inp_conf_pass).keyup(()=>{check()});
         $(sub_std).click(function () {
-            if (std_form_check) {
+            if (std_form_check()) {
                 $.ajax({
                     type    : 'POST',
                     url     : '{{url('plagconf')}}',
@@ -348,11 +355,12 @@
         function check() {
             const newPass = $(inp_new_pass).val();
             const cnfPass = $(inp_conf_pass).val();
+            console.log(newPass + ' '+ cnfPass);
             if (newPass === '') {
                 if (cnfPass === '') {
                     $(inp_new_pass).removeClass('border-danger');
                     $(inp_conf_pass).removeClass('border-danger');
-                    submitable_pass = true;
+                    submitable_pass = false;
                 }
                 else {
                     $(inp_new_pass).removeClass('border-danger');
@@ -364,12 +372,19 @@
                 if (cnfPass === '') {
                     $(inp_new_pass).removeClass('border-danger');
                     $(inp_conf_pass).removeClass('border-danger');
-                    submitable_pass = true;
+                    submitable_pass = false;
                 }
                 else {
-                    $(inp_new_pass).removeClass('border-danger');
-                    $(inp_conf_pass).addClass('border-danger');
-                    submitable_pass = false;
+                    if (cnfPass === newPass) {
+                        $(inp_new_pass).removeClass('border-danger');
+                        $(inp_conf_pass).removeClass('border-danger');
+                        submitable_pass = true;
+                    }
+                    else {
+                        $(inp_new_pass).removeClass('border-danger');
+                        $(inp_conf_pass).addClass('border-danger');
+                        submitable_pass = false;
+                    }
                 }
             }
         }

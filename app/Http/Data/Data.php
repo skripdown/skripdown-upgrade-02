@@ -14,6 +14,7 @@ use App\Models\Revision;
 use App\Models\RevisionMessage;
 use App\Models\Student;
 use App\Models\SubmitRequest;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -82,7 +83,8 @@ class Data {
     }
 
     public static function getDepartmentConf() {
-        return DB::table('users')->where('id',Auth::user()->id)->first();
+        $temp = DB::table('users')->where('id',Auth::user()->id)->first();
+        return User::find($temp->id);
     }
 
     public static function isVerified_thesis_by($lecturer_id) {

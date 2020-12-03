@@ -185,7 +185,7 @@ class Controller extends BaseController
     public function deptSetting() {
         if (Authorization_::department()) {
             $title = Authorization_::data()->name;
-            return view('content.setting-department',compact($title));
+            return view('content.setting-department',compact('title'));
         }
         return 'authorization error';
     }

@@ -16,7 +16,7 @@
 
 @section('header-button')
     <!--suppress JSUnfilteredForInLoop -->
-    <a href="javascript:void(0)" class="dropdown-item">
+    <a href="{{url('/pengaturan')}}" class="dropdown-item">
         <i data-feather="settings" class="svg-icon mr-2 ml-1"></i>
         Pengaturan
     </a>
