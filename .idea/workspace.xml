@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="login view updated" />
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="implement SSL support">
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -346,14 +348,7 @@
       <workItem from="1606982279034" duration="2036000" />
       <workItem from="1606985601860" duration="655000" />
       <workItem from="1606991821350" duration="8454000" />
-      <workItem from="1607003901035" duration="1058000" />
-    </task>
-    <task id="LOCAL-00077" summary="advisor scoring script modified">
-      <created>1605348679718</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1605348679718</updated>
+      <workItem from="1607003901035" duration="1372000" />
     </task>
     <task id="LOCAL-00078" summary="markdown document access">
       <created>1605353242607</created>
@@ -691,7 +686,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607004850566</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="implement SSL support">
+      <created>1607010558320</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1607010558320</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -711,7 +713,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="controller data routing" />
     <MESSAGE value="department dashboard backend" />
     <MESSAGE value="login redirect bug repair" />
     <MESSAGE value="login dashboard bug fixed" />
@@ -736,7 +737,8 @@
     <MESSAGE value="department response ujian plagiasi bug fixed" />
     <MESSAGE value="department setting bug fixed" />
     <MESSAGE value="login view updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="login view updated" />
+    <MESSAGE value="implement SSL support" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement SSL support" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600922526929">
@@ -787,10 +789,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="507" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1600920212231" />
-    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2" timestamp="1607004854890">
+    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2" timestamp="1607010566674">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607004854890" />
+    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607010566674" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1602072002937">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

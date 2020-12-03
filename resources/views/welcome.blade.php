@@ -43,7 +43,11 @@
                     </li>
                     <li class="nav-item btn-contact-us pl-4 pl-lg-0">
                         @if(\Illuminate\Support\Facades\Auth::check())
-                            <a href="{{url('/dashboard')}}" class="btn btn-success">Dashboard</a>
+                            @can('isUStudent')
+                                <a href="{{url('/dashboard')}}" class="btn btn-success">Editor</a>
+                            @elsecan
+                                <a href="{{url('/dashboard')}}" class="btn btn-success">Dashboard</a>
+                            @endcan
                         @else
                             <a href="{{route('login')}}" class="btn btn-success">Masuk</a>
                         @endif
