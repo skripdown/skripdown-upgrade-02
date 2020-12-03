@@ -7,6 +7,11 @@
     <meta name="author" content="{{env('APP_AUTHOR')}}">
     <link rel="icon" type="image/png" sizes="{{env('ICON_SIZE')}}" href="{{asset(env('ICON_PATH'))}}">
     <link href="{{asset(env('CSS_PATH').'style.min.css')}}" rel="stylesheet">
+    <style>
+        #app-bg {
+            background-image: url("{{asset('asset/bg-blank.png')}}");
+        }
+    </style>
     <script src="{{asset(env('LIB_PATH').'extra/html5shiv/html5shiv.js')}}"></script>
     <script src="{{asset(env('LIB_PATH').'extra/respond/respond.js')}}"></script>
     <title>{{env('APP_NAME'),' login'}}</title>
@@ -19,11 +24,13 @@
             <div class="lds-pos"></div>
         </div>
     </div>
-    <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative" style="background-color: #f0f0f0">
+    <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative" id="app-bg">
         <div class="auth-box row">
             <div class="col-12 bg-white">
                 <div class="p-3">
-                    <h2 class="mt-3 text-center">Login</h2>
+                    <h2 class="text-center">
+                        <img src="{{asset(env('ICON_PATH'))}}" alt="" style="width: 100pt; margin-bottom: -3.5%">
+                    </h2>
                     <p class="text-center">Masukkan ID dan kata sandi untuk mengakses Skripdown.</p>
                     <form class="mt-4" method="POST" action="{{route('login')}}">
                         @csrf
@@ -51,7 +58,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-12 text-center">
-                                <button type="submit" class="btn btn-block btn-info">Masuk</button>
+                                <button type="submit" class="btn btn-block btn-success">Masuk</button>
                             </div>
                         </div>
                     </form>
