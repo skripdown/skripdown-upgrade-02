@@ -19,11 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="advisor accept submit update">
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="advisor bug fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Data/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Data/Maker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Data/Maker.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/content/dashboard-lecturer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/dashboard-lecturer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/dashboard-department.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/dashboard-department.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -347,14 +347,8 @@
       <workItem from="1606912252324" duration="58000" />
       <workItem from="1606913435672" duration="20000" />
       <workItem from="1606952489571" duration="912000" />
-      <workItem from="1606953416991" duration="10914000" />
-    </task>
-    <task id="LOCAL-00071" summary="README.md updated">
-      <created>1605346146069</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1605346146069</updated>
+      <workItem from="1606953416991" duration="11836000" />
+      <workItem from="1606982279034" duration="2036000" />
     </task>
     <task id="LOCAL-00072" summary="README.md updated">
       <created>1605346214624</created>
@@ -692,7 +686,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606969748021</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="advisor bug fixed">
+      <created>1606975829155</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1606975829155</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -712,7 +713,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="department setting serve routing" />
     <MESSAGE value="department setting async backend" />
     <MESSAGE value="implement async authorization" />
     <MESSAGE value="modify backend authorization access" />
@@ -737,7 +737,8 @@
     <MESSAGE value="revision send bug fixed" />
     <MESSAGE value="revision message bug fixed" />
     <MESSAGE value="advisor accept submit update" />
-    <option name="LAST_COMMIT_MESSAGE" value="advisor accept submit update" />
+    <MESSAGE value="advisor bug fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="advisor bug fixed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600922526929">
@@ -788,10 +789,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="507" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1600920212231" />
-    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2" timestamp="1606969753230">
+    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2" timestamp="1606975834925">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606969753230" />
+    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606975834925" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1602072002937">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

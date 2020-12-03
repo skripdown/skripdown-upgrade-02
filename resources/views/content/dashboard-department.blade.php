@@ -68,7 +68,7 @@
                             <tbody>
                             @foreach($thesis as $item)
                                 <tr>
-                                    <td>{{$item->doc_title}}</td>
+                                    <td>{{$item->title}}</td>
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->lec_1}}</td>
                                     <td>{{$item->lec_2}}</td>

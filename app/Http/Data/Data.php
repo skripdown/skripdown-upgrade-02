@@ -305,11 +305,12 @@ class Data {
 
     public static function dataRouteDashboard_department() {
         $department = Auth::user()->name;
-        $thesis = DB::select("SELECT students.identity,students.name,documents.title,(SELECT name FROM lecturers WHERE lecturers.identity = students.identity_l1) AS lec_1, (SELECT name FROM lecturers WHERE lecturers.identity = students.identity_l2) AS lec_2 FROM documents,students,lecturers WHERE documents.id_ = students.identity AND students.identity_dep = ? AND students.identity_l1 IN (lecturers.identity) OR students.identity_l2 IN (lecturers.identity)",[$department]);
-        $advisors_ = DB::select("SELECT lecturer_deps.lecturer_id AS identity,lecturers.name FROM lecturer_deps,lecturers WHERE lecturers.identity = lecturer_deps.lecturer_id AND lecturer_deps.department_id = ?",[$department]);
+        $thesis = DB::select("SELECT DISTINCT students.identity,students.name,documents.title,(SELECT name FROM lecturers WHERE lecturers.identity = students.identity_l1) AS lec_1, (SELECT name FROM lecturers WHERE lecturers.identity = students.identity_l2) AS lec_2 FROM documents,students,lecturers WHERE documents.id_ = students.identity AND students.identity_dep = ? AND students.identity_l1 IN (lecturers.identity) OR students.identity_l2 IN (lecturers.identity)",[$department]);
+        $advisors_ = DB::select("SELECT lecturer_deps.lecturer_id AS identity, users.photo_url AS photo_url,lecturers.name FROM lecturer_deps,lecturers,users WHERE lecturers.identity = lecturer_deps.lecturer_id AND users.identity = lecturers.identity AND lecturer_deps.department_id = ?",[$department]);
         foreach ($advisors_ as $advisor) {
-            $advising = DB::select("SELECT DISTINCT students.name,students.identity,documents.title AS doc_title,users.photo_url,documents.url AS doc_url FROM students,documents,users WHERE students.identity_dep = ? AND students.identity = documents.id_ AND students.identity_l1 = ? OR students.identity_l2 = ? AND students.identity = users.identity;",[$department,$advisor->identity,$advisor->identity]);
+            $advising = DB::select("SELECT DISTINCT students.name,students.identity,documents.title AS doc_title,users.photo_url,documents.url AS doc_url FROM students,documents,users WHERE students.identity_dep = ? AND students.identity = documents.id_ AND students.identity_l1 = ? OR students.identity_l2 = ? AND students.identity = users.identity AND students.status_1 > 0 AND students.status_2 > 0;",[$department,$advisor->identity,$advisor->identity]);
             $advisor->advising = $advising;
+            $advisor->advising_total = count($advising);
         }
         return array(
             $department,
