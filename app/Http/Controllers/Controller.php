@@ -192,7 +192,7 @@ class Controller extends BaseController
 
     public function ujianPlagiasi() {
         if (Authorization_::department()) {
-            $data = '';
+            $data = Data::dataUjianPlagiasi_department();
             return view('content.ujianPlagiasi-department',compact('data'));
         }
         return 'authorization error';

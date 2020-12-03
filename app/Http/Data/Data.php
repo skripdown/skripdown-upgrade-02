@@ -5,6 +5,7 @@
 
 namespace App\Http\Data;
 
+use App\Models\Department;
 use App\Models\Exam;
 use App\Models\Plagiarism;
 use App\Models\Proposal;
@@ -73,9 +74,11 @@ class Data {
     public static function getDepartment($identity,$role) {
         if ($role == 's') {
             $stud = DB::table('students')->where('identity', $identity)->first();
-            return DB::table('departments')->where('identity',$stud->identity_dep)->first();
+            $stud = DB::table('departments')->where('identity',$stud->identity_dep)->first();
         }
-        return DB::table('departments')->where('identity',Auth::user()->identity)->first();
+        else
+            $stud = DB::table('departments')->where('identity',Auth::user()->identity)->first();
+        return Department::find($stud->id);
     }
 
     public static function getDepartmentConf() {
@@ -190,6 +193,7 @@ class Data {
             $data = DB::table('plagiarisms')
                 ->where('author_id',$identity)
                 ->first();
+            $data = Plagiarism::find($data->id);
         }
         return $data;
     }
@@ -316,6 +320,31 @@ class Data {
             $department,
             $thesis,
             $advisors_
+        );
+    }
+
+    public static function dataUjianPlagiasi_department() {
+        $department = Auth::user()->name;
+        $standard = DB::select('SELECT departments.plagiarism_bi AS bab_i, departments.plagiarism_bii AS bab_ii, departments.plagiarism_biii AS bab_iii, departments.plagiarism_biv AS bab_iv, departments.plagiarism_bv AS bab_v, departments.examiner_quo AS examiner_quo, departments.identity AS identity FROM departments where departments.identity = ? LIMIT 1',[$department]);
+        $standard = $standard[0];
+        $qouta_examiner = $standard->examiner_quo;
+        $plag = DB::select('SELECT users.name AS name, users.photo_url AS photo_url, students.doc_title AS doc_title, students.identity AS identity, students.doc_link AS doc_url, plagiarisms.bab_i AS bab_i, plagiarisms.bab_ii AS bab_ii, plagiarisms.bab_iii AS bab_iii, plagiarisms.bab_iv AS bab_iv, plagiarisms.bab_v AS bab_v FROM students RIGHT JOIN plagiarisms ON plagiarisms.author_id = students.identity LEFT JOIN users ON users.identity = students.identity WHERE students.identity_dep = ?',[$department]);
+        $exam = DB::select('SELECT users.name AS author, users.identity AS author_id, students.doc_title AS doc_title, students.doc_link AS doc_url, users.photo_url AS photo_url, exams.id AS exam_id, exams.examiner1_id AS examiner1_id, exams.examiner2_id AS examiner2_id FROM students LEFT JOIN exams ON exams.author_id = students.identity LEFT JOIN users ON users.identity = students.identity WHERE exams.examiner1_pass = false OR exams.examiner2_pass = false AND students.status_1 >= 4 AND students.status_2 >= 4 AND students.identity_dep = ?',[$department]);
+        $lect = DB::select('SELECT lecturer_deps.lecturer_id AS identity, users.photo_url AS photo_url,lecturers.name AS name FROM lecturer_deps,lecturers,users WHERE lecturers.identity = lecturer_deps.lecturer_id AND users.identity = lecturers.identity AND lecturer_deps.department_id = ?',[$department]);
+        foreach ($lect as $item) {
+            $item->tot_bimbingan = DB::table('students')->where('identity_l1',$item->identity)
+                ->orWhere('identity_l2',$item->identity)
+                ->where('status_1','>',0)
+                ->where('status_2','>',0)
+                ->count();
+        }
+        return array(
+            $department,
+            $plag,
+            $standard,
+            $exam,
+            $lect,
+            $qouta_examiner
         );
     }
 

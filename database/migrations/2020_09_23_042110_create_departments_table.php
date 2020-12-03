@@ -22,6 +22,7 @@ class CreateDepartmentsTable extends Migration
             $table->double('plagiarism_biii')->default(25);
             $table->double('plagiarism_biv')->default(25);
             $table->double('plagiarism_bv')->default(25);
+            $table->integer('examiner_quo')->default(2);
             $table->timestamps();
         });
     }

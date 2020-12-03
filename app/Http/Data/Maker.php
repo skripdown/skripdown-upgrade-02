@@ -275,8 +275,8 @@ class Maker {
         ) {
             $plagiarism->pass = true;
             $status = Data::getAdvisorWriter($author_id);
-            $status->status_1 = 3;
-            $status->status_2 = 3;
+            $status->status_1 = 4;
+            $status->status_2 = 4;
             $status->save();
             $plagiarism->save();
             return array('status'=>'1');

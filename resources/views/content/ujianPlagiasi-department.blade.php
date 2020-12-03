@@ -6,12 +6,14 @@
 
 @section('response-area')
     @php
-    if (isset($response)) {
-        $data = $response[0];
-        $std  = $response[1];
-        $exm  = $response[2];
-        $lec  = $response[3];
-        $amt  = $response[4];
+    if (isset($data)) {
+        $response = $data;
+        $dept = $response[0];
+        $data = $response[1];
+        $std  = $response[2];
+        $exm  = $response[3];
+        $lec  = $response[4];
+        $amt  = $response[5];
     }
     @endphp
 @endsection
@@ -62,7 +64,7 @@
 
 @section('header-button')
     <a href="javascript:void(0)" class="dropdown-item">
-        <i data-feather="gear" class="svg-icon mr-2 ml-1"></i>
+        <i data-feather="settings" class="svg-icon mr-2 ml-1"></i>
         Pengaturan
     </a>
 @endsection
@@ -85,7 +87,7 @@
 @endsection
 
 @section('sub-breadcrumb')
-    Halaman Cek Plagiarisme dan Ujian Skripsi Program Studi {Jurusan}
+    Halaman Cek Plagiarisme dan Ujian Skripsi Program Studi {{$dept}}
 @endsection
 
 @section('content')
@@ -387,9 +389,9 @@
         window.dosens           = [
         @foreach ($lec as $item)
             new Dosen(
-                {!! $item->photo_url.'' !!},
-                {!! $item->name.'' !!},
-                {!! $item->identity.'' !!},
+                '{!! $item->photo_url.'' !!}',
+                '{!! $item->name.'' !!}',
+                '{!! $item->identity.'' !!}',
                 {!! $item->tot_bimbingan.'' !!},
             ),
         @endforeach
