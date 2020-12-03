@@ -25,11 +25,11 @@
         </div>
     </div>
     <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative" id="app-bg">
-        <div class="auth-box row">
-            <div class="col-12 bg-white">
+        <div class="auth-box row shadow-lg">
+            <div class="col-12 bg-white" style="border-radius: 1.5%; padding-bottom: 1vw">
                 <div class="p-3">
                     <h2 class="text-center">
-                        <img src="{{asset(env('ICON_PATH'))}}" alt="" style="width: 100pt; margin-bottom: -3.5%">
+                        <img src="{{asset(env('ICON_PATH'))}}" alt="" style="width: 100pt; margin-bottom: -3.5%; margin-top: -1.5%">
                     </h2>
                     <p class="text-center">Masukkan ID dan kata sandi untuk mengakses Skripdown.</p>
                     <form class="mt-4" method="POST" action="{{route('login')}}">

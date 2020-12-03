@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="department setting bug fixed">
+    <list default="true" id="d29cb3a4-9834-457b-8f58-caa3c7838ec6" name="Default Changelist" comment="login view updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/login.blade.php" afterDir="false" />
     </list>
@@ -349,14 +349,7 @@
       <workItem from="1606982279034" duration="2036000" />
       <workItem from="1606985601860" duration="655000" />
       <workItem from="1606991821350" duration="8454000" />
-      <workItem from="1607003901035" duration="478000" />
-    </task>
-    <task id="LOCAL-00075" summary="advisor view modified">
-      <created>1605347698504</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1605347698504</updated>
+      <workItem from="1607003901035" duration="781000" />
     </task>
     <task id="LOCAL-00076" summary="advisor dashboard-lecturer.blade.php modified">
       <created>1605348393342</created>
@@ -694,7 +687,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607003294133</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="login view updated">
+      <created>1607004538614</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1607004538614</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -714,7 +714,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="department frontend bug repair" />
     <MESSAGE value="controller data routing" />
     <MESSAGE value="department dashboard backend" />
     <MESSAGE value="login redirect bug repair" />
@@ -739,7 +738,8 @@
     <MESSAGE value="department response dashboard bug fixed" />
     <MESSAGE value="department response ujian plagiasi bug fixed" />
     <MESSAGE value="department setting bug fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="department setting bug fixed" />
+    <MESSAGE value="login view updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="login view updated" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600922526929">
@@ -790,10 +790,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="507" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1600920212231" />
-    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2" timestamp="1607003299300">
+    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2" timestamp="1607004542968">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607003299300" />
+    <state x="552" y="248" width="1236" height="543" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607004542968" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1602072002937">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
