@@ -218,17 +218,18 @@ class Maker {
         $submit = Data::getSubmitRequest($author->identity, '');
         $score = floatval($score);
         if ($author->identity_l1 == $lecturer_id) {
-            $author->status_1 = 2;
+            $author->status_1 = 3;
             $author->thesis_score_l1 = $score;
-            $submit->l1_agreement = 2;
+            $submit->l1_agreement = 1;
         }
         else {
-            $author->status_2 = 2;
+            $author->status_2 = 3;
             $author->thesis_score_l2 = $score;
-            $submit->l2_agreement = 2;
+            $submit->l2_agreement = 1;
         }
         $author->save();
-        if ($author->status_1 == 2 && $author->status_2 == 2) {
+        $submit->save();
+        if ($author->status_1 == 3 && $author->status_2 == 3) {
             $submit->delete();
             Data::getPlagiarism($author_id);
             return array('status'=>'1');

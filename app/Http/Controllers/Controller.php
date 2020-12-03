@@ -37,6 +37,7 @@ class Controller extends BaseController
         }
         elseif (Authorization_::department()) {
             $data = Data::dataRouteDashboard_department();
+            return $data;
             return view('content.dashboard-department',compact('data'));
         }
         elseif (Authorization_::super()) {

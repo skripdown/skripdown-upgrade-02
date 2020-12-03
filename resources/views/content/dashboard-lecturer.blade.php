@@ -105,6 +105,8 @@
                                     @else
                                         @if ($request_submit == 0)
                                             <td>permintaan submit repository</td>
+                                        @elseif($request_submit == 1)
+                                            <td>telah menyetujui permintaan submit</td>
                                         @else
                                             @if ($progres == 0)
                                                 <td class="text-warning">belum ada progres</td>
@@ -179,9 +181,12 @@
                                                        data-author_id="{{$user->identity}}"
                                                        data-status-sec="{{$status_sec}}"
                                                     >tolak</a>
+                                                @elseif($request_submit == 1)
+                                                    <span class="text-muted">
+                                                        tidak ada aksi
+                                                    </span>
                                                 @else
                                                     <span class="text-muted">
-                                                        {{$user->l1_agrement}}
                                                         tidak ada permintaan revisi
                                                     </span>
                                                 @endif
@@ -555,7 +560,7 @@
         });
         $('#submit-setuju-submit').click(function () {
             const author_id = $('#popup_setuju_submit_author_id').val();
-            const score     = $('#thesis-score').val();
+            const score     = $('#score-input').val();
             $.ajax({
                 url     : '{{url('accsubmit')}}',
                 type    : 'POST',

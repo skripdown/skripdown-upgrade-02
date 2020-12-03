@@ -309,7 +309,7 @@ class Data {
         $advisors_ = DB::select("SELECT lecturer_deps.lecturer_id AS identity,lecturers.name FROM lecturer_deps,lecturers WHERE lecturers.identity = lecturer_deps.lecturer_id AND lecturer_deps.department_id = ?",[$department]);
         foreach ($advisors_ as $advisor) {
             $advising = DB::select("SELECT DISTINCT students.name,students.identity,documents.title AS doc_title,users.photo_url,documents.url AS doc_url FROM students,documents,users WHERE students.identity_dep = ? AND students.identity = documents.id_ AND students.identity_l1 = ? OR students.identity_l2 = ? AND students.identity = users.identity;",[$department,$advisor->identity,$advisor->identity]);
-            $advisor['advising'] = $advising;
+            $advisor->advising = $advising;
         }
         return array(
             $department,
