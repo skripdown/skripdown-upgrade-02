@@ -291,6 +291,19 @@ class Data {
         $rejected->save();
     }
 
+    public static function dataWelcome_guest() {
+        $total_dokumen = DB::table('documents')->count();
+        $total_active  = DB::table('students')
+            ->where('status_1','!=', 5)
+            ->orWhere('status_2','!=',5)
+            ->where('doc_title','!=',null)
+            ->count();
+        return array(
+            $total_dokumen,
+            $total_active
+        );
+    }
+
     public static function dataRouteDashboard_lecturer() {
         $identity  = Auth::user()->identity;
         $bimbingan = DB::select("SELECT students.id AS id, students.identity AS identity,students.name AS name, students.status_1 AS status_1, students.status_2 AS status_2, students.doc_title AS doc_title, students.doc_link AS doc_link, students.identity_l1 AS identity_l1, students.identity_l2 AS identity_l2, students.l1_revision_request AS l1_request_revision, students.l2_revision_request AS l2_request_revision, revisions.lec_1_revision AS lec_1_revision, revisions.lec_2_revision AS lec_2_revision, submit_requests.l1_agreement AS l1_agrement, submit_requests.l2_agreement AS l2_agrement, proposals.id FROM students LEFT JOIN revisions ON students.identity = revisions.author_id LEFT JOIN submit_requests ON students.identity = submit_requests.author_id LEFT JOIN proposals ON proposals.lecturer_id = ? WHERE students.identity_l1 = ? OR students.identity_l2 = ?",[$identity,$identity,$identity]);

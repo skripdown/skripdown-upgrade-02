@@ -82,7 +82,7 @@
                     <div class="fill-span">
                         <h2>Repositori</h2>
                         <h6 class="section-subtitle text-muted">Pencarian {{$tot_dokumen}} dokumen tugas akhir pada penyimpanan pusat<br>dengan {{$tot_aktif}} penulis aktif.</h6>
-                        <a href="" class="btn btn-lg btn-success mt-4" style="font-size: 18pt">Buka Repositori</a>
+                        <a href="" class="btn btn-lg btn-success mt-4" style="font-size: 12pt">Buka Repositori</a>
                     </div>
                     <div class="ept-span"></div>
                 </div>

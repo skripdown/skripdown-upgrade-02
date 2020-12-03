@@ -18,7 +18,8 @@ class Controller extends BaseController
 
     //-----------------------------ROOT-----------------------------//
     public function home() {
-        return view('welcome');
+        $data = Data::dataWelcome_guest();
+        return view('welcome',compact('data'));
     }
 
     public function dashboard() {
